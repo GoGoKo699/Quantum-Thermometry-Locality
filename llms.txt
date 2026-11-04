@@ -23,12 +23,24 @@ Canonical entrypoints:
 - references/references.bib: structured source metadata.
 - verification/README.md: commands, dependencies, finite checks and their limits.
 - verification/run_all.py: focused verification entrypoint.
+- verification/hosted/README.md: read-only actual GitHub math capture, source
+  comparison, text contracts, screenshots and the limits of renderer checks.
+
+Learning entrypoints:
+- learning/MILESTONES.md: the canonical M01–M30 understanding map, with 14
+  background/preliminaries milestones and 16 narrative/innovation milestones;
+  dependencies, conceptual connections, anchor sections and exact science routes.
+- learning/ANCHOR_BRIDGE.md: the single selected source, Howard M. Wiseman and
+  Gerard J. Milburn, Quantum Measurement and Control (first edition, 2010);
+  verified sections, notation, operational examples and source-to-project bridges.
 
 Reader routes:
 - For the story: read the model and physical consequences, then follow the
   converse and construction according to the mechanism of interest.
 - For an exact theorem: start with the model and read its entire proof page;
   an introductory summary is not a replacement for assumptions or limits.
+- For self-directed study: use the anchor bridge alongside M01–M30. The map is
+  project-defined; the textbook supports it without replacing the proof pages.
 - To reproduce a calculation: read verification/README.md, run the documented
   command, and distinguish a new execution from committed reference outputs.
 - To compare with another thermometry model: inspect how the parameter enters,
@@ -57,3 +69,6 @@ Preserve these distinctions when explaining or editing:
   literature. Read the attribution before making an originality claim.
 - Finite numerical checks support implementations. Analytical proofs establish
   universal and asymptotic statements; no external peer review is implied.
+- The one educational anchor supplies measurement and control foundations.
+  Primary research citations remain necessary for attribution and imported
+  tools; they do not constitute additional assigned textbooks.

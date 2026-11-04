@@ -43,6 +43,12 @@ Start with the [model and exact statements](science/model_and_results.md). The [
 
 [The LLM reading guide](llms.txt) maps scientific questions to these same authoritative files.
 
+## Learn the project
+
+The single educational anchor is **Howard M. Wiseman and Gerard J. Milburn, *Quantum Measurement and Control* (Cambridge University Press, first edition, 2010)**. The [anchor bridge](learning/ANCHOR_BRIDGE.md) selects the relevant sections, translates the notation, and connects measurements, counting records and feedback to the microscopic thermometry problem.
+
+The [30-milestone map](learning/MILESTONES.md) gives a common route through the project. Its 14 background milestones build the operational and mathematical foundations; its 16 narrative milestones connect the locality converse, attaining sensor and physical consequences. Each milestone states an understanding target, dependencies, conceptual connections and source pointers. The map is defined by the science and can be used alongside the bridge for self-directed study.
+
 ## Reproduce the finite checks
 
 From the repository root:

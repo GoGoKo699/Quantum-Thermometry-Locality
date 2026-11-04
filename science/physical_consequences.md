@@ -17,7 +17,7 @@ This identifies two ways to improve the order of the precision. One can initiall
 
 The [counted-sensor construction](counted_sensor.md) shows that the bound is attainable. For $`\tau>r`$, one fixed two-level sensor with fixed hopping and fixed counted loss suffices. Its detector resets the sensor into a known state; the thermal chain evolves throughout and is never re-prepared. For $`r\geq\tau`$, a measurement of the initial contacted block's occupation supplies the matching order.
 
-The theorem applies to squared log-temperature error as well: on the fixed interval, $`\log T=\log J-\log b`$ is bi-Lipschitz in $`b`$. Squared error in physical inverse temperature carries the dimensional factor $`J^{-2}`$. None of these comparisons has constants uniform as $`b_+\to\infty`$ or as the positive band gap closes.
+The theorem applies to squared log-temperature error as well: on the fixed interval, the dimensionless coordinate $`\theta=\log(k_{\mathrm B}T/J)=-\log b`$ is bi-Lipschitz in $`b`$. Squared error in physical inverse temperature carries the dimensional factor $`J^{-2}`$. None of these comparisons has constants uniform as $`b_+\to\infty`$ or as the positive band gap closes.
 
 ## A collective Markov experiment
 
@@ -37,28 +37,31 @@ For the free half-chain, the endpoint density of one-particle states is
 
 ```math
 w_\nu(E)=\frac{\sqrt{4-(E-\nu)^2}}{2\pi},
-\qquad \nu-2<E<\nu+2.
+\qquad \nu-2\lt E\lt\nu+2.
 ```
 
 The ordinary weak-coupling endpoint rates, expressed per unit $`\tau`$, are
 
 ```math
-\gamma_+(b)=\Gamma f_b(\Delta),\qquad
-\gamma_-(b)=\Gamma[1-f_b(\Delta)],
-\qquad
-\Gamma=2\pi\lambda^2w_\nu(\Delta),\qquad
-f_b(E)=\frac{1}{1+e^{bE}}.
+\begin{aligned}
+\gamma_+(b)&=\Gamma f_b(\Delta),&
+\gamma_-(b)&=\Gamma[1-f_b(\Delta)],\\
+\Gamma&=2\pi\lambda^2w_\nu(\Delta),&
+f_b(E)&=\frac{1}{1+e^{bE}}.
+\end{aligned}
 ```
 
 These Fermi occupation factors belong to this spin chain at its Jordan–Wigner endpoint. They are not rates asserted for every thermal environment. They define the reference Markov generator
 
 ```math
+\begin{aligned}
 \mathcal L_b(\rho)
-=-i[\Delta S_z+H_{\rm LS}(b),\rho]
- +\gamma_-(b)\mathcal D[S_-]\rho
- +\gamma_+(b)\mathcal D[S_+]\rho,
-\qquad
-\mathcal D[A]\rho=A\rho A^\dagger-\tfrac12\{A^\dagger A,\rho\}.
+&=-i[\Delta S_z+H_{\rm LS}(b),\rho]\\
+&\quad+\gamma_-(b)\mathcal D[S_-]\rho
+ +\gamma_+(b)\mathcal D[S_+]\rho,\\
+\mathcal D[A]\rho
+&=A\rho A^\dagger-\tfrac12\{A^\dagger A,\rho\}.
+\end{aligned}
 ```
 
 The secular Lamb shift is diagonal in the collective-spin population basis, so it does not affect the population experiment below. Using these rates for increasing collective strength is a proposed extension of a weak-coupling description whose uniform validity is being tested, not an assumption that the approximation remains accurate.
@@ -169,10 +172,12 @@ The microscopic and Markov distributions here refer to the same probe-measuremen
 the triangle inequality gives
 
 ```math
-2\epsilon_N\geq
-\|P^{\rm M}_{b_0,N}-P^{\rm M}_{b_1,N}\|_{\rm TV}-q_0,
-\qquad
-\liminf_{N\to\infty}\epsilon_N\geq\frac{1-q_0}{2}>0.
+\begin{aligned}
+2\epsilon_N&\geq
+\|P^{\rm M}_{b_0,N}-P^{\rm M}_{b_1,N}\|_{\rm TV}-q_0,\\
+\liminf_{N\to\infty}\epsilon_N
+&\geq\frac{1-q_0}{2}>0.
+\end{aligned}
 ```
 
 In particular, the displayed choice gives $`\liminf_N\epsilon_N\geq5/16`$. Thus the formal collective Markov model cannot approximate all controlled experiments uniformly over the temperature interval when it predicts an unbounded rate at a fixed microscopic contact and bandwidth. With physical units restored, the comparison is between $`\Lambda_N^{\rm phys}=(J/\hbar)\Lambda_N`$ and the chain rate $`J/\hbar`$.

@@ -1,0 +1,563 @@
+{
+  "schema_version": 1,
+  "expressions": [
+    {
+      "path": "README.md",
+      "index": 3,
+      "source_sha256": "a6887f7dbb7e260917e12ea9aea29ade3486b660fc912f5361ac9b872f7f38f5",
+      "expected_text": "R(r,Jt/ħ)=Θ(1r+Jt/ħ)."
+    },
+    {
+      "path": "learning/ANCHOR_BRIDGE.md",
+      "index": 3,
+      "source_sha256": "709957105da480700333315f268c66e3ff6abc9d8b4a227b5b7f7787e8b44d8b",
+      "expected_text": "pb=fb(E)=11+ebE,b=JkBT."
+    },
+    {
+      "path": "learning/ANCHOR_BRIDGE.md",
+      "index": 23,
+      "source_sha256": "ce1e0680b764f7cf3fda8ff81c89fc9a4d61b9607d584f256dc5a8c193aa90a7",
+      "expected_text": "θ=log(kBTJ)=−logb,(θ^−θ)2=(logb^−logb)2=[log(T^T)]2."
+    },
+    {
+      "path": "learning/ANCHOR_BRIDGE.md",
+      "index": 26,
+      "source_sha256": "f9eee2b9ba150405f5138825eb4fc589e7fea65656b114ed8213bb9472a64991",
+      "expected_text": "R(r,τ)=Θ(1r+τ)."
+    },
+    {
+      "path": "learning/ANCHOR_BRIDGE.md",
+      "index": 31,
+      "source_sha256": "7845d1eef98d2947f77f222e24323eadf15b1859952fbc3a00d3b3f04813eba3",
+      "expected_text": "p(y)=trIy(ρ),ρy=Iy(ρ)p(y)whenp(y)>0."
+    },
+    {
+      "path": "learning/ANCHOR_BRIDGE.md",
+      "index": 44,
+      "source_sha256": "9923eb4a33a5e146278551c3d270639049e4a66dc677295e0a26bbaa97e1aba5",
+      "expected_text": "hB=νI−S−S†,Cb=fb(hB),(Cb)jk=⟨ck†cj⟩b."
+    },
+    {
+      "path": "learning/ANCHOR_BRIDGE.md",
+      "index": 49,
+      "source_sha256": "d5932c4390c2821f5bedc22dd522bb37510da4b3862911b67c199f28d164c011",
+      "expected_text": "⟨njnk⟩b=(Cb)jj(Cb)kk−|(Cb)jk|2,j≠k."
+    },
+    {
+      "path": "learning/ANCHOR_BRIDGE.md",
+      "index": 51,
+      "source_sha256": "6f2e5c418ab9d7aae29675203270f9944aa79b01a7b0200fbd51ac6101d98b48",
+      "expected_text": "Cb,R=PRfb(hB)PR."
+    },
+    {
+      "path": "learning/ANCHOR_BRIDGE.md",
+      "index": 53,
+      "source_sha256": "8bd1a923a4c9a7f04cca2307e5b5d31dac6d51a34afc92eb65e14fe43314469c",
+      "expected_text": "PRfb(hB)PR≠fb(PRhBPR)."
+    },
+    {
+      "path": "learning/ANCHOR_BRIDGE.md",
+      "index": 61,
+      "source_sha256": "4073908bf3f0ef4b8eb6cf852bb7f42c5b12dd0c4a8142244d48b22f3afdd1d7",
+      "expected_text": "σb,R=ΛR(ρb,R)."
+    },
+    {
+      "path": "learning/ANCHOR_BRIDGE.md",
+      "index": 63,
+      "source_sha256": "e3b9fa7b466060ab6b029df756fbda17166557ac87c106597c11d2c13c45235c",
+      "expected_text": "D(ρb,R‖ρb′,R)≤KR(b−b′)2,"
+    },
+    {
+      "path": "learning/ANCHOR_BRIDGE.md",
+      "index": 73,
+      "source_sha256": "5c2ba665002c7232c84826fd07b5addfdff4f265e98e7040dde12767736dd744",
+      "expected_text": "l=κσ0−,κ=12."
+    },
+    {
+      "path": "learning/ANCHOR_BRIDGE.md",
+      "index": 77,
+      "source_sha256": "3975e3ee0772fffadd9648ff004a3d6de8d9e9d88d20efa77e8aaed2e72b0dec",
+      "expected_text": "Pr(dNτ=1∣record)=κ⟨n0⟩conddτ+o(dτ)."
+    },
+    {
+      "path": "learning/ANCHOR_BRIDGE.md",
+      "index": 79,
+      "source_sha256": "33c8cc072246b0426f68e4ee400d1e8820dff6df309c1af37a3694898ad3448c",
+      "expected_text": "Kτ=e(−ih−κP0/2)τ,Mτ=PB(I−Kτ†Kτ)PB."
+    },
+    {
+      "path": "learning/ANCHOR_BRIDGE.md",
+      "index": 88,
+      "source_sha256": "213ce9013307b1e91dab5397532afed8f179029d522a12605299e58d67a62e3f",
+      "expected_text": "Qτ(b)=Cb1/2MτCb1/2,EbzNτ=det[I+(z−1)Qτ(b)]=∏j(1−qj+qjz)."
+    },
+    {
+      "path": "learning/ANCHOR_BRIDGE.md",
+      "index": 93,
+      "source_sha256": "ea8e1cf2540e2e25bd0547c0089f0667e831285487b962399b3e799d56109edf",
+      "expected_text": "μτ(b)=EbNτ=Tr(CbMτ),Varb(Nτ)=∑jqj(1−qj)≤μτ(b)."
+    },
+    {
+      "path": "learning/ANCHOR_BRIDGE.md",
+      "index": 94,
+      "source_sha256": "255eefc1433f7661a29d89cd2f263538273cd8656fc5383f5d5e44f86ea5d769",
+      "expected_text": "κqτ−1≤TrMτ≤κτ,q=1−43π>0."
+    },
+    {
+      "path": "learning/ANCHOR_BRIDGE.md",
+      "index": 97,
+      "source_sha256": "765a5fec941e332c9c6259e16868f456f0cf5c3f97f77a7a2ebdf46342dba723",
+      "expected_text": "−μτ′(b)≥mTrMτ,m=minb∈IE∈[ν−2,ν+2]Efb(E)[1−fb(E)]>0."
+    },
+    {
+      "path": "learning/ANCHOR_BRIDGE.md",
+      "index": 100,
+      "source_sha256": "8a4d09524b8f2052c64cb59596af9d289a75b2de381275525a1c0949e7de77ac",
+      "expected_text": "Eb(b^−b)2≤Varb(Nτ)m2(TrMτ)2≤12m2TrMτ."
+    },
+    {
+      "path": "learning/MILESTONES.md",
+      "index": 8,
+      "source_sha256": "c59b746838ff1cde163afaeda6010918755c75c38b21a2de235c48d1b26083fe",
+      "expected_text": "ν>2"
+    },
+    {
+      "path": "learning/MILESTONES.md",
+      "index": 23,
+      "source_sha256": "97a45a47b19879ea5fdbd0f9fce9a867d0ec4a1ff3c10ec4368af85c9f2cef06",
+      "expected_text": "TrMτ≥κqτ−1"
+    },
+    {
+      "path": "learning/MILESTONES.md",
+      "index": 25,
+      "source_sha256": "7d08d757e35b025c76a39d002bc9ae594856102e127e259856bd192beea0a742",
+      "expected_text": "q=1−4/(3π)>0"
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 7,
+      "source_sha256": "cad1d1bd959ebedf0cc5d3fe8da0bf7bd7686cdf3688fa780634736ccfd86b80",
+      "expected_text": "HB/J=ν∑x≥1nx−∑x≥1(σx+σx+1−+σx+1+σx−),ν>2."
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 8,
+      "source_sha256": "6cc0f2bc94b50cce7862f9891ab788e437128c8fe4bc8745b12640b027041903",
+      "expected_text": "hB=νI−S−S∗,E−=ν−2>0,E+=ν+2,Cb=fb(hB),fb(E)=11+ebE."
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 22,
+      "source_sha256": "c990ae55d7bd518e3c5f67c3288f41bf29cf3ace09cd89033092c8a258bbae5f",
+      "expected_text": "Kτ=e(−ih−κP0/2)τ,Lτ=I−Kτ∗Kτ,Mτ=PBLτPB|l2(N)."
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 35,
+      "source_sha256": "229560d830cf24686f6bb9c975228db6fc4b7103476c7d3b079715efd6d055a6",
+      "expected_text": "z>0"
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 36,
+      "source_sha256": "11e174fe0bace62bce73a1dc3ec53ca4251c3d3d22fa9869ed501d4fe33db846",
+      "expected_text": "ECzNτ=Tr[z−N^Eτ(zN^ρ(C))]."
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 46,
+      "source_sha256": "f2fa38d7315beb67ebd65f7b0644a46d5c7d9c855b99713b68e9f72b9f965f67",
+      "expected_text": "Tr(uN^ρ(C′))=det[I+(u−1)C′]"
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 54,
+      "source_sha256": "70566af9343202b33004d04dfd1a123572302d6c92fe82134938f372afcd3b83",
+      "expected_text": "EbzNτ=det[I+(z−1)Qτ(b)],Qτ(b)=Cb1/2MτCb1/2."
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 57,
+      "source_sha256": "9bd07532f98be57513edefec678c1fa2ea05a375f7e9f9ba7fb8ef1c1095996d",
+      "expected_text": "μτ(b):=EbNτ=Tr(CbMτ),Varb(Nτ)=Tr[Qτ(b)(I−Qτ(b))]."
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 59,
+      "source_sha256": "35f720bb1d4ef30ab30fdf21a1720f9a2f5b00a389d63183d0ba8aa42394884d",
+      "expected_text": "Varb(Nτ)≤μτ(b)≤12TrMτ."
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 61,
+      "source_sha256": "8fa804e805e02b12df6e294496635de8197849d264ae7b30c8826d556ba52e20",
+      "expected_text": "Lτ=κ∫0τ|Ks∗0⟩⟨Ks∗0|ds,TrLτ≤κτ."
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 79,
+      "source_sha256": "507cacc73f85abfeb6fa57d2285825dc27f46b52269465569e1f105f46a5b790",
+      "expected_text": "TrMτ"
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 85,
+      "source_sha256": "1598d0fa89d209cf71cc2d70d459e1243a5cc7e88a5b62e6bf6272ab717f8e54",
+      "expected_text": "TrLτ=κ∫0τ∥Ks∗|0⟩∥2ds=κ∫0τSκ(s)ds."
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 92,
+      "source_sha256": "f884a4cfb89bfef3de1570a62e72d9ea5b8eeb30e7343a849c61ea50ec0e9940",
+      "expected_text": "a0(s)=∫w(E)e−iEsdE,∫0∞|a0(s)|2ds=π∫w(E)2dE=83π."
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 95,
+      "source_sha256": "ea0b62a59789546eb5f6c906521ee03334e7056b105eaf124c38908cb19e73fc",
+      "expected_text": "Rz>0"
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 98,
+      "source_sha256": "48de7626ef8e8a8ff7ccb6df9a95337790136efc2e33dc0667bed5b80d38c39b",
+      "expected_text": "Aκ(z)=A0(z)1+(κ/2)A0(z),A0(z)=∫w(E)z+iEdE."
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 99,
+      "source_sha256": "0fe4051e611e422270ee436451464cd1bbf6043714c2c77a737124fc76b5dd66",
+      "expected_text": "RA0(z)≥0"
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 101,
+      "source_sha256": "dcc0f6d5f5055f62e1040cd71ccc5eab8b6120607550665d2f52702b5e81cfef",
+      "expected_text": "x>0"
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 104,
+      "source_sha256": "0072031501d6cd5131593587fadc84925126584ac96473d39b13c3507c6e4db7",
+      "expected_text": "∫0∞|aκ(s)|2ds≤83π,Sκ(s)≥qκ:=1−8κ3π."
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 106,
+      "source_sha256": "cb55ee7f208572f781de06caf7fa5db13cfcb31c02f31fed51939555da32ac45",
+      "expected_text": "q:=q1/2=1−4/(3π)>0"
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 107,
+      "source_sha256": "a17564e3c15c62048ae29f8a170815ac1c95a4e29de6c670a8e6f0b166d2f8c7",
+      "expected_text": "κqτ−1≤TrMτ≤κτ,κ=12."
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 108,
+      "source_sha256": "eb538f191eb4e493531131bf1aa1bc19be3dffbfb79b7d259e39cf7962ba0d4e",
+      "expected_text": "m:=minb∈BE∈[E−,E+]Efb(E)(1−fb(E))>0."
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 113,
+      "source_sha256": "0e784cf2859fad49d3bd65ac4d803bcf56eb366af0276dce7a191714cf98f7dc",
+      "expected_text": "−μτ′(b)=Tr[hBCb(I−Cb)Mτ]≥mTrMτ."
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 117,
+      "source_sha256": "d12d71fcf88862ec6f3dbde426cc897e3bb3b98c8c9bd94ce7ee387b66622e73",
+      "expected_text": "TrMτ>0"
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 121,
+      "source_sha256": "e2e6208cd6074777a56b711e65a84899f1229a50da80bea59a4457c73cdc7369",
+      "expected_text": "(mTrMτ)−1"
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 123,
+      "source_sha256": "211307004baa261c29460228070c1ae59ff3885a4ef4e82e985455b83c50c12c",
+      "expected_text": "Eb(b^τ−b)2≤Eb(Nτ−μτ(b))2m2(TrMτ)2≤12m2TrMτ."
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 136,
+      "source_sha256": "53e5dbcfe5b0746dc597f043fc91c0bf75feb71a0f65dbe8b7445222d19dd09e",
+      "expected_text": "|θ^−θ|≤b−−1|b^−b|,supb∈BEb(θ^−θ)2≤Cinv/b−21+τ."
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 142,
+      "source_sha256": "2e3a5c75dbe4ba126350a50eedbe6ff17af7327382a9c881efbb1817945e887b",
+      "expected_text": "νr(b)=EbNr=Tr(PrCbPr),Varb(Nr)=Tr[Cb,r(I−Cb,r)]≤r4,"
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 143,
+      "source_sha256": "a87a30cc3b04fec8edb1494dc50b6dd160d777304da88e6c53bafe09526cbe24",
+      "expected_text": "−νr′(b)=Tr[PrhBCb(I−Cb)Pr]≥mr."
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 146,
+      "source_sha256": "99914d52ba19587ef03e5bc28c49f202dfc482f301b776981b279aba6d0bc1e6",
+      "expected_text": "τ>r"
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 5,
+      "source_sha256": "9230a125444c372e98cddbde7e99653d56cd9c332dc7bc6ac0581d1dc744242a",
+      "expected_text": "T(ρ,σ)=12∥ρ−σ∥1,D(ρ‖σ)=trρ(logρ−logσ)."
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 7,
+      "source_sha256": "15725f28646b5433c36d286e05d70adc51ba054255c74de4e0793067cb3ea865",
+      "expected_text": "Emax=ν+2,η=(1+eb+Emax)−1,K=Emax232η(1−η),W=b+−b−,a=min{W2,18K},v=6e,A=v+log16+1,cb=5a264A,c=cbb+2."
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 10,
+      "source_sha256": "53c49159ceae158c2f08a2cbc86e63fc44666818f8ec2c3bf8ee3c833e583e0a",
+      "expected_text": "Rb(r,τ)≥cbr+τ,R(r,τ)≥cr+τ."
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 18,
+      "source_sha256": "ebe0773a1736c73a3ae173edd699990aa94409e8c24391a914da6d57d3101d68",
+      "expected_text": "H(s)=∑j≥0vj(s),suppvj(s)⊆{j,j+1},∥vj(s)∥≤1."
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 21,
+      "source_sha256": "35933233b867ea8c718c54b2537e2ac44a1945329374c450f58d99efcb98041d",
+      "expected_text": "Lj(s)(O)=i[vj(s),O],∥Lj(s)∥∞→∞≤2."
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 32,
+      "source_sha256": "5247fdc21d6bd8c0720a36c78316e958b59f70d853994532bb66ef2f2d981640",
+      "expected_text": "FX(s)≤FX(t)+∑Y:Y∩X≠∅∫st∥LY(u)∥FY(u)du."
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 47,
+      "source_sha256": "b157bfc808b783310ee5889f4bc1408ebbe1f42dd67d2a527e6cfb2e19135373",
+      "expected_text": "FX(s)≤∥O∥∑n≥d[6(t−s)]nn!≤∥O∥e6e(t−s)−d."
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 51,
+      "source_sha256": "b9d13fc6d53095d2d043233cd5ec1e0339bffaec689ddf904c73a638c14a2fcd",
+      "expected_text": "∥[VX,αs,t(O)]∥≤2∥O∥ev(t−s)−d,v=6e."
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 61,
+      "source_sha256": "e71d286f0e982fb2d95382287bffdc844be9bfeba5e7f20ad7d06302120e3c07",
+      "expected_text": "∥α0,τf(O)−α0,τc(O)∥≤∫0τ∥[vd(s),αs,τc(O)]∥ds≤2v(evτ−1)e−(R−r)∥O∥."
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 64,
+      "source_sha256": "b075b11d6bd903e8112f034f9d6668a5cc2402c92bfdb410169d8d4316ee853c",
+      "expected_text": "T(σb,σb,R)≤evτ−1ve−(R−r)≤evτ−(R−r)."
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 66,
+      "source_sha256": "0b79337dac915d669e5907685cdf8853020d7b422a7e365a814c376aca30efbe",
+      "expected_text": "σb,R=ΛR(ρb,R),"
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 72,
+      "source_sha256": "cc2cec599a10b46cdfa478735a1531398701b57081bb6499e7c4ce8e5202a36f",
+      "expected_text": "D(ρb,R‖ρb′,R)≤KR(b−b′)2,b,b′∈I."
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 76,
+      "source_sha256": "0cbad894efe9dd8645a97cef74cb67718ccffdc5c907914c68a6ca457a42159d",
+      "expected_text": "ρC=det(I−C)exp[c†log(C(I−C)−1)c]."
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 77,
+      "source_sha256": "fef9d2b69d91dee3f4aa927f23b6af59bdad801f41442c71909ce5097926884d",
+      "expected_text": "Cij=tr(ρCcj†ci)"
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 81,
+      "source_sha256": "8a802a736b23a72a7d2deb154078d1a5fe76b80f75278e5d3549b57af08cbfd8",
+      "expected_text": "tr(ρCc†Ac)=Tr(AC)"
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 82,
+      "source_sha256": "bf069c482a3de18652a2160d67dfee5a4ee1aa22857bfebcd91ebe0680d07269",
+      "expected_text": "D(ρC‖ρD)=Tr[C(logC−logD)+(I−C)(log(I−C)−log(I−D))]."
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 83,
+      "source_sha256": "bbfa3039713b4e0cfa72476eb6873f9d5f9bb884efce041267b9332828f1465a",
+      "expected_text": "tr"
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 84,
+      "source_sha256": "cb54ccc274450ff5650539b78daa92ba197baae79e330122e272274fa7ee5652",
+      "expected_text": "Tr"
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 88,
+      "source_sha256": "3892309aa4e0fbeb17be51cea708580fca12b8bca4db401e341f07098282a1ff",
+      "expected_text": "Φ(C)=Trg(C)"
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 89,
+      "source_sha256": "4c042f4a830c0b7b13c481c2b25e1acbaef4e94099de8f21030f0dc625ea08b1",
+      "expected_text": "Φ(C)−Φ(D)−Tr[g′(D)(C−D)]."
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 97,
+      "source_sha256": "924283d32aec6d15a16fda1054d4135bf08e82340f2be3930908f2dabeb5fc2d",
+      "expected_text": "DΦ(A)[X]=Tr[g′(A)X]"
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 99,
+      "source_sha256": "171151935be0d4423f3d0edd2d08ac2e5bfee92da990914c6108fd5b0ccdb87e",
+      "expected_text": "g′′(x)=1x(1−x)≤1η(1−η),η≤x≤1−η,"
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 101,
+      "source_sha256": "7b6c048cb5e03353ed8b833fe9132f5132611d5156e4d1a2a9087003c92e1b31",
+      "expected_text": "D(ρC‖ρD)≤∥C−D∥F22η(1−η)."
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 104,
+      "source_sha256": "7f272b3b76bada709a3abe38f6d7d4946e4f2aa2445197b10cb69039af721007",
+      "expected_text": "ηI≤Cb,R≤12I≤(1−η)I,η=(1+eb+(ν+2))−1."
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 106,
+      "source_sha256": "1d1ca738e247710e166dcb196859b9aa7e44cd8033f2e74ad739b07fdcbf670d",
+      "expected_text": "∂bfb(hB)=−hBfb(hB)[I−fb(hB)],∥∂bfb(hB)∥≤Emax4."
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 110,
+      "source_sha256": "00379b5082a994c24e0cfde04f9e570fcbcff4b54961c0611e898092b78e46db",
+      "expected_text": "R=r+⌈vτ+log16⌉."
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 113,
+      "source_sha256": "2db806f1229261fd665ffa8ac14f50f0782272173a952b33beb53c61932d8011",
+      "expected_text": "δ=aR,b0=b∗−δ2,b1=b∗+δ2."
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 117,
+      "source_sha256": "ce0e58d499d1d82ff8c7c3b66aabd8c992f6a78bb190d6f26ad2be7cb52efe1f",
+      "expected_text": "T(σb0,σb1)≤14+116+116=38."
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 122,
+      "source_sha256": "83d48ab1fa721cc964d2ecaac4c401ed9a30f81c60c4d7f39ef39a7b37588a6e",
+      "expected_text": "maxi=0,1Ebi(b^−bi)2≥δ28[1−T(σb0,σb1)]≥5a264R."
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 124,
+      "source_sha256": "02b3a323de019793f68b4ba5c354552487cb9fbc2bff8be2624ffab487d296b7",
+      "expected_text": "tr(σb0M)+tr(σb1(I−M))"
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 126,
+      "source_sha256": "2bef525ac79a27ccaf0d3ff0baf18c65d629571e9756bf9a41ac5e9f23674410",
+      "expected_text": "R≤r+vτ+log16+1≤A(r+τ),A=v+log16+1."
+    },
+    {
+      "path": "science/model_and_results.md",
+      "index": 5,
+      "source_sha256": "25844844ea41a5dc332fdf2701ecf2d094bb2bb2542364352ae10476c7f4b9ef",
+      "expected_text": "HB=J[ν∑j≥1nj−∑j≥1(σj+σj+1−+σj−σj+1+)],nj=σj+σj−,J>0,ν>2."
+    },
+    {
+      "path": "science/model_and_results.md",
+      "index": 7,
+      "source_sha256": "4b2892b32c3588ffe7a9091cc638270b2d29d8076bdfddd5783fc4e2ecb597e7",
+      "expected_text": "b=βJ=JkBT,I=[b−,b+],0<b−<b+<∞."
+    },
+    {
+      "path": "science/model_and_results.md",
+      "index": 13,
+      "source_sha256": "a0065ecb8416cabfda95fe64a312f6d757382ca33cc92fa9478352b410f62ce4",
+      "expected_text": "hB=νI−S−S†,spec(hB)=[ν−2,ν+2],Cb=fb(hB),fb(E)=11+ebE,"
+    },
+    {
+      "path": "science/model_and_results.md",
+      "index": 38,
+      "source_sha256": "5f7821f2d5055333585a8789300670b4d598cd12a5f55ecfbaed4a87c707fcf7",
+      "expected_text": "θ=log(kBTJ)=−logb,Θ=[−logb+,−logb−]."
+    },
+    {
+      "path": "science/model_and_results.md",
+      "index": 56,
+      "source_sha256": "d44c50b7b4a0e2df182b584e743829caf4675a6ea3eeeb811beb95feeb18b412",
+      "expected_text": "cr+τ≤R(r,τ)≤Cr+τ."
+    },
+    {
+      "path": "science/model_and_results.md",
+      "index": 64,
+      "source_sha256": "4d5962d18ccea1a15ea357bd9f84f089c3583c32b661c21952f28f328ef625aa",
+      "expected_text": "D(ρb,R‖ρb′,R)≤KR(b−b′)2,K=(ν+2)232η(1−η),η=11+eb+(ν+2)."
+    },
+    {
+      "path": "science/physical_consequences.md",
+      "index": 20,
+      "source_sha256": "65e0d192e04c7cf1dfdb00ffd1e21600358c912a1068bc486b76d5c790e69233",
+      "expected_text": "wν(E)=4−(E−ν)22π,ν−2<E<ν+2."
+    },
+    {
+      "path": "science/physical_consequences.md",
+      "index": 22,
+      "source_sha256": "bb860bd65ccccee318afa6b6fcc741df8571c14f2be3d4733931c2e4ea12e13a",
+      "expected_text": "γ+(b)=Γfb(Δ),γ−(b)=Γ[1−fb(Δ)],Γ=2πλ2wν(Δ),fb(E)=11+ebE."
+    },
+    {
+      "path": "science/physical_consequences.md",
+      "index": 23,
+      "source_sha256": "1f17fb1fe9c44b1fa683c17c7b982a8d26900e6cfb841b22ca989a72f17ae2df",
+      "expected_text": "Lb(ρ)=−i[ΔSz+HLS(b),ρ]+γ−(b)D[S−]ρ+γ+(b)D[S+]ρ,D[A]ρ=AρA†−12{A†A,ρ}."
+    },
+    {
+      "path": "science/physical_consequences.md",
+      "index": 72,
+      "source_sha256": "be42a96ef2f665a31fb29c88344576c2f46964ed9dea3e7d73ac91830636c7e1",
+      "expected_text": "2εN≥∥Pb0,NM−Pb1,NM∥TV−q0,liminfN→∞εN≥1−q02>0."
+    },
+    {
+      "path": "science/physical_consequences.md",
+      "index": 73,
+      "source_sha256": "82e276c117b08076711cf1e9466bbb1211e9c9cafb395c5f30dabb32beab1463",
+      "expected_text": "liminfNεN≥5/16"
+    }
+  ]
+}

@@ -11,15 +11,17 @@ Use $`\hbar=k_B=1`$, dimensionless time $`\tau=Jt`$, and
 ```math
 H_B/J=\nu\sum_{x\ge1}n_x
 -\sum_{x\ge1}\bigl(\sigma_x^+\sigma_{x+1}^-+
-\sigma_{x+1}^+\sigma_x^-\bigr),\qquad \nu>2.
+\sigma_{x+1}^+\sigma_x^-\bigr),\qquad \nu\gt 2.
 ```
 
 The one-particle bath Hamiltonian and thermal covariance are
 
 ```math
-h_B=\nu I-S-S^*,\qquad
-E_-=\nu-2>0,\quad E_+=\nu+2,\qquad
-C_b=f_b(h_B),\quad f_b(E)=\frac1{1+e^{bE}}.
+\begin{aligned}
+h_B&=\nu I-S-S^*,\\
+E_-&=\nu-2\gt 0,\quad E_+=\nu+2,\\
+C_b&=f_b(h_B),\quad f_b(E)=\frac1{1+e^{bE}}.
+\end{aligned}
 ```
 
 The covariance convention is $`(C_b)_{xy}=\langle c_y^*c_x\rangle_b`$. The infinite-volume state is the gauge-invariant quasifree state specified by this covariance. Its local spin marginals are well defined by the Jordan–Wigner transformation starting at the physical endpoint.
@@ -45,9 +47,11 @@ This continuous instrument is allowed in the operational closure of finite local
 Let $`h`$ be the one-particle half-chain Hamiltonian on sites $`0,1,\ldots`$. Write $`P_0=|0\rangle\langle0|`$, $`P_B=I-P_0`$, and
 
 ```math
-K_\tau=e^{(-ih-\kappa P_0/2)\tau},\qquad
-L_\tau=I-K_\tau^*K_\tau,\qquad
-M_\tau=P_B L_\tau P_B\big|_{\ell^2(\mathbb N)}.
+\begin{aligned}
+K_\tau&=e^{(-ih-\kappa P_0/2)\tau},\\
+L_\tau&=I-K_\tau^*K_\tau,\\
+M_\tau&=P_B L_\tau P_B\big|_{\ell^2(\mathbb N)}.
+\end{aligned}
 ```
 
 Here $`L_\tau`$ denotes a one-particle loss operator, not the Lindblad generator or the jump operator. Contractivity gives $`0\le L_\tau\le I`$ and $`0\le M_\tau\le I`$. The initial combined covariance is $`C_b^{(0)}=0\oplus C_b`$.
@@ -66,11 +70,11 @@ One elementary way to check preservation is to split the evolution into quadrati
 
 ### Relate counted jumps to lost excitations
 
-Let $`\widehat N`$ be total sensor-plus-bath excitation number and $`\mathcal E_\tau`$ the unconditional channel. The Hamiltonian and the no-jump evolution preserve $`\widehat N`$; each counted jump lowers it by one. Since the initial Gaussian state $`\rho(C)`$ commutes with $`\widehat N`$, trajectory expansion gives, for real $`z>0`$,
+Let $`\widehat N`$ be total sensor-plus-bath excitation number and $`\mathcal E_\tau`$ the unconditional channel. The Hamiltonian and the no-jump evolution preserve $`\widehat N`$; each counted jump lowers it by one. Since the initial Gaussian state $`\rho(C)`$ commutes with $`\widehat N`$, trajectory expansion gives, for real $`z\gt 0`$,
 
 ```math
 \mathbb E_C z^{N_\tau}
-=\operatorname{Tr}\!\left[
+=\mathrm{Tr}\!\left[
 z^{-\widehat N}\,
 \mathcal E_\tau\!\left(z^{\widehat N}\rho(C)\right)
 \right].
@@ -85,7 +89,7 @@ D_z=I+(z-1)C,\qquad
 C_z=zC D_z^{-1}.
 ```
 
-The positive operator $`z^{\widehat N}\rho(C)`$ has trace $`\det D_z`$ and, after normalization, Gaussian covariance $`C_z`$. These identities follow by diagonalizing $`C`$ into independent occupation modes. The same diagonalization gives $`\operatorname{Tr}(u^{\widehat N}\rho(C'))=\det[I+(u-1)C']`$. Consequently,
+The positive operator $`z^{\widehat N}\rho(C)`$ has trace $`\det D_z`$ and, after normalization, Gaussian covariance $`C_z`$. These identities follow by diagonalizing $`C`$ into independent occupation modes. The same diagonalization gives $`\mathrm{Tr}(u^{\widehat N}\rho(C'))=\det[I+(u-1)C']`$. Consequently,
 
 ```math
 \begin{aligned}
@@ -101,11 +105,11 @@ The last step uses $`\det(I+AB)=\det(I+BA)`$ and multiplication by $`D_z`$; it d
 For $`C=C_b^{(0)}`$, remove the initially empty sensor mode and symmetrize the determinant:
 
 ```math
-\boxed{\quad
+\boxed{\begin{aligned}
 \mathbb E_b z^{N_\tau}
-=\det\!\left[I+(z-1)Q_\tau(b)\right],\qquad
-Q_\tau(b)=C_b^{1/2}M_\tau C_b^{1/2}.
-\quad}
+&=\det\!\left[I+(z-1)Q_\tau(b)\right],\\
+Q_\tau(b)&=C_b^{1/2}M_\tau C_b^{1/2}.
+\end{aligned}}
 ```
 
 The eigenvalues of $`Q_\tau(b)`$ are in $`[0,1]`$. The total count therefore has the law of a sum of Bernoulli variables with those eigenvalues as success probabilities. This is an auxiliary representation in occupation modes; the measured jump times need not be independent.
@@ -113,17 +117,18 @@ The eigenvalues of $`Q_\tau(b)`$ are in $`[0,1]`$. The total count therefore has
 In particular,
 
 ```math
-\mu_\tau(b):=\mathbb E_bN_\tau=\operatorname{Tr}(C_bM_\tau),
-\qquad
-\operatorname{Var}_b(N_\tau)
-=\operatorname{Tr}\bigl[Q_\tau(b)(I-Q_\tau(b))\bigr].
+\begin{aligned}
+\mu_\tau(b)&:=\mathbb E_bN_\tau=\mathrm{Tr}(C_bM_\tau),\\
+\mathrm{Var}_b(N_\tau)
+&=\mathrm{Tr}\bigl[Q_\tau(b)(I-Q_\tau(b))\bigr].
+\end{aligned}
 ```
 
 The positive band implies $`0\le C_b\le I/2`$, and hence
 
 ```math
-\operatorname{Var}_b(N_\tau)
-\le\mu_\tau(b)\le\frac12\operatorname{Tr}M_\tau.
+\mathrm{Var}_b(N_\tau)
+\le\mu_\tau(b)\le\frac12\mathrm{Tr}\,M_\tau.
 ```
 
 ### Infinite-volume count and moments
@@ -131,10 +136,11 @@ The positive band implies $`0\le C_b\le I/2`$, and hence
 For every fixed $`\tau`$,
 
 ```math
-L_\tau=\kappa\int_0^\tau
-|K_s^*0\rangle\langle K_s^*0|\,ds,
-\qquad
-\operatorname{Tr}L_\tau\le\kappa\tau.
+\begin{aligned}
+L_\tau&=\kappa\int_0^\tau
+|K_s^*0\rangle\langle K_s^*0|\,ds,\\
+\mathrm{Tr}\,L_\tau&\le\kappa\tau.
+\end{aligned}
 ```
 
 This is a positive trace-class operator: differentiate $`K_s^*K_s`$ and use $`\|K_s\|\le1`$. Thus $`M_\tau`$ and $`Q_\tau(b)`$ are trace class, and the infinite determinant is a well-defined Fredholm determinant.
@@ -149,7 +155,7 @@ Fredholm determinant continuity proves convergence of the count generating funct
 
 ## 3. Linear extraction from the initially thermal half-chain
 
-The required lower bound concerns how many independent one-particle loss channels become available, measured by $`\operatorname{Tr}M_\tau`$. It is independent of the unknown temperature.
+The required lower bound concerns how many independent one-particle loss channels become available, measured by $`\mathrm{Tr}\,M_\tau`$. It is independent of the unknown temperature.
 
 Define the boundary amplitude and one-particle survival probability
 
@@ -167,9 +173,11 @@ S_\kappa(s)=1-\kappa\int_0^s|a_\kappa(u)|^2\,du.
 The matrix $`h`$ is real symmetric and $`P_0`$ is diagonal. Hence $`K_s`$ is complex symmetric in the site basis, so its boundary row and column have equal squared norms. The loss trace is therefore
 
 ```math
-\operatorname{Tr}L_\tau
-=\kappa\int_0^\tau\|K_s^*|0\rangle\|^2ds
-=\kappa\int_0^\tau S_\kappa(s)\,ds.
+\begin{aligned}
+\mathrm{Tr}\,L_\tau
+&=\kappa\int_0^\tau\|K_s^*|0\rangle\|^2ds\\
+&=\kappa\int_0^\tau S_\kappa(s)\,ds.
+\end{aligned}
 ```
 
 ### The free boundary return has finite squared integral
@@ -184,26 +192,28 @@ w(E)=\frac{\sqrt{4-(E-\nu)^2}}{2\pi}
 Indeed, the generalized eigenvectors at sites $`x=0,1,\ldots`$ are $`\sqrt{2/\pi}\sin((x+1)k)`$, with $`E=\nu-2\cos k`$, $`0\lt k\lt\pi`$. Changing variables in the boundary weight $`(2/\pi)\sin^2k\,dk`$ gives the stated density. Thus
 
 ```math
-a_0(s)=\int w(E)e^{-iEs}\,dE,
-\qquad
+\begin{aligned}
+a_0(s)&=\int w(E)e^{-iEs}\,dE,\\
 \int_0^\infty|a_0(s)|^2ds
-=\pi\int w(E)^2dE
+&=\pi\int w(E)^2dE
 =\frac8{3\pi}.
+\end{aligned}
 ```
 
 The factor $`\pi`$ follows from full-line Fourier Plancherel and $`|a_0(-s)|=|a_0(s)|`$.
 
 ### Dissipation cannot increase that squared integral
 
-For $`\operatorname{Re}z>0`$, let $`A_\kappa(z)`$ be the Laplace transform of $`a_\kappa`$. The rank-one resolvent identity gives
+For $`\Re\,z\gt 0`$, let $`A_\kappa(z)`$ be the Laplace transform of $`a_\kappa`$. The rank-one resolvent identity gives
 
 ```math
-A_\kappa(z)=\frac{A_0(z)}{1+(\kappa/2)A_0(z)},
-\qquad
-A_0(z)=\int\frac{w(E)}{z+iE}\,dE.
+\begin{aligned}
+A_\kappa(z)&=\frac{A_0(z)}{1+(\kappa/2)A_0(z)},\\
+A_0(z)&=\int\frac{w(E)}{z+iE}\,dE.
+\end{aligned}
 ```
 
-Since $`\operatorname{Re}A_0(z)\ge0`$, the denominator has modulus at least one. Apply Fourier Plancherel on each vertical line $`z=x+iy`$, $`x>0`$:
+Since $`\Re\,A_0(z)\ge0`$, the denominator has modulus at least one. Apply Fourier Plancherel on each vertical line $`z=x+iy`$, $`x\gt 0`$:
 
 ```math
 \int_0^\infty e^{-2xs}|a_\kappa(s)|^2ds
@@ -213,17 +223,18 @@ Since $`\operatorname{Re}A_0(z)\ge0`$, the denominator has modulus at least one.
 Monotone convergence as $`x\downarrow0`$ yields
 
 ```math
-\int_0^\infty|a_\kappa(s)|^2ds\le\frac8{3\pi},
-\qquad
-S_\kappa(s)\ge q_\kappa:=1-\frac{8\kappa}{3\pi}.
+\begin{aligned}
+\int_0^\infty|a_\kappa(s)|^2ds&\le\frac8{3\pi},\\
+S_\kappa(s)&\ge q_\kappa:=1-\frac{8\kappa}{3\pi}.
+\end{aligned}
 ```
 
-Fixing $`\kappa=1/2`$ gives $`q:=q_{1/2}=1-4/(3\pi)>0`$. Finally, removing the initially vacuum sensor can reduce the loss trace by at most one:
+Fixing $`\kappa=1/2`$ gives $`q:=q_{1/2}=1-4/(3\pi)\gt 0`$. Finally, removing the initially vacuum sensor can reduce the loss trace by at most one:
 
 ```math
 \boxed{\qquad
 \kappa q\tau-1
-\le\operatorname{Tr}M_\tau\le\kappa\tau,
+\le\mathrm{Tr}\,M_\tau\le\kappa\tau,
 \qquad \kappa=\frac12.
 \qquad}
 ```
@@ -236,7 +247,7 @@ The positive band and compact temperature interval give a strictly positive susc
 
 ```math
 m:=\min_{\substack{b\in B\\E\in[E_-,E_+]}}
-E f_b(E)(1-f_b(E))>0.
+E f_b(E)(1-f_b(E))\gt 0.
 ```
 
 For example, with $`\eta=f_{b_+}(E_+)`$, the explicit conservative choice $`m_0=E_-\eta(1-\eta)`$ also works in every bound below. Since
@@ -248,14 +259,16 @@ For example, with $`\eta=f_{b_+}(E_+)`$, the explicit conservative choice $`m_0=
 and $`M_\tau`$ is positive, temperature independent, and trace class,
 
 ```math
+\begin{aligned}
 -\mu_\tau'(b)
-=\operatorname{Tr}\bigl[h_BC_b(I-C_b)M_\tau\bigr]
-\ge m\operatorname{Tr}M_\tau.
+&=\mathrm{Tr}\bigl[h_BC_b(I-C_b)M_\tau\bigr]\\
+&\ge m\mathrm{Tr}\,M_\tau.
+\end{aligned}
 ```
 
 Differentiation under this trace is legitimate because the functional-calculus derivative is bounded uniformly on $`B`$. Neither $`C_b`$ nor its derivative needs to commute with $`M_\tau`$ for the inequality: the trace of the product of two positive operators is nonnegative.
 
-Whenever $`\operatorname{Tr}M_\tau>0`$, the calibrated mean $`\mu_\tau`$ is continuous and strictly decreasing. Define
+Whenever $`\mathrm{Tr}\,M_\tau\gt 0`$, the calibrated mean $`\mu_\tau`$ is continuous and strictly decreasing. Define
 
 ```math
 \widehat b_\tau
@@ -264,14 +277,14 @@ Whenever $`\operatorname{Tr}M_\tau>0`$, the calibrated mean $`\mu_\tau`$ is cont
 \right),
 ```
 
-where $`\Pi`$ is projection onto the indicated interval. This assigns a valid estimate to every count, including those beyond the physically possible mean range. Projection cannot increase distance from the true mean, and the inverse mean is Lipschitz with constant $`(m\operatorname{Tr}M_\tau)^{-1}`$. Thus, for every $`b\in B`$,
+where $`\Pi`$ is projection onto the indicated interval. This assigns a valid estimate to every count, including those beyond the physically possible mean range. Projection cannot increase distance from the true mean, and the inverse mean is Lipschitz with constant $`(m\mathrm{Tr}\,M_\tau)^{-1}`$. Thus, for every $`b\in B`$,
 
 ```math
 \begin{aligned}
 \mathbb E_b(\widehat b_\tau-b)^2
 &\le\frac{\mathbb E_b(N_\tau-\mu_\tau(b))^2}
-{m^2(\operatorname{Tr}M_\tau)^2}\\
-&\le\frac1{2m^2\operatorname{Tr}M_\tau}.
+{m^2(\mathrm{Tr}\,M_\tau)^2}\\
+&\le\frac1{2m^2\mathrm{Tr}\,M_\tau}.
 \end{aligned}
 ```
 
@@ -304,11 +317,12 @@ This is finite and depends only on $`\nu`$ and $`B`$.
 For the stated dimensionless temperature loss, set $`\theta=\log(T/J)=-\log b`$ and $`\widehat\theta=-\log\widehat b`$ in the chosen units $`k_B=1`$. Both inverse-temperature values belong to $`B`$, so
 
 ```math
+\begin{aligned}
 |\widehat\theta-\theta|
-\le b_-^{-1}|\widehat b-b|,
-\qquad
+&\le b_-^{-1}|\widehat b-b|,\\
 \sup_{b\in B}\mathbb E_b(\widehat\theta-\theta)^2
-\le\frac{C_{\mathrm{inv}}/b_-^2}{1+\tau}.
+&\le\frac{C_{\mathrm{inv}}/b_-^2}{1+\tau}.
+\end{aligned}
 ```
 
 This is a finite-time worst-case risk bound. It requires no locally unbiased estimator, asymptotic normality, or quantum Fisher-information continuity. Calibration of $`\mu_\tau`$ uses only the known model; no claim of a particular computational cost for that calibration is made.
@@ -324,17 +338,18 @@ N_r=\sum_{x=1}^r n_x.
 Its marginal covariance is $`C_{b,r}=P_rC_bP_r`$, the restriction of the actual initial half-chain state, rather than the Gibbs covariance of a chain cut after $`r`$. Its number statistics obey
 
 ```math
-\nu_r(b)=\mathbb E_bN_r=\operatorname{Tr}(P_rC_bP_r),
-\qquad
-\operatorname{Var}_b(N_r)
-=\operatorname{Tr}[C_{b,r}(I-C_{b,r})]\le\frac r4,
+\begin{aligned}
+\nu_r(b)&=\mathbb E_bN_r=\mathrm{Tr}(P_rC_bP_r),\\
+\mathrm{Var}_b(N_r)
+&=\mathrm{Tr}[C_{b,r}(I-C_{b,r})]\le\frac r4,
+\end{aligned}
 ```
 
 and
 
 ```math
 -\nu_r'(b)
-=\operatorname{Tr}[P_rh_BC_b(I-C_b)P_r]\ge mr.
+=\mathrm{Tr}[P_rh_BC_b(I-C_b)P_r]\ge mr.
 ```
 
 The same clipped inverse-mean estimator has
@@ -344,7 +359,7 @@ The same clipped inverse-mean estimator has
 \le\frac1{4m^2r}.
 ```
 
-Choose the initial block measurement when $`r\ge\tau`$ and the one-sensor count protocol when $`\tau>r`$. This decision depends only on the known budget. Since the larger of $`r`$ and $`\tau`$ is at least $`(r+\tau)/2`$, the resulting squared log-temperature risk is at most
+Choose the initial block measurement when $`r\ge\tau`$ and the one-sensor count protocol when $`\tau\gt r`$. This decision depends only on the known budget. Since the larger of $`r`$ and $`\tau`$ is at least $`(r+\tau)/2`$, the resulting squared log-temperature risk is at most
 
 ```math
 \frac{C}{r+\tau},\qquad

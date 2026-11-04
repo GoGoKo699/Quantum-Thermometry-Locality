@@ -1,0 +1,84 @@
+name: Hosted Markdown
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    name: Capture commit-pinned GitHub mathematics
+    if: >-
+      github.repository == 'GoGoKo699/Quantum-Thermometry-Locality' &&
+      github.event.repository.private == false &&
+      (github.event_name == 'workflow_dispatch' ||
+       github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      HOSTED_MATH_REVISION: ${{ github.event.pull_request.head.sha || github.sha }}
+
+    steps:
+      - name: Choose ephemeral evidence directories
+        shell: bash
+        run: |
+          set -euo pipefail
+          {
+            echo "HOSTED_MATH_DEPS=$RUNNER_TEMP/hosted-math-dependencies"
+            echo "HOSTED_MATH_RUN=$RUNNER_TEMP/hosted-math-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+            echo "PLAYWRIGHT_BROWSERS_PATH=$RUNNER_TEMP/hosted-math-browsers"
+          } >> "$GITHUB_ENV"
+
+      - name: Check out the exact source revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: ${{ github.repository }}
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Install the pinned capture runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOSTED_MATH_RUN"
+          {
+            git rev-parse HEAD
+            git rev-parse 'HEAD^{tree}'
+            node --version
+            npm --version
+            python3 --version
+          } > "$HOSTED_MATH_RUN/runtime.txt"
+          test "$(git rev-parse HEAD)" = "$HOSTED_MATH_REVISION"
+          npm install --prefix "$HOSTED_MATH_DEPS" --save-exact --no-audit --no-fund \
+            playwright@1.56.1 mathjax-full@3.2.1 \
+            2>&1 | tee "$HOSTED_MATH_RUN/dependencies.log"
+          "$HOSTED_MATH_DEPS/node_modules/.bin/playwright" install --with-deps chromium \
+            2>&1 | tee "$HOSTED_MATH_RUN/browser-install.log"
+
+      - name: Capture every tracked Markdown page at both widths
+        shell: bash
+        run: |
+          set -euo pipefail
+          # The default inventory covers all Markdown in this exact commit.
+          # Keep the collector's output directory empty until it creates evidence.
+          NODE_PATH="$HOSTED_MATH_DEPS/node_modules" \
+            node verification/hosted/capture_hosted_math.cjs \
+              --root "$GITHUB_WORKSPACE" \
+              --repository "$GITHUB_REPOSITORY" \
+              --revision "$HOSTED_MATH_REVISION" \
+              --contract "$GITHUB_WORKSPACE/verification/hosted/math-contract.json" \
+              --output "$HOSTED_MATH_RUN/evidence" \
+              2>&1 | tee "$HOSTED_MATH_RUN/capture.log"
+
+      - name: Preserve capture evidence and failure logs
+        if: ${{ always() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: hosted-markdown-${{ env.HOSTED_MATH_REVISION }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ env.HOSTED_MATH_RUN }}/
+          if-no-files-found: warn
+          retention-days: 14

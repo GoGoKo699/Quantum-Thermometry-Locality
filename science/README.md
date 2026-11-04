@@ -16,3 +16,7 @@ The converse and the construction share the [model](model_and_results.md) but ha
 The [related-work account](../references/RELATED_WORK.md) identifies imported ingredients and the closest thermometry models. Primary source identities are collected in the [bibliography](../references/references.bib). The [verification guide](../verification/README.md) describes the finite calculations and their limits.
 
 For a quick result-first route, read the model, then the physical consequences. To audit the theorem, read both proof pages in full, including the continuous-instrument and infinite-volume limits.
+
+## Learning route
+
+The [Wiseman–Milburn bridge](../learning/ANCHOR_BRIDGE.md) connects the measurement and control foundations to this argument. Use it alongside the [30-milestone map](../learning/MILESTONES.md), whose two phases develop the prerequisites and then assemble the complete result. The specialist proof route above remains authoritative for exact statements and technical detail.
