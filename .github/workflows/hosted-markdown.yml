@@ -20,11 +20,18 @@ jobs:
     timeout-minutes: 15
     env:
       HOSTED_MATH_REVISION: ${{ github.event.pull_request.head.sha || github.sha }}
-      HOSTED_MATH_DEPS: ${{ runner.temp }}/hosted-math-dependencies
-      HOSTED_MATH_RUN: ${{ runner.temp }}/hosted-math-${{ github.run_id }}-${{ github.run_attempt }}
-      PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/hosted-math-browsers
 
     steps:
+      - name: Choose ephemeral evidence directories
+        shell: bash
+        run: |
+          set -euo pipefail
+          {
+            echo "HOSTED_MATH_DEPS=$RUNNER_TEMP/hosted-math-dependencies"
+            echo "HOSTED_MATH_RUN=$RUNNER_TEMP/hosted-math-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+            echo "PLAYWRIGHT_BROWSERS_PATH=$RUNNER_TEMP/hosted-math-browsers"
+          } >> "$GITHUB_ENV"
+
       - name: Check out the exact source revision
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
