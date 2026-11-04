@@ -16,25 +16,27 @@ The [locality converse](locality_converse.md) proves the lower bound with explic
 The bath is a semi-infinite chain of spin-$`1/2`$ sites with a known Hamiltonian
 
 ```math
+\begin{aligned}
 H_B
-=J\left[
+&=J\left[
 \nu\sum_{j\ge1}n_j
 -\sum_{j\ge1}
 \left(\sigma_j^+\sigma_{j+1}^-+\sigma_j^-\sigma_{j+1}^+\right)
-\right],
-\qquad
-n_j=\sigma_j^+\sigma_j^-,
+\right],\\
+n_j&=\sigma_j^+\sigma_j^-,
 \qquad J>0,\quad \nu>2.
+\end{aligned}
 ```
 
 The unknown physical temperature $`T`$ enters only through the initial Gibbs state. Define
 
 ```math
-b=\beta J=\frac{J}{k_BT},
-\qquad
-I=[b_-,b_+],
+\begin{aligned}
+b&=\beta J=\frac{J}{k_BT},\\
+I&=[b_-,b_+],
 \qquad
 0\lt b_-\lt b_+\lt\infty.
+\end{aligned}
 ```
 
 The interval $`I`$, the hopping energy $`J`$, and the band position $`\nu`$ are known. The interval is fixed as the time and contact resources increase. Except when restoring physical units, use $`\hbar=k_B=1`$ and dimensionless time $`\tau=Jt`$.
@@ -42,13 +44,12 @@ The interval $`I`$, the hopping energy $`J`$, and the band position $`\nu`$ are 
 The infinite reservoir is specified by its compatible local states; a normalized density matrix on the entire half-chain is unnecessary. With the Jordan–Wigner ordering beginning at the physical endpoint, the one-particle Hamiltonian and thermal covariance are
 
 ```math
-h_B=\nu I-S-S^\dagger,
-\qquad
-\operatorname{spec}(h_B)=[\nu-2,\nu+2],
-\qquad
-C_b=f_b(h_B),
-\qquad
-f_b(E)=\frac{1}{1+e^{bE}},
+\begin{aligned}
+h_B&=\nu I-S-S^\dagger,\\
+\mathrm{spec}(h_B)&=[\nu-2,\nu+2],\\
+C_b&=f_b(h_B),\\
+f_b(E)&=\frac{1}{1+e^{bE}},
+\end{aligned}
 ```
 
 where $`S|j\rangle=|j+1\rangle`$ on $`\ell^2(\mathbb N)`$. In the convention $`(C_b)_{jk}=\langle c_k^\dagger c_j\rangle_b`$, the sine transform gives
@@ -91,9 +92,10 @@ There is one initially thermal reservoir. Sensor resets and additional apparatus
 Use the dimensionless log-temperature coordinate
 
 ```math
-\theta=\log\!\left(\frac{k_BT}{J}\right)=-\log b,
-\qquad
-\Theta=[-\log b_+,-\log b_-].
+\begin{aligned}
+\theta&=\log\!\left(\frac{k_BT}{J}\right)=-\log b,\\
+\Theta&=[-\log b_+,-\log b_-].
+\end{aligned}
 ```
 
 All logarithms are natural. If $`\widehat b\in I`$ and $`\widehat T=J/(k_B\widehat b)`$, the loss is
@@ -172,12 +174,12 @@ Deleting the bath bond beyond site $`R`$ then changes the complete accessible ou
 Under the cut dynamics, the output is a parameter-independent channel of $`\rho_{b,R}`$. The actual local thermal states satisfy
 
 ```math
+\begin{aligned}
 D(\rho_{b,R}\Vert\rho_{b',R})
-\le K R(b-b')^2,
-\qquad
-K=\frac{(\nu+2)^2}{32\eta(1-\eta)},
-\qquad
-\eta=\frac{1}{1+e^{b_+(\nu+2)}}.
+&\le K R(b-b')^2,\\
+K&=\frac{(\nu+2)^2}{32\eta(1-\eta)},\\
+\eta&=\frac{1}{1+e^{b_+(\nu+2)}}.
+\end{aligned}
 ```
 
 Choosing $`R=r+\lceil6e\tau+\log16\rceil`$ leaves a constant testing error between temperatures separated by order $`R^{-1/2}`$. A two-point decision argument yields the stated global minimax lower bound. The [complete proof](locality_converse.md) includes the locality estimate, the noncommuting covariance calculation, the thermodynamic and continuous-record limits, and an explicit value of $`c`$.

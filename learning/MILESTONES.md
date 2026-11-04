@@ -1,6 +1,6 @@
 # The 30-milestone understanding map
 
-**Map revision 1 — settled 4 November 2026.** This map follows the [canonical scientific account](../science/README.md) from a single thermal occupation to the optimal precision of a complete controlled experiment. Its 30 understanding targets describe the project itself. The exact assumptions and theorem remain in [Model and results](../science/model_and_results.md); the proof pages own the specialist derivations.
+This map follows the [canonical scientific account](../science/README.md) from a single thermal occupation to the optimal precision of a complete controlled experiment. Its 30 understanding targets describe the project itself. The exact assumptions and theorem remain in [Model and results](../science/model_and_results.md); the proof pages own the specialist derivations.
 
 The allocation is **14 background/preliminary milestones and 16 narrative/innovation milestones**. The background connects local states and exchange links to measurement records, distinguishability, and the complete estimation problem. The narrative develops two complementary arguments: the converse limits every accessible output, while the construction extracts a useful count with one fixed sensor. They meet at the joint spatial and temporal law; the last milestones interpret its Markov comparison, scope, and significance. Each phase ends by integrating its components. The map covers the load-bearing ideas without treating every proof calculation or neighboring subject as a separate milestone.
 
@@ -99,7 +99,7 @@ The progression is from one occupation and one bond to an entire temperature-est
 
 **Central question.** Which assumptions keep thermal occupation uniformly responsive to the parameter?
 
-**Understanding target.** Explain the roles of $`\nu>2`$ and a fixed compact interval $`0\lt b_-\lt b_+\lt\infty`$. The covariance eigenvalues stay away from zero and one, and every positive-energy occupation decreases with $`b`$. Distinguish a strictly positive response on a fixed interval from a response bound uniform down to zero temperature.
+**Understanding target.** Explain the roles of $`\nu\gt 2`$ and a fixed compact interval $`0\lt b_-\lt b_+\lt\infty`$. The covariance eigenvalues stay away from zero and one, and every positive-energy occupation decreases with $`b`$. Distinguish a strictly positive response on a fixed interval from a response bound uniform down to zero temperature.
 
 **Dependencies and story role.** M01, M03, M04. Identify the quantitative assumptions shared by the information bound and the explicit estimator.
 
@@ -338,7 +338,7 @@ The converse starts at the controlled boundary and reaches a statement about eve
 
 **Central question.** Why can a single boundary sensor keep extracting information from one unreprepared half-chain?
 
-**Understanding target.** Connect the loss trace to a boundary survival probability. Explain the roles of the semicircle spectral density, the finite squared return-amplitude integral, and the dissipative rank-one resolvent bound. Interpret $`\operatorname{Tr}M_\tau\ge\kappa q\tau-1`$ with fixed $`\kappa=1/2`$ and $`q=1-4/(3\pi)>0`$: the linear term supplies growing loss channels, and the subtraction removes the initially empty sensor mode.
+**Understanding target.** Connect the loss trace to a boundary survival probability. Explain the roles of the semicircle spectral density, the finite squared return-amplitude integral, and the dissipative rank-one resolvent bound. Interpret $`\mathrm{Tr}\,M_\tau\ge\kappa q\tau-1`$ with fixed $`\kappa=1/2`$ and $`q=1-4/(3\pi)\gt 0`$: the linear term supplies growing loss channels, and the subtraction removes the initially empty sensor mode.
 
 **Dependencies and story role.** M02, M03, M21, M22. Establish the dynamical supply needed for an inverse-time upper bound.
 
