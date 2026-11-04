@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "expressions": [
+    {
+      "path": "README.md",
+      "index": 3,
+      "source_sha256": "a6887f7dbb7e260917e12ea9aea29ade3486b660fc912f5361ac9b872f7f38f5",
+      "expected_text": "R(r,Jt/ℏ)=Θ(1r+Jt/ℏ)."
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 54,
+      "source_sha256": "8ce9ee759cbeb6beee12fad3e8de787e2658ce7ac2ae7acbd609062807c3dc9d",
+      "expected_text": "EbzNτ=det[I+(z−1)Qτ(b)],Qτ(b)=Cb1/2MτCb1/2."
+    },
+    {
+      "path": "science/counted_sensor.md",
+      "index": 107,
+      "source_sha256": "cf6cd154a4cc7c9c5d7c7beea02b6b52d63824b2d33bc3f7c96aec378bd0cbfc",
+      "expected_text": "κqτ−1≤TrMτ≤κτ,κ=12."
+    },
+    {
+      "path": "science/locality_converse.md",
+      "index": 117,
+      "source_sha256": "24d3559f889087466d01e83bc68adef30e5332a03afe91b700fa2d86adf34d78",
+      "expected_text": "(13)T(σb0,σb1)≤14+116+116=38."
+    },
+    {
+      "path": "science/model_and_results.md",
+      "index": 56,
+      "source_sha256": "d44c50b7b4a0e2df182b584e743829caf4675a6ea3eeeb811beb95feeb18b412",
+      "expected_text": "cr+τ≤R(r,τ)≤Cr+τ."
+    },
+    {
+      "path": "science/physical_consequences.md",
+      "index": 72,
+      "source_sha256": "6d4bac7a46c59c023316a3a785b22f4f9e30584d9742bfb8edf828b474008c78",
+      "expected_text": "2ϵN≥∥Pb0,NM−Pb1,NM∥TV−q0,liminfN→∞ϵN≥1−q02>0."
+    },
+    {
+      "path": "science/physical_consequences.md",
+      "index": 73,
+      "source_sha256": "82e276c117b08076711cf1e9466bbb1211e9c9cafb395c5f30dabb32beab1463",
+      "expected_text": "liminfNϵN≥5/16"
+    }
+  ]
+}

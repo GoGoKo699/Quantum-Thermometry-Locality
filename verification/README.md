@@ -58,3 +58,7 @@ These values describe the recorded run; the acceptance tolerances in the scripts
 Finite calculations cannot establish the universal quantifiers over controllers, arbitrarily large apparatus, continuous records, or infinite elapsed time. Those statements rely on the [locality proof](../science/locality_converse.md), the noncommuting matrix-entropy estimate on that page, and the [trace-class limit and boundary-resolvent argument](../science/counted_sensor.md).
 
 The global minimax proof uses two-point distinguishability and a clipped inverse estimator. The verification does not infer this result from a local Fisher information or from a fit to numerical scaling. The collective Markov comparison is an analytical comparison of complete controlled records, with its own approximation caveats in [physical consequences](../science/physical_consequences.md).
+
+## Hosted mathematical display
+
+The separate [hosted Markdown check](hosted/README.md) compares the actual GitHub mathematics against exact commit-pinned source at wide and narrow viewport widths. It records screenshots and structural evidence for visual review. The workflow has read-only repository permissions. Its success concerns the observed rendering and is independent of the scientific checks above.
