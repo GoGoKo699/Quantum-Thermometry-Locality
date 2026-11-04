@@ -1,0 +1,127 @@
+{
+  "check": "restricted_gaussian_relative_entropy",
+  "status": "passed",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "scope": "Nine finite restricted thermal-state pairs; direct 4-, 8-, and 16-dimensional Fock density matrices. The general matrix bound and complete-output locality are analytical.",
+  "full_chain_sites": 19,
+  "nu": 3.2,
+  "b_interval": [
+    0.2,
+    1.2
+  ],
+  "eta": 0.0019460609850855582,
+  "quadratic_coefficient": 435.0570893746074,
+  "maximum_covariance_formula_error": 1.1102230246251565e-15,
+  "cases": [
+    {
+      "restricted_sites": 2,
+      "b": 0.2,
+      "other_b": 0.8,
+      "covariance_commutator_frobenius": 0.0010668092073841929,
+      "restriction_vs_cut_gibbs_frobenius": 0.001376099396786124,
+      "fock_relative_entropy": 0.5502890743675777,
+      "covariance_formula_error": 1.1102230246251565e-16,
+      "hessian_bound": 31.753637793801946,
+      "uniform_temperature_bound": 313.24110434971743,
+      "trace_distance": 0.383186506939874
+    },
+    {
+      "restricted_sites": 2,
+      "b": 0.55,
+      "other_b": 1.1,
+      "covariance_commutator_frobenius": 0.0011210586469020138,
+      "restriction_vs_cut_gibbs_frobenius": 0.0127096629599821,
+      "fock_relative_entropy": 0.1895824354595479,
+      "covariance_formula_error": 5.551115123125783e-17,
+      "hessian_bound": 6.694629230470505,
+      "uniform_temperature_bound": 263.20953907163755,
+      "trace_distance": 0.19913446404406523
+    },
+    {
+      "restricted_sites": 2,
+      "b": 0.7,
+      "other_b": 0.701,
+      "covariance_commutator_frobenius": 3.1119203849644695e-06,
+      "restriction_vs_cut_gibbs_frobenius": 0.0171196240419185,
+      "fock_relative_entropy": 6.698448841019333e-07,
+      "covariance_formula_error": 6.288372600415926e-17,
+      "hessian_bound": 3.301996479403012e-05,
+      "uniform_temperature_bound": 0.0008701141787492164,
+      "trace_distance": 0.0004421081096898259
+    },
+    {
+      "restricted_sites": 3,
+      "b": 0.2,
+      "other_b": 0.8,
+      "covariance_commutator_frobenius": 0.0010899566290507982,
+      "restriction_vs_cut_gibbs_frobenius": 0.0013761809422797018,
+      "fock_relative_entropy": 0.8529713909868261,
+      "covariance_formula_error": 9.992007221626409e-16,
+      "hessian_bound": 46.7848492761225,
+      "uniform_temperature_bound": 469.8616565245762,
+      "trace_distance": 0.4401262713386306
+    },
+    {
+      "restricted_sites": 3,
+      "b": 0.55,
+      "other_b": 1.1,
+      "covariance_commutator_frobenius": 0.0013256484345616046,
+      "restriction_vs_cut_gibbs_frobenius": 0.012704193226913487,
+      "fock_relative_entropy": 0.2893885530771106,
+      "covariance_formula_error": 3.3306690738754696e-16,
+      "hessian_bound": 9.923470532619973,
+      "uniform_temperature_bound": 394.8143086074563,
+      "trace_distance": 0.26124982882404535
+    },
+    {
+      "restricted_sites": 3,
+      "b": 0.7,
+      "other_b": 0.701,
+      "covariance_commutator_frobenius": 3.403211627855754e-06,
+      "restriction_vs_cut_gibbs_frobenius": 0.017072250308816348,
+      "fock_relative_entropy": 1.0082567369489623e-06,
+      "covariance_formula_error": 4.4297790262326497e-16,
+      "hessian_bound": 4.8462232016704675e-05,
+      "uniform_temperature_bound": 0.0013051712681238247,
+      "trace_distance": 0.0005689948059721859
+    },
+    {
+      "restricted_sites": 4,
+      "b": 0.2,
+      "other_b": 0.8,
+      "covariance_commutator_frobenius": 0.0010870830196131624,
+      "restriction_vs_cut_gibbs_frobenius": 0.0013761803004607805,
+      "fock_relative_entropy": 1.1556892172024744,
+      "covariance_formula_error": 1.1102230246251565e-15,
+      "hessian_bound": 61.82365743247515,
+      "uniform_temperature_bound": 626.4822086994349,
+      "trace_distance": 0.5084839749355488
+    },
+    {
+      "restricted_sites": 4,
+      "b": 0.55,
+      "other_b": 1.1,
+      "covariance_commutator_frobenius": 0.0013262968690151346,
+      "restriction_vs_cut_gibbs_frobenius": 0.012704731737563233,
+      "fock_relative_entropy": 0.3892285446952872,
+      "covariance_formula_error": 6.106226635438361e-16,
+      "hessian_bound": 13.171803960668294,
+      "uniform_temperature_bound": 526.4190781432751,
+      "trace_distance": 0.30543363938107426
+    },
+    {
+      "restricted_sites": 4,
+      "b": 0.7,
+      "other_b": 0.701,
+      "covariance_commutator_frobenius": 3.3839570220909475e-06,
+      "restriction_vs_cut_gibbs_frobenius": 0.017073803466912684,
+      "fock_relative_entropy": 1.3467610003350646e-06,
+      "covariance_formula_error": 2.1429255939175995e-16,
+      "hessian_bound": 6.400559978358306e-05,
+      "uniform_temperature_bound": 0.001740228357498433,
+      "trace_distance": 0.0006532160401946858
+    }
+  ]
+}

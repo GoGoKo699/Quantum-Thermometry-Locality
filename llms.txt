@@ -1,0 +1,59 @@
+# Quantum Thermometry Locality
+
+This repository establishes an attained global estimation law for the initial
+temperature of a semi-infinite XX spin bath under fixed local access. The full
+scientific account is organized by topic under science/.
+
+Canonical entrypoints:
+- README.md: scientific question, principal result, reading routes, reproduction
+  commands, consequential scope, purpose and contact.
+- science/README.md: connected scientific reading route and proof dependencies.
+- science/model_and_results.md: authoritative model, quantifiers, available
+  resources, risk convention, and precise lower and upper statements.
+- science/locality_converse.md: boundary compression, dimension-independent
+  complete-output locality, restricted Gaussian relative entropy, and the
+  global two-point risk lower bound.
+- science/counted_sensor.md: physical spin count determinant, infinite-volume
+  limit, boundary survival and extraction, calibrated inverse estimator, and
+  the spatial-access branch attaining the joint rate.
+- science/physical_consequences.md: information supply, apparatus size, controlled
+  Markov comparison, and consequences of changing the resource model.
+- references/RELATED_WORK.md: primary-source comparison, inherited ingredients,
+  and the bounded scope of the novelty assessment.
+- references/references.bib: structured source metadata.
+- verification/README.md: commands, dependencies, finite checks and their limits.
+- verification/run_all.py: focused verification entrypoint.
+
+Reader routes:
+- For the story: read the model and physical consequences, then follow the
+  converse and construction according to the mechanism of interest.
+- For an exact theorem: start with the model and read its entire proof page;
+  an introductory summary is not a replacement for assumptions or limits.
+- To reproduce a calculation: read verification/README.md, run the documented
+  command, and distinguish a new execution from committed reference outputs.
+- To compare with another thermometry model: inspect how the parameter enters,
+  which bath degrees of freedom can be accessed, whether thermal samples are
+  replaced, and which dynamics are microscopic or assumed Markovian.
+
+Preserve these distinctions when explaining or editing:
+- The unknown parameter is only in the initial bath state. All apparatus
+  preparation and controls are temperature independent.
+- All contact is confined to the first r sites. The bond leaving that region
+  is an untouched bath bond of fixed strength J.
+- The risk is worst-case squared log-temperature error on a fixed positive
+  compact interval. It allows biased estimators and is not a pointwise QFI bound.
+- Arbitrary finite apparatus, quantum memory, feedback and retained records
+  are included in the converse; continuous instruments are limits of them.
+- Strong controls inside the contacted block do not increase the norm of the
+  bath bond outside it.
+- The attaining sensor resets only itself, using a temperature-independent
+  counted vacuum channel. The bath is initialized once and never re-prepared.
+- Generalized-binomial count statistics do not make jump times independent.
+- The two upper-bound protocols are alternatives. Their correlated outputs
+  are not assumed to provide additive independent samples.
+- The positive band, known Hamiltonian, fixed temperature interval and infinite
+  bath are load-bearing for the stated attainment theorem and constants.
+- The asymptotic exponent, locality bounds and counting formalism have prior
+  literature. Read the attribution before making an originality claim.
+- Finite numerical checks support implementations. Analytical proofs establish
+  universal and asymptotic statements; no external peer review is implied.
