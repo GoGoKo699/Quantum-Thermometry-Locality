@@ -1,8 +1,8 @@
 # A counted boundary sensor attains the locality rate
 
-One sensor spin, coupled with the bath hopping strength and reset at the fixed rate $`J/2`$, attains a worst-case squared log-temperature error of order $`(1+Jt)^{-1}`$. The bath is prepared thermally once. Only the sensor is reset. This page proves the count law, the continuing supply of detectable excitations, and the global estimator bound. The [model and theorem](model_and_results.md) specify the available controls; the [locality converse](locality_converse.md) proves that arbitrary apparatus at the same contact cannot improve the order.
+One detuned sensor spin coupled to the bath endpoint and reset at the fixed rate $`J/(2\hbar)`$ attains worst-case squared log-temperature error of order $`(1+Jt/\hbar)^{-1}`$. The initially thermal bath is prepared once. Sections 2–4 derive the physical count law, prove a nonzero long-time thermal response, and construct the global estimator. The [model and theorem](model_and_results.md) specify the controls. The [locality converse](locality_converse.md) bounds the complete record of every thermometer at the same contact.
 
-The assumptions matter: the bath is a semi-infinite XX chain with known positive one-particle band, and $`b=\beta J`$ lies in a fixed compact interval $`B=[b_-,b_+]\subset(0,\infty)`$. Constants below depend on this interval and on the known band position. The proof does not give a uniform zero-temperature or gap-closing limit.
+The bath is a semi-infinite XX chain with any fixed known field $`\nu\in\mathbb R`$. The inverse temperature $`b=\beta J`$ lies in a known compact interval $`B=[b_-,b_+]\subset(0,\infty)`$. Constants below depend on the interval and known model parameters.
 
 ## 1. Apparatus and one-particle description
 
@@ -11,7 +11,7 @@ Use $`\hbar=k_B=1`$, dimensionless time $`\tau=Jt`$, and
 ```math
 H_B/J=\nu\sum_{x\ge1}n_x
 -\sum_{x\ge1}\bigl(\sigma_x^+\sigma_{x+1}^-+
-\sigma_{x+1}^+\sigma_x^-\bigr),\qquad \nu\gt 2.
+\sigma_{x+1}^+\sigma_x^-\bigr),\qquad \nu\in\mathbb R.
 ```
 
 The one-particle bath Hamiltonian and thermal covariance are
@@ -19,20 +19,20 @@ The one-particle bath Hamiltonian and thermal covariance are
 ```math
 \begin{aligned}
 h_B&=\nu I-S-S^*,\\
-E_-&=\nu-2\gt 0,\quad E_+=\nu+2,\\
+\mathrm{spec}(h_B)&=[\nu-2,\nu+2],\\
 C_b&=f_b(h_B),\quad f_b(E)=\frac1{1+e^{bE}}.
 \end{aligned}
 ```
 
 The covariance convention is $`(C_b)_{xy}=\langle c_y^*c_x\rangle_b`$. The infinite-volume state is the gauge-invariant quasifree state specified by this covariance. Its local spin marginals are well defined by the Jordan–Wigner transformation starting at the physical endpoint.
 
-Add a sensor spin at site $`0`$ in $`|0\rangle`$, with the same on-site energy and exchange coupling as the bath. Continuously count the sensor loss channel
+Add a sensor spin at site $`0`$ in $`|0\rangle`$. Use exchange coupling $`J`$ on the sensor bond and detune the sensor energy from $`\nu J`$ to $`(\nu+d)J`$. The fixed choice $`d=1/2`$ for $`\nu\ge0`$ and $`d=-1/2`$ for $`\nu\lt 0`$ suffices. Continuously count the sensor loss channel
 
 ```math
 \ell=\sqrt\kappa\,\sigma_0^-,\qquad \kappa=\frac12,
 ```
 
-where $`\kappa`$ is dimensionless; the physical reset rate is $`J/2`$. The master equation for sensor and bath is
+Here $`\kappa`$ is dimensionless. The argument works for any fixed $`\kappa>0`$ and the displayed choice gives physical reset rate $`J/(2\hbar)`$. The master equation for sensor and bath is
 
 ```math
 \frac{d\rho}{d\tau}
@@ -44,11 +44,12 @@ Every jump of this monitored channel is counted. The count through time $`\tau`$
 
 This continuous instrument is allowed in the operational closure of finite local instruments: successive vacuum ancillas can interact with the sensor and be measured, with the collision step tending to zero. It is an ideal continuous-monitoring statement. A claim about a particular nonzero detector cadence or an inefficient detector would require a further error analysis.
 
-Let $`h`$ be the one-particle half-chain Hamiltonian on sites $`0,1,\ldots`$. Write $`P_0=|0\rangle\langle0|`$, $`P_B=I-P_0`$, and
+Let $`h_0=\nu I-S-S^*`$ denote the matched one-particle half-chain Hamiltonian on sites $`0,1,\ldots`$. Write $`P_0=|0\rangle\langle0|`$, $`P_B=I-P_0`$, and
 
 ```math
 \begin{aligned}
-K_\tau&=e^{(-ih-\kappa P_0/2)\tau},\\
+h_d&=h_0+dP_0,\\
+K_\tau&=e^{(-ih_d-\kappa P_0/2)\tau},\\
 L_\tau&=I-K_\tau^*K_\tau,\\
 M_\tau&=P_B L_\tau P_B\big|_{\ell^2(\mathbb N)}.
 \end{aligned}
@@ -124,11 +125,11 @@ In particular,
 \end{aligned}
 ```
 
-The positive band implies $`0\le C_b\le I/2`$, and hence
+For every field, $`0\le C_b\le I`$, which gives
 
 ```math
 \mathrm{Var}_b(N_\tau)
-\le\mu_\tau(b)\le\frac12\mathrm{Tr}\,M_\tau.
+\le\mu_\tau(b)\le\mathrm{Tr}\,M_\tau\le\kappa\tau.
 ```
 
 ### Infinite-volume count and moments
@@ -143,237 +144,171 @@ L_\tau&=\kappa\int_0^\tau
 \end{aligned}
 ```
 
-This is a positive trace-class operator: differentiate $`K_s^*K_s`$ and use $`\|K_s\|\le1`$. Thus $`M_\tau`$ and $`Q_\tau(b)`$ are trace class, and the infinite determinant is a well-defined Fredholm determinant.
+This is a positive trace-class operator: differentiate $`K_s^*K_s`$ and use $`\Vert K_s\Vert\le1`$. Thus $`M_\tau`$ and $`Q_\tau(b)`$ are trace class, and the infinite determinant is a well-defined Fredholm determinant.
 
-There is also a direct limit from finite spin experiments. Truncate the bath after site $`n`$ and embed its one-particle vectors into the half-chain. Bounded finite-range generators imply $`K_{n,s}^*|0\rangle\to K_s^*|0\rangle`$, uniformly on a fixed compact time interval. Polynomial approximation of the exponentials proves this assertion directly. The rank-one integral above then gives $`L_{n,\tau}\to L_\tau`$ in trace norm. Finite-volume thermal covariances, extended by zero, converge strongly to $`C_b`$, by continuous functional calculus for the bounded one-particle Hamiltonians. Their norms are at most $`1/2`$. Strong convergence of their square roots, together with the trace-norm convergence of $`M_{n,\tau}`$, gives
+There is also a direct limit from finite spin experiments. Truncate the bath after site $`n`$ and embed its one-particle vectors into the half-chain. Bounded finite-range generators imply $`K_{n,s}^*|0\rangle\to K_s^*|0\rangle`$, uniformly on a fixed compact time interval. Polynomial approximation of the exponentials proves this assertion directly. The rank-one integral above then gives $`L_{n,\tau}\to L_\tau`$ in trace norm. Finite-volume thermal covariances, extended by zero, converge strongly to $`C_b`$, by continuous functional calculus for the bounded one-particle Hamiltonians. Their norms are at most $`1`$. Strong convergence of their square roots, together with the trace-norm convergence of $`M_{n,\tau}`$, gives
 
 ```math
-\|Q_{n,\tau}(b)-Q_\tau(b)\|_1\longrightarrow0.
+\Vert Q_{n,\tau}(b)-Q_\tau(b)\Vert_1\longrightarrow0.
 ```
 
-Fredholm determinant continuity proves convergence of the count generating functions on the unit circle. Traces of $`Q`$ and $`Q^2`$ also converge. To identify this with the actual infinite spin experiment, construct its local dynamics as the thermodynamic limit of the finite spin channels. Each number-resolved Dyson term contains finitely many local jump insertions; the term with $`k`$ insertions is bounded by $`(\kappa\tau)^k/k!`$, so the finite-volume limit passes through the sum. At all times, the conditional jump intensity is at most $`\|\ell^*\ell\|=\kappa`$. A Poisson process of rate $`\kappa`$ therefore dominates the count, uniformly in bath length, giving convergence of all fixed count moments along with the local instrument limit. In particular, the displayed mean and variance are the physical infinite-volume moments. No infinite total bath-excitation observable or global thermal density matrix is required.
+Fredholm determinant continuity proves convergence of the count generating functions on the unit circle. Traces of $`Q`$ and $`Q^2`$ also converge. To identify this with the actual infinite spin experiment, construct its local dynamics as the thermodynamic limit of the finite spin channels. Each number-resolved Dyson term contains finitely many local jump insertions; the term with $`k`$ insertions is bounded by $`(\kappa\tau)^k/k!`$, so the finite-volume limit passes through the sum. At all times, the conditional jump intensity is at most $`\Vert\ell^*\ell\Vert=\kappa`$. A Poisson process of rate $`\kappa`$ therefore dominates the count, uniformly in bath length, giving convergence of all fixed count moments along with the local instrument limit. In particular, the displayed mean and variance are the physical infinite-volume moments. No infinite total bath-excitation observable or global thermal density matrix is required.
 
 ## 3. Linear extraction from the initially thermal half-chain
 
-The required lower bound concerns how many independent one-particle loss channels become available, measured by $`\mathrm{Tr}\,M_\tau`$. It is independent of the unknown temperature.
+The useful quantity is the **temperature response** of the mean count. A linear number of detected excitations gives a linear variance budget, while a linear derivative of the mean lets us make that count into a thermometer.
 
-Define the boundary amplitude and one-particle survival probability
-
-```math
-a_\kappa(s)=\langle0|K_s|0\rangle,
-\qquad S_\kappa(s)=\|K_s|0\rangle\|^2.
-```
-
-Differentiating the norm gives
+Write $`g_b(E)=E f_b(E)[1-f_b(E)]`$. The initial sensor is vacuum, so the derivative of the mean uses the operator $`G_b=0\oplus g_b(h_B)`$. The loss integral gives
 
 ```math
-S_\kappa(s)=1-\kappa\int_0^s|a_\kappa(u)|^2\,du.
+-\mu_\tau'(b)
+=\mathrm{Tr}(L_\tau G_b)
+=\kappa\int_0^\tau \langle u_s,G_bu_s\rangle\,ds,
+\qquad u_s=K_s^*|0\rangle.
 ```
 
-The matrix $`h`$ is real symmetric and $`P_0`$ is diagonal. Hence $`K_s`$ is complex symmetric in the site basis, so its boundary row and column have equal squared norms. The loss trace is therefore
+Differentiation is legitimate because the functional-calculus derivative of $`f_b(h_B)`$ is uniformly bounded on $`B`$, and $`L_\tau`$ is trace class.
+
+### The undetuned count at zero field
+
+For $`\nu=d=0`$, let $`\Theta`$ conjugate the site amplitudes and multiply the amplitude at site $`j`$ by $`(-1)^j`$. This antiunitary fixes the sensor endpoint, reverses $`h_0`$, and leaves $`P_0`$ fixed. Conjugating $`i`$ contributes a second minus sign, so $`\Theta`$ commutes with $`K_s^*`$ and fixes $`u_s`$. Since $`g_b`$ is odd, $`\Theta G_b\Theta^{-1}=-G_b`$. The integrand above is real and equals its own negative, so $`\mu_\tau'(b)=0`$ at every elapsed time. This is a statement about the mean of the cumulative count. Higher moments and the jump times are separate statistics.
+
+### Detuned thermal response at any known field
+
+**Separate the vacuum preparation from the spectral calculation.** The operator $`h_{\mathrm{cut}}=\nu P_0\oplus h_B`$ differs from $`h_0`$ by the rank-two coupling across the sensor bond. Take a contour enclosing both real spectra with imaginary parts of magnitude strictly less than $`\pi/b_+`$. Let $`\ell_{\mathrm c}`$ be its length, $`M_g`$ a uniform bound on the analytic functions $`g_b(z)`$ there for $`b\in B`$, and $`M_R`$ a common bound on the two resolvent norms. The resolvent identity gives
 
 ```math
-\begin{aligned}
-\mathrm{Tr}\,L_\tau
-&=\kappa\int_0^\tau\|K_s^*|0\rangle\|^2ds\\
-&=\kappa\int_0^\tau S_\kappa(s)\,ds.
-\end{aligned}
+\sup_{b\in B}\Vert g_b(h_0)-g_b(h_{\mathrm{cut}})\Vert_1
+\le\frac{\ell_{\mathrm c}}{2\pi}\,
+\Vert h_0-h_{\mathrm{cut}}\Vert_1 M_g M_R^2
+\lt\infty.
 ```
 
-### The free boundary return has finite squared integral
+Removing the single entry $`g_b(\nu)P_0`$ from $`g_b(h_{\mathrm{cut}})`$ gives $`G_b`$. Therefore replacing $`G_b`$ by $`g_b(h_0)`$ in $`\mathrm{Tr}(L_\tau G_b)`$ changes the result by at most a constant independent of $`\tau`$ and $`b`$. This estimate uses $`0\le L_\tau\le I`$ and keeps the actual vacuum-sensor preparation in the experiment.
 
-The sine transform diagonalizes the free half-chain. Its boundary spectral density is
+**Compute the continuum response.** Let $`c=d+i\kappa/2`$. Then $`u_s=e^{i(h_0+cP_0)s}|0\rangle`$. The boundary amplitude $`a(s)=\langle0|u_s\rangle`$ satisfies
 
 ```math
-w(E)=\frac{\sqrt{4-(E-\nu)^2}}{2\pi}
-\,\mathbf 1_{[\nu-2,\nu+2]}(E).
+\frac{d}{ds}\Vert u_s\Vert^2=-\kappa |a(s)|^2,
+\qquad \int_0^\infty |a(s)|^2\,ds\le\kappa^{-1}.
 ```
 
-Indeed, the generalized eigenvectors at sites $`x=0,1,\ldots`$ are $`\sqrt{2/\pi}\sin((x+1)k)`$, with $`E=\nu-2\cos k`$, $`0\lt k\lt\pi`$. Changing variables in the boundary weight $`(2/\pi)\sin^2k\,dk`$ gives the stated density. Thus
+The free half-chain sine transform gives the endpoint spectral density
 
 ```math
-\begin{aligned}
-a_0(s)&=\int w(E)e^{-iEs}\,dE,\\
-\int_0^\infty|a_0(s)|^2ds
-&=\pi\int w(E)^2dE
-=\frac8{3\pi}.
-\end{aligned}
+w_\nu(E)=\frac{\sqrt{4-(E-\nu)^2}}{2\pi},
+\qquad E\in[\nu-2,\nu+2],
 ```
 
-The factor $`\pi`$ follows from full-line Fourier Plancherel and $`|a_0(-s)|=|a_0(s)|`$.
-
-### Dissipation cannot increase that squared integral
-
-For $`\Re\,z\gt 0`$, let $`A_\kappa(z)`$ be the Laplace transform of $`a_\kappa`$. The rank-one resolvent identity gives
+with zero weight outside the band. In the spectral representation of $`h_0`$ with cyclic vector $`|0\rangle`$, that vector is the constant function $`1`$. Duhamel's formula represents $`e^{-ih_0s}u_s`$ by
 
 ```math
-\begin{aligned}
-A_\kappa(z)&=\frac{A_0(z)}{1+(\kappa/2)A_0(z)},\\
-A_0(z)&=\int\frac{w(E)}{z+iE}\,dE.
-\end{aligned}
+v_s(E)=1+ic\int_0^s e^{-iEu}a(u)\,du.
 ```
 
-Since $`\Re\,A_0(z)\ge0`$, the denominator has modulus at least one. Apply Fourier Plancherel on each vertical line $`z=x+iy`$, $`x\gt 0`$:
+The integral is the Fourier transform of a truncated square-integrable function. Plancherel's identity gives convergence as $`s\to\infty`$ in ordinary $`L^2`$ for this integral and then in $`L^2(w_\nu(E)\,dE)`$ because $`w_\nu`$ is bounded. Replacing the sharp time cutoff by multiplication by $`e^{-\epsilon u}`$ produces the same limit in the two norms as $`\epsilon\downarrow0`$.
+
+Define $`m_0(z)=\langle0|(z-h_0)^{-1}|0\rangle`$. For $`z=E-i\epsilon`$, the Abel-regularized integral above is $`-i\langle0|(z-h_0-cP_0)^{-1}|0\rangle`$, by the Laplace integral of the contraction semigroup. The rank-one resolvent identity gives $`m_0(z)/(1-cm_0(z))`$ for the matrix element. Thus the Abel-regularized version of $`v_s`$ is $`1/(1-cm_0(E-i\epsilon))`$. Cutting the free chain after site 0 gives $`m_0(z)=[z-\nu-m_0(z)]^{-1}`$, where the branch is fixed by $`m_0(z)\sim 1/z`$ at infinity. Inside the band,
 
 ```math
-\int_0^\infty e^{-2xs}|a_\kappa(s)|^2ds
-\le\int_0^\infty e^{-2xs}|a_0(s)|^2ds.
+m_0(E-i0)=\frac{x+iy}{2},
+\qquad x=E-\nu,\quad y=\sqrt{4-x^2}.
 ```
 
-Monotone convergence as $`x\downarrow0`$ yields
+In particular $`|m_0(E-i0)|=1`$, and
 
 ```math
 \begin{aligned}
-\int_0^\infty|a_\kappa(s)|^2ds&\le\frac8{3\pi},\\
-S_\kappa(s)&\ge q_\kappa:=1-\frac{8\kappa}{3\pi}.
+D(E)&=|1-cm_0(E-i0)|^2\\
+&=1+d^2+\kappa^2/4-dx+(\kappa/2)y.
 \end{aligned}
 ```
 
-Fixing $`\kappa=1/2`$ gives $`q:=q_{1/2}=1-4/(3\pi)\gt 0`$. Finally, removing the initially vacuum sensor can reduce the loss trace by at most one:
+The denominator is strictly positive since $`1+d^2-dx\ge(1-|d|)^2`$ and $`\kappa\gt 0`$. Pointwise Abel limits therefore identify the $`L^2(w_\nu\,dE)`$ limit $`v_\infty`$ by the same boundary formula. As $`g_b(h_0)`$ commutes with the free evolution,
 
 ```math
-\boxed{\qquad
-\kappa q\tau-1
-\le\mathrm{Tr}\,M_\tau\le\kappa\tau,
-\qquad \kappa=\frac12.
-\qquad}
+\langle u_s,g_b(h_0)u_s\rangle
+=\int g_b(E)|v_s(E)|^2w_\nu(E)\,dE
+\longrightarrow
+\int g_b(E)\frac{w_\nu(E)}{D(E)}\,dE
 ```
 
-The lower bound can be negative at short times, when it is simply uninformative. At long times it proves a continuing linear supply from the same initially thermal half-chain. The proof uses the absolutely continuous half-chain spectral measure; it makes no corresponding all-time assertion for a fixed finite chain.
+uniformly in $`b`$. Indeed $`\Vert v_s\Vert_{L^2(w_\nu)}\le1`$ by contractivity, and the difference of the quadratic forms is bounded by
+$`\sup_{b\in B}\Vert g_b(h_0)\Vert\,\Vert v_s-v_\infty\Vert_{L^2(w_\nu)}(\Vert v_s\Vert_{L^2(w_\nu)}+\Vert v_\infty\Vert_{L^2(w_\nu)})`$. Averaging in time and using the preparation bound gives the uniform limiting count slope
+
+```math
+\boxed{
+\lim_{\tau\to\infty}\frac{-\mu_\tau'(b)}{\tau}
+=\kappa\int_{\nu-2}^{\nu+2}
+g_b(E)\frac{w_\nu(E)}{D(E)}\,dE.
+}
+```
+
+### Strict temperature response
+
+For $`\nu\ge0`$, choose $`d\gt 0`$. The weight $`w_\nu(E)/D(E)`$ inside the band is proportional to $`y/(A-dx+(\kappa/2)y)`$, with $`A=1+d^2+\kappa^2/4`$. It increases in $`x`$ and in $`y`$ separately for $`|x|\le2`$ and $`y\ge0`$, using $`A-dx\gt 0`$. If $`E\gt 0`$ and both $`E`$ and $`-E`$ are in the band, then $`x(E)\gt x(-E)`$ and $`y(E)\ge y(-E)`$. The weight at $`E`$ is strictly larger in the interior. This remains true for a pair with only its positive member in the band, and a pair with only its negative member in the band cannot occur. Since $`g_b`$ is odd and positive for $`E\gt 0`$, the limiting slope is strictly positive. For $`\nu\lt 0`$ and $`d\lt 0`$, reflecting $`E,\nu,d`$ reverses the slope. The conclusion holds for every fixed positive reset rate. Continuity on $`B`$ and uniform convergence give constants $`s_*\gt 0`$ and finite $`\tau_0`$, determined by the known model, such that $`|\mu_\tau'(b)|\ge s_*\tau`$ with a fixed sign for all $`b\in B`$ and $`\tau\ge\tau_0`$.
 
 ## 4. A global estimator, including biased outcomes
 
-The positive band and compact temperature interval give a strictly positive susceptibility constant
-
-```math
-m:=\min_{\substack{b\in B\\E\in[E_-,E_+]}}
-E f_b(E)(1-f_b(E))\gt 0.
-```
-
-For example, with $`\eta=f_{b_+}(E_+)`$, the explicit conservative choice $`m_0=E_-\eta(1-\eta)`$ also works in every bound below. Since
-
-```math
--\partial_b C_b=h_BC_b(I-C_b)\ge mI,
-```
-
-and $`M_\tau`$ is positive, temperature independent, and trace class,
-
-```math
-\begin{aligned}
--\mu_\tau'(b)
-&=\mathrm{Tr}\bigl[h_BC_b(I-C_b)M_\tau\bigr]\\
-&\ge m\mathrm{Tr}\,M_\tau.
-\end{aligned}
-```
-
-Differentiation under this trace is legitimate because the functional-calculus derivative is bounded uniformly on $`B`$. Neither $`C_b`$ nor its derivative needs to commute with $`M_\tau`$ for the inequality: the trace of the product of two positive operators is nonnegative.
-
-Whenever $`\mathrm{Tr}\,M_\tau\gt 0`$, the calibrated mean $`\mu_\tau`$ is continuous and strictly decreasing. Define
+For $`\tau\ge\tau_0`$ the mean $`\mu_\tau`$ is strictly monotone on $`B`$. Project the observed count to the interval $`\mu_\tau(B)`$ and invert the calibrated mean:
 
 ```math
 \widehat b_\tau
-=\mu_\tau^{-1}\!\left(
-\Pi_{[\mu_\tau(b_+),\,\mu_\tau(b_-)]}N_\tau
-\right),
+=\mu_\tau^{-1}\!\left(\Pi_{\mu_\tau(B)}N_\tau\right).
 ```
 
-where $`\Pi`$ is projection onto the indicated interval. This assigns a valid estimate to every count, including those beyond the physically possible mean range. Projection cannot increase distance from the true mean, and the inverse mean is Lipschitz with constant $`(m\mathrm{Tr}\,M_\tau)^{-1}`$. Thus, for every $`b\in B`$,
-
-```math
-\begin{aligned}
-\mathbb E_b(\widehat b_\tau-b)^2
-&\le\frac{\mathbb E_b(N_\tau-\mu_\tau(b))^2}
-{m^2(\mathrm{Tr}\,M_\tau)^2}\\
-&\le\frac1{2m^2\mathrm{Tr}\,M_\tau}.
-\end{aligned}
-```
-
-For $`\tau\ge\tau_0:=2/(\kappa q)`$, the trace lower bound gives
+Projection cannot increase the distance to $`\mu_\tau(b)`$. The inverse mean has Lipschitz constant at most $`(s_*\tau)^{-1}`$, and the count variance is at most $`\kappa\tau`$ by Section 2. Hence
 
 ```math
 \sup_{b\in B}\mathbb E_b(\widehat b_\tau-b)^2
-\le\frac1{m^2\kappa q\tau}.
+\le\frac{\kappa}{s_*^2\tau}.
 ```
 
-For $`0\le\tau\lt\tau_0`$, use the interval midpoint, whose squared error is at most $`(b_+-b_-)^2/4`$. This produces a single budget-dependent protocol and estimator with
-
-```math
-\sup_{b\in B}\mathbb E_b(\widehat b_\tau-b)^2
-\le\frac{C_{\mathrm{inv}}}{1+\tau}
-```
-
-For example, one may choose
-
-```math
-C_{\mathrm{inv}}
-=\max\!\left\{
-\frac{(b_+-b_-)^2(1+\tau_0)}4,\,
-\frac{1+\tau_0^{-1}}{m^2\kappa q}
-\right\}.
-```
-
-This is finite and depends only on $`\nu`$ and $`B`$.
-
-For the stated dimensionless temperature loss, set $`\theta=\log(T/J)=-\log b`$ and $`\widehat\theta=-\log\widehat b`$ in the chosen units $`k_B=1`$. Both inverse-temperature values belong to $`B`$, so
-
-```math
-\begin{aligned}
-|\widehat\theta-\theta|
-&\le b_-^{-1}|\widehat b-b|,\\
-\sup_{b\in B}\mathbb E_b(\widehat\theta-\theta)^2
-&\le\frac{C_{\mathrm{inv}}/b_-^2}{1+\tau}.
-\end{aligned}
-```
-
-This is a finite-time worst-case risk bound. It requires no locally unbiased estimator, asymptotic normality, or quantum Fisher-information continuity. Calibration of $`\mu_\tau`$ uses only the known model; no claim of a particular computational cost for that calibration is made.
+At shorter times use the midpoint of $`B`$, with squared error at most $`(b_+-b_-)^2/4`$. The resulting worst-case squared inverse-temperature error is bounded by $`C_{\mathrm{inv}}/(1+\tau)`$ for a finite constant $`C_{\mathrm{inv}}`$. Since $`|\log\widehat b-\log b|\le b_-^{-1}|\widehat b-b|`$ for estimates in $`B`$, the same order holds in log temperature. The estimate accounts for every outcome. The model determines the calibration curve, and this proof places no computational bound on its evaluation.
 
 ## 5. Spatial access and the joint law
 
-The allowed model grants an ideal instantaneous instrument within the fixed initial block of $`r\ge1`$ bath spins. At time zero measure its occupation
-
-```math
-N_r=\sum_{x=1}^r n_x.
-```
-
-Its marginal covariance is $`C_{b,r}=P_rC_bP_r`$, the restriction of the actual initial half-chain state, rather than the Gibbs covariance of a chain cut after $`r`$. Its number statistics obey
+For the spatial branch, measure the dimensionless block energy $`\mathrm d\Gamma(A_r)=\sum_{jk}(A_r)_{jk} c_j^\dagger c_k`$, where $`A_r=P_r h_B P_r`$ acts on the first $`r`$ sites. This is a physical observable on the contacted block, with its onsite terms and its internal exchange bonds. The initial block state has the actual compressed covariance $`C_{b,r}=P_r f_b(h_B)P_r`$. By the Gaussian two- and four-point formulas, the mean $`e_r(b)`$ and variance obey
 
 ```math
 \begin{aligned}
-\nu_r(b)&=\mathbb E_bN_r=\mathrm{Tr}(P_rC_bP_r),\\
-\mathrm{Var}_b(N_r)
-&=\mathrm{Tr}[C_{b,r}(I-C_{b,r})]\le\frac r4,
+e_r(b)&=\mathrm{Tr}(A_r C_{b,r}),\\
+\mathrm{Var}_b(\mathrm d\Gamma(A_r))
+&=\mathrm{Tr}\!\big[C_{b,r} A_r(I-C_{b,r})A_r\big]
+\le \mathrm{Tr}(A_r^2)\le r(|\nu|+2)^2.
 \end{aligned}
 ```
 
-and
+The trace formula for the variance follows by Wick contraction. Its first inequality follows by writing the trace as the squared Hilbert–Schmidt norm of $`(I-C_{b,r})^{1/2}A_r C_{b,r}^{1/2}`$ and using that both covariance factors are contractions.
+
+To bound the slope, let $`m_*=\min_{b\in B,\ E\in[\nu-2,\nu+2]} f_b(E)[1-f_b(E)]\gt 0`$. Then $`h_Bg_b(h_B)\ge m_*h_B^2`$. Inserting $`P_r+(I-P_r)`$ between $`h_B`$ and $`g_b(h_B)`$ gives
 
 ```math
--\nu_r'(b)
-=\mathrm{Tr}[P_rh_BC_b(I-C_b)P_r]\ge mr.
+\begin{aligned}
+-e_r'(b)
+&=\mathrm{Tr}(A_r P_r g_b(h_B)P_r)\\
+&\ge m_*\mathrm{Tr}(P_r h_B^2 P_r)
+-\big|\mathrm{Tr}\big(P_r h_B(I-P_r)g_b(h_B)P_r\big)\big|\\
+&\ge m_*[r(\nu^2+2)-1]-\Vert g_b(h_B)\Vert.
+\end{aligned}
 ```
 
-The same clipped inverse-mean estimator has
+The omitted trace crosses only the rank-one bond term $`P_r h_B(I-P_r)=-|r\rangle\langle r+1|`$, of trace norm one. The diagonal of $`h_B^2`$ counts one hopping neighbor at the physical endpoint and two elsewhere. Thus for all sufficiently large $`r`$, the derivative magnitude is bounded below by a positive constant times $`r`$, uniformly in $`b`$. The same clipped inverse-mean estimator gives worst-case squared error at most $`C_{\rm sp}/r`$ in $`b`$. A midpoint estimate covers the bounded set of smaller blocks, including a single site at zero field.
+
+Choose the block measurement for $`r\ge\tau`$, or the one-sensor count when $`\tau\gt r`$. Each branch depends only on the known budget. Converting to log temperature gives the joint risk bound
 
 ```math
-\sup_{b\in B}\mathbb E_b(\widehat b_r-b)^2
-\le\frac1{4m^2r}.
+\frac{C}{r+\tau},
+\qquad C=\frac{2}{b_-^2}\max\{C_{\rm sp},C_{\rm inv}\}.
 ```
 
-Choose the initial block measurement when $`r\ge\tau`$ and the one-sensor count protocol when $`\tau\gt r`$. This decision depends only on the known budget. Since the larger of $`r`$ and $`\tau`$ is at least $`(r+\tau)/2`$, the resulting squared log-temperature risk is at most
-
-```math
-\frac{C}{r+\tau},\qquad
-C=\frac{2}{b_-^2}
-\max\!\left\{\frac1{4m^2},\,C_{\mathrm{inv}}\right\}.
-```
-
-There is no need to combine correlated block and count records. The spatial branch uses the model's permission to perform arbitrary operations on its contacted block. If block readout or moving probes carries an additional time cost, that is a different access model and this branch must be charged accordingly.
+The spatial branch uses the model's allowance for an instantaneous joint operation within the contacted block. A separate time charge for the block measurement would define a different access model.
 
 ## 6. What the verification does and does not establish
 
 [`check_counting.py`](../verification/check_counting.py) builds the finite spin Hamiltonian directly from Pauli raising and lowering matrices, prepares its exact many-body thermal density matrix, and solves the number-resolved spin Lindblad equation. It compares the complete count probability distribution with the one-particle determinant prediction. Its dynamical calculation never assumes Gaussian evolution or a fermionic output detector.
 
-[`check_extraction.py`](../verification/check_extraction.py) compares boundary propagation at two bath lengths before reflections, verifies the mean susceptibility by finite differences, and checks the extraction and variance inequalities. It also includes a deliberately exhausted finite bath to show why the all-time linear extraction bound belongs to the half-chain. These reproducible numerical checks can catch sign, normalization, and finite-volume mistakes. The analytic spectral and trace-class arguments above establish the infinite-volume claims.
+[`check_detuned_response.py`](../verification/check_detuned_response.py) compares finite-chain evolution with the continuum count slope over several fields, temperatures, and reset rates. It checks the zero-field cancellation and the sign of the restored response. [`check_extraction.py`](../verification/check_extraction.py) retains the original positive-band benchmark, including a finite bath that exhausts its initial supply. These calculations check signs, normalization, and the finite-volume implementation. The analytic spectral and trace-class arguments above establish the infinite-volume statements.
 
 ### Primary references for inherited ingredients
 

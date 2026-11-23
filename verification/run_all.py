@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the three independent finite checks; optionally save fresh reports."""
+"""Run the finite checks and optionally save fresh reports."""
 
 from __future__ import annotations
 
@@ -18,7 +18,7 @@ def main():
     )
     arguments = parser.parse_args()
     directory = Path(__file__).resolve().parent
-    for name in ("relative_entropy", "counting", "extraction"):
+    for name in ("relative_entropy", "counting", "extraction", "detuned_response"):
         command = [sys.executable, str(directory / f"check_{name}.py")]
         if arguments.output_dir:
             command += ["--output", str(arguments.output_dir / f"{name}.json")]

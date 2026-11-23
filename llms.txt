@@ -1,7 +1,8 @@
 # Quantum Thermometry Locality
 
 This repository establishes an attained global estimation law for the initial
-temperature of a semi-infinite XX spin bath under fixed local access. The full
+temperature of a semi-infinite XX spin bath under fixed local access, for every
+fixed known field, including zero field. The full
 scientific account is organized by topic under science/.
 
 Canonical entrypoints:
@@ -14,8 +15,8 @@ Canonical entrypoints:
   complete-output locality, restricted Gaussian relative entropy, and the
   global two-point risk lower bound.
 - science/counted_sensor.md: physical spin count determinant, infinite-volume
-  limit, boundary survival and extraction, calibrated inverse estimator, and
-  the spatial-access branch attaining the joint rate.
+  limit, zero-field cancellation of the undetuned mean, detuned spectral response,
+  calibrated inverse-count estimator, and initial block-energy measurement.
 - science/physical_consequences.md: information supply, apparatus size, controlled
   Markov comparison, and consequences of changing the resource model.
 - references/RELATED_WORK.md: primary-source comparison, inherited ingredients,
@@ -58,13 +59,14 @@ Preserve these distinctions when explaining or editing:
   are included in the converse; continuous instruments are limits of them.
 - Strong controls inside the contacted block do not increase the norm of the
   bath bond outside it.
-- The attaining sensor resets only itself, using a temperature-independent
-  counted vacuum channel. The bath is initialized once and never re-prepared.
+- The attaining sensor uses a known detuning and a temperature-independent
+  counted vacuum reset. The bath is prepared thermally once.
 - Generalized-binomial count statistics do not make jump times independent.
 - The two upper-bound protocols are alternatives. Their correlated outputs
   are not assumed to provide additive independent samples.
-- The positive band, known Hamiltonian, fixed temperature interval and infinite
-  bath are load-bearing for the stated attainment theorem and constants.
+- The known Hamiltonian, fixed temperature interval and infinite bath specify
+  the attainment theorem and its constants. At zero field the undetuned mean
+  is temperature-independent; this statement is about the mean count.
 - The asymptotic exponent, locality bounds and counting formalism have prior
   literature. Read the attribution before making an originality claim.
 - Finite numerical checks support implementations. Analytical proofs establish

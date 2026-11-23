@@ -7,7 +7,7 @@ A thermometer that contacts the first $`r`$ sites of a spin reservoir can use th
 \qquad \tau=\frac{Jt}{\hbar}.
 ```
 
-Here $`\mathcal R`$ is the worst-case mean squared error in **logarithmic temperature**, minimized over all allowed protocols and estimators. The lower bound includes arbitrary ancillas, adaptive measurements, feedback, resets, strong control inside the contacted region, and the complete retained measurement record. A single counted sensor attains the time dependence. Direct measurement of the initially accessible bath block supplies the spatial dependence.
+Here $`\mathcal R`$ is the worst-case mean squared error in **logarithmic temperature**, minimized over all allowed protocols and estimators. The lower bound includes arbitrary ancillas, adaptive measurements, feedback, resets, strong control inside the contacted region, and the complete retained measurement record. A single detuned counted sensor attains the time dependence. An energy measurement of the initially accessible bath block supplies the spatial dependence.
 
 The [locality converse](locality_converse.md) proves the lower bound with explicit constants. The [counted sensor construction](counted_sensor.md) proves the matching upper bound. [Physical consequences](physical_consequences.md) discusses the meaning of the result for local sensing and reduced dynamical descriptions.
 
@@ -24,7 +24,7 @@ H_B
 \left(\sigma_j^+\sigma_{j+1}^-+\sigma_j^-\sigma_{j+1}^+\right)
 \right],\\
 n_j&=\sigma_j^+\sigma_j^-,
-\qquad J>0,\quad \nu>2.
+\qquad J>0,\quad \nu\in\mathbb R.
 \end{aligned}
 ```
 
@@ -147,7 +147,7 @@ Consequently,
 
 ## Theorem: optimal contact and time scaling
 
-**Theorem.** Fix $`\nu>2`$ and $`0\lt b_-\lt b_+\lt\infty`$. Under the reservoir, control, and initial-state assumptions above, there are constants $`0\lt c\le C\lt\infty`$, depending only on $`\nu`$ and $`I`$, such that for every integer $`r\ge1`$ and every $`\tau\ge0`$,
+**Theorem.** Fix any known $`\nu\in\mathbb R`$ and $`0\lt b_-\lt b_+\lt\infty`$. Under the reservoir, control, and initial-state assumptions above, there are constants $`0\lt c\le C\lt\infty`$, depending only on $`\nu`$ and $`I`$, such that for every integer $`r\ge1`$ and every $`\tau\ge0`$,
 
 ```math
 \boxed{
@@ -157,7 +157,7 @@ Consequently,
 }
 ```
 
-The lower bound is uniform in the apparatus dimension, sensor number, number of interventions, and strength of all controls supported inside the accessible region. It applies to the complete output of every allowed protocol. The upper bound uses a measurement of total occupation in the accessible initial block or a single sensor with a fixed local counted reset, chosen according to the resource budget.
+The lower bound is uniform in the apparatus dimension, sensor number, number of interventions, and strength of all controls supported inside the accessible region. It applies to the complete output of every allowed protocol. The upper bound uses a measurement of the initial block energy or a single detuned sensor with a fixed local counted reset, chosen according to the resource budget.
 
 In physical units the denominator is $`r+Jt/\hbar`$. For a fixed footprint, the optimal mean squared log-temperature error is of order $`\hbar/(Jt)`$ at long times. The optimal root mean squared log-temperature error is of order $`\sqrt{\hbar/(Jt)}`$.
 
@@ -177,8 +177,8 @@ Under the cut dynamics, the output is a parameter-independent channel of $`\rho_
 \begin{aligned}
 D(\rho_{b,R}\Vert\rho_{b',R})
 &\le K R(b-b')^2,\\
-K&=\frac{(\nu+2)^2}{32\eta(1-\eta)},\\
-\eta&=\frac{1}{1+e^{b_+(\nu+2)}}.
+K&=\frac{(|\nu|+2)^2}{32\eta(1-\eta)},\\
+\eta&=\frac{1}{1+e^{b_+(|\nu|+2)}}.
 \end{aligned}
 ```
 
@@ -186,13 +186,13 @@ Choosing $`R=r+\lceil6e\tau+\log16\rceil`$ leaves a constant testing error betwe
 
 ### Why the order is attainable
 
-The [counted sensor construction](counted_sensor.md) couples one sensor to the endpoint and records local loss events. Its count has a mean whose inverse-temperature derivative grows linearly in $`\tau`$ and a variance bounded by a constant times $`\tau`$. Inverting the calibrated mean, with clipping to the known interval, gives worst-case mean squared error of order $`1/\tau`$ without preparing replacement bath states.
+The [counted sensor construction](counted_sensor.md) couples one sensor to the endpoint, detunes its onsite energy, and counts local loss events. At zero field the mean count of the matched sensor is exactly independent of temperature. A fixed detuning weights positive and negative energies differently and restores a mean derivative of order $`\tau`$ in magnitude at long times, uniformly over $`I`$. The count variance is at most a constant times $`\tau`$. Inverting the calibrated mean with clipping gives worst-case mean squared error of order $`1/\tau`$ from the one initially thermal bath.
 
-For short times relative to $`r`$, a measurement of total occupation of the first $`r`$ bath sites gives worst-case error of order $`1/r`$. Choosing the better of these two experiments gives the uniform $`1/(r+\tau)`$ bound. No assumption of independence between samples drawn at different times is required.
+For short times relative to $`r`$, an energy measurement of the first $`r`$ bath sites gives worst-case error of order $`1/r`$. Choosing the better of these two experiments gives the uniform $`1/(r+\tau)`$ bound. No assumption of independence between samples drawn at different times is required.
 
 ## Scope of the theorem
 
-The positive one-particle band, $`\nu>2`$, makes occupation uniformly monotone in inverse temperature on the fixed compact interval. It is used by the explicit upper construction. The constants can deteriorate as the interval approaches zero temperature or as model parameters approach a limiting regime. The theorem makes no uniform claim in such limits.
+The theorem includes bands containing zero, $`|\nu|\le 2`$, and the particle–hole-symmetric point $`\nu=0`$. The field is supplied to the thermometer, which uses it to choose the sign of the detuning. The compact positive interval $`I`$ is fixed in the scaling statement. Constants can deteriorate if that interval approaches zero temperature.
 
 The half-chain supplies an indefinitely growing spatial region. A reservoir of fixed finite length cannot support the same long-time upper law indefinitely. Moving a contact beyond the first $`r`$ sites, changing the bond that leaves the contacted region, or introducing temperature-dependent ancillary inputs changes the operational resources and falls outside the statement.
 

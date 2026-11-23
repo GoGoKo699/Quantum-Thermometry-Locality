@@ -17,6 +17,7 @@ Expected summary:
 PASS: restricted_gaussian_relative_entropy
 PASS: independent_number_resolved_spin_counting
 PASS: finite_chain_extraction_and_global_estimator
+PASS: detuned_boundary_count_response
 All finite checks passed. Analytical and infinite-volume claims require the written proofs.
 ```
 
@@ -33,23 +34,27 @@ Each check can also run separately, with an optional `--output PATH` argument. T
 | Program | Independent calculations | Scientific issue tested |
 |---|---|---|
 | [check_relative_entropy.py](check_relative_entropy.py) | Full Fock-space density matrices versus one-particle covariance logarithms for nine pairs of restricted thermal states. | The relative-entropy formula remains correct when compressed covariances do not commute. The actual restricted state differs from the Gibbs state of a cut Hamiltonian. |
-| [check_counting.py](check_counting.py) | A number-resolved Lindblad equation built from physical spin matrices and the many-body Gibbs state versus the Gaussian determinant prediction. | The complete probability law, mean, variance and excitation balance describe the physical counted spin-reset instrument. |
-| [check_extraction.py](check_extraction.py) | Dense loss matrices versus independently propagated boundary vectors and integrated detector current; two bath lengths; exact finite count distributions and clipped estimators. | Signs, normalizations, the extraction and variance inequalities, thermal response, estimator bounds, and the onset of finite-volume exhaustion. |
+| [check_counting.py](check_counting.py) | A number-resolved Lindblad equation built from physical spin matrices and the many-body Gibbs state versus the Gaussian determinant prediction. | The complete probability law, mean, variance and excitation balance describe the physical counted spin-reset instrument, including with sensor detuning. |
+| [check_extraction.py](check_extraction.py) | Dense loss matrices versus independently propagated boundary vectors and integrated detector current at two bath lengths, with exact finite count distributions and clipped estimators. | For the matched sensor in a positive band, checks the extraction and variance inequalities, thermal response, estimator bounds and onset of finite-volume exhaustion. |
+| [check_detuned_response.py](check_detuned_response.py) | Finite-chain susceptibility from sparse adjoint propagation versus quadrature of the half-chain spectral weight. | Tests cancellation in the undetuned half-filled count mean, its restoration by detuning, and the sign response across fields and reset rates. |
 
 The entropy cases restrict a 19-site one-particle thermal covariance to two, three and four sites, then reconstruct and compare the full 4-, 8- and 16-dimensional density matrices. The test explicitly records nonzero covariance commutators and the difference from rethermalizing an isolated block.
 
-The counting cases use one to four bath spins and cover zero time, short exposure, and nontrivial interacting evolution. Excitation conservation makes counts from zero through the bath length the exact support. The dynamical side of this comparison does not assume Gaussian evolution.
+The counting cases use one to four bath spins and cover zero time, short exposure, and interacting evolution. They include detuning at half filling and on both sides of that field. Excitation conservation makes counts from zero through the bath length the exact support. The dynamical side evolves the full spin density matrices.
 
 The extraction cases compare baths of 48 and 80 sites through dimensionless time 12, well before appreciable reflection in these instances. A separate three-site bath at time 200 saturates near three extracted one-particle modes. This demonstrates the failure of extending the half-chain's indefinite linear lower bound to a fixed finite bath. The reported finite estimator diagnostics distinguish the inverse-count estimator from the midpoint/count choice used by the uniform theorem.
 
+The detuned response calculation uses one vacuum sensor and a bath of 245 sites at dimensionless time 80. It checks four inverse temperatures at half filling, on both sides of half filling, and at the two band-touching fields. It also tests two positive reset rates at half filling. The comparison measures the finite-time response per unit time against the analytical long-time coefficient.
+
 ## Reference results
 
-The committed [entropy](results/relative_entropy.json), [counting](results/counting.json), and [extraction](results/extraction.json) reports record the parameters, software versions and residuals. In the reference run:
+The committed [entropy](results/relative_entropy.json), [counting](results/counting.json), [extraction](results/extraction.json) and [detuned response](results/detuned_response.json) reports record the parameters, software versions and residuals. In the reference runs:
 
 - The full density-matrix relative entropy and covariance formula agreed within $`1.2\times10^{-15}`$.
 - The physical spin and determinant count probabilities agreed within $`7\times10^{-16}`$.
 - The two finite-chain extraction traces agreed within $`1.5\times10^{-13}`$ at the tested times.
 - The count mean and integrated detector current agreed within $`2\times10^{-11}`$.
+- The undetuned half-filled slope per unit time was below $`6\times10^{-18}`$ in magnitude. The tested detuned slopes agreed with the spectral formula to within 1.8% relative error.
 
 These values describe the recorded run; the acceptance tolerances in the scripts are larger to accommodate floating-point variation.
 

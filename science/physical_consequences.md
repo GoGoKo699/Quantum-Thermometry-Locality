@@ -2,7 +2,7 @@
 
 ## What the precision law says
 
-The [model and theorem](model_and_results.md) concern one initially thermal XX half-chain with positive one-particle band. Write $`b=\beta J`$ and $`\tau=Jt`$, using $`\hbar=k_{\mathrm B}=1`$. The parameter interval $`[b_-,b_+]`$ is fixed and contained in $`(0,\infty)`$. For all allowed experiments supported on the first $`r`$ bath sites,
+The [model and theorem](model_and_results.md) concern one initially thermal XX half-chain at any fixed known field. Write $`b=\beta J`$ and $`\tau=Jt`$, using $`\hbar=k_{\mathrm B}=1`$. The parameter interval $`[b_-,b_+]`$ is fixed and contained in $`(0,\infty)`$. For all allowed experiments supported on the first $`r`$ bath sites,
 
 ```math
 \mathcal R_b(r,\tau)
@@ -15,9 +15,9 @@ The constants depend on the known band and parameter interval, but not on thermo
 
 This identifies two ways to improve the order of the precision. One can initially access more thermal sites, or allow more time for the chain to bring initially encoded information into reach. Adding arbitrarily many auxiliary probes at a fixed contact supplies neither resource. Such probes can still improve constants, implement convenient readout, or operate efficiently in restricted regimes.
 
-The [counted-sensor construction](counted_sensor.md) shows that the bound is attainable. For $`\tau>r`$, one fixed two-level sensor with fixed hopping and fixed counted loss suffices. Its detector resets the sensor into a known state; the thermal chain evolves throughout and is never re-prepared. For $`r\geq\tau`$, a measurement of the initial contacted block's occupation supplies the matching order.
+The [counted-sensor construction](counted_sensor.md) shows that the bound is attainable. For $`\tau>r`$, one two-level sensor with fixed detuning, hopping, and counted loss suffices. The detector resets the sensor into a known state as the initially thermal chain evolves. For $`r\geq\tau`$, measuring the energy of the initial contacted block supplies the matching order.
 
-The theorem applies to squared log-temperature error as well: on the fixed interval, the dimensionless coordinate $`\theta=\log(k_{\mathrm B}T/J)=-\log b`$ is bi-Lipschitz in $`b`$. Squared error in physical inverse temperature carries the dimensional factor $`J^{-2}`$. None of these comparisons has constants uniform as $`b_+\to\infty`$ or as the positive band gap closes.
+The theorem applies to squared log-temperature error as well: on the fixed interval, the dimensionless coordinate $`\theta=\log(k_{\mathrm B}T/J)=-\log b`$ is bi-Lipschitz in $`b`$. Squared error in physical inverse temperature carries the dimensional factor $`J^{-2}`$. The parameter interval stays fixed in these comparisons. Taking $`b_+\to\infty`$ would introduce a separate low-temperature limit.
 
 ## A collective Markov experiment
 
@@ -25,7 +25,7 @@ Collective thermometry within a prescribed Markov generator can have a quadratic
 
 ### Microscopic interaction and formal weak-coupling rates
 
-Take an even number $`N`$ of probe spins in the symmetric sector of spin $`s=N/2`$. Let their known level spacing in units of $`J`$ be $`\Delta\in(\nu-2,\nu+2)`$, and use collective operators $`S_z,S_\pm`$. Couple them to the first bath spin through
+For this comparison, suppose the bath band contains a positive interior frequency. Take an even number $`N`$ of probe spins in the symmetric sector of spin $`s=N/2`$. Choose a positive level spacing $`\Delta\in(\nu-2,\nu+2)`$ in units of $`J`$, and use collective operators $`S_z,S_\pm`$. Couple them to the first bath spin through
 
 ```math
 \frac{H_I}{J}
@@ -149,7 +149,7 @@ uniformly over $`N`$, $`\lambda`$, the probe preparation and all subsequent cont
 Fix $`\tau>0`$. The [two-point converse](locality_converse.md) supplies distinct parameters $`b_0,b_1`$ in the interval, separated by a constant times $`(1+\tau)^{-1/2}`$, such that
 
 ```math
-\|P^{\rm mic}_{b_0,N}-P^{\rm mic}_{b_1,N}\|_{\rm TV}
+\Vert P^{\rm mic}_{b_0,N}-P^{\rm mic}_{b_1,N}\Vert_{\rm TV}
 \leq q_0<1
 ```
 
@@ -158,7 +158,7 @@ for every allowed microscopic protocol, with $`q_0`$ independent of $`N`$ and it
 Suppose $`\Lambda_N\to\infty`$ at this fixed time. Under the Markov model, the normalized upward count consistently estimates $`p_b`$, and $`p_{b_0}\ne p_{b_1}`$. Thresholding that estimate distinguishes the two parameters with error tending to zero. Choosing a sufficiently fine finite cadence therefore yields
 
 ```math
-\|P^{\rm M}_{b_0,N}-P^{\rm M}_{b_1,N}\|_{\rm TV}\longrightarrow1.
+\Vert P^{\rm M}_{b_0,N}-P^{\rm M}_{b_1,N}\Vert_{\rm TV}\longrightarrow1.
 ```
 
 The microscopic and Markov distributions here refer to the same probe-measurement record for each $`N`$. If
@@ -166,7 +166,7 @@ The microscopic and Markov distributions here refer to the same probe-measuremen
 ```math
 \epsilon_N=
 \max_{j\in\{0,1\}}
-\|P^{\rm mic}_{b_j,N}-P^{\rm M}_{b_j,N}\|_{\rm TV},
+\Vert P^{\rm mic}_{b_j,N}-P^{\rm M}_{b_j,N}\Vert_{\rm TV},
 ```
 
 the triangle inequality gives
@@ -174,7 +174,7 @@ the triangle inequality gives
 ```math
 \begin{aligned}
 2\epsilon_N&\geq
-\|P^{\rm M}_{b_0,N}-P^{\rm M}_{b_1,N}\|_{\rm TV}-q_0,\\
+\Vert P^{\rm M}_{b_0,N}-P^{\rm M}_{b_1,N}\Vert_{\rm TV}-q_0,\\
 \liminf_{N\to\infty}\epsilon_N
 &\geq\frac{1-q_0}{2}>0.
 \end{aligned}
@@ -195,4 +195,4 @@ This is a necessary obstruction. It does not establish validity below a sharp cr
 | Use an unbounded local bosonic Hilbert space, a moving contact or a different bath geometry | Requires a separate locality and information-density analysis. No universal extension is asserted. |
 | Use a finite bath | The infinite-chain scaling describes the interval before finite-size boundaries affect extraction. It cannot provide an indefinitely decreasing risk from a fixed finite initial information supply. |
 
-Finally, positivity of the band is doing observable work in the attaining protocol. It makes the mean total extraction count uniformly monotone in $`b`$. At particle–hole symmetry the same unweighted count can lose its temperature response. A different statistic or sensor would then be needed, and no matching theorem for that regime is established here.
+The attaining detector needs a temperature-dependent mean count. At particle–hole symmetry the matched sensor integrates equal and opposite temperature responses. An onsite detuning breaks the cancellation while the sensor still counts the same local loss. Its [limiting response](counted_sensor.md#detuned-thermal-response-at-any-known-field) follows from the microscopic boundary spectrum.

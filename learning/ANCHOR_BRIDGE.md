@@ -2,7 +2,7 @@
 
 A thermometer touches a sample, changes as a result of that interaction, and produces a reading. Repeating the readout, resetting the sensor, or attaching more sensors gives more opportunities to observe the sample. The question here is how much temperature information those operations can acquire when they all use the same small contact with one microscopic reservoir.
 
-The reservoir is a chain of two-state spins, prepared thermally once. Its nearest-neighbor couplings transport excitations toward the contacted region. The project proves a limit for every permitted controller and then constructs a fixed sensor that attains its order. Wiseman and Milburn supply the language of states, instruments, trajectories, and feedback needed to describe this experiment; the spatial bath analysis and global statistical argument are supplied by the project.
+The reservoir is a chain of two-state spins, prepared thermally once. Its nearest-neighbor couplings transport excitations toward the contacted region. The project proves a limit for every permitted controller and shows how a fixed boundary sensor attains it. At zero bath field, the undetuned sensor's mean count is independent of temperature. A known shift of the sensor's own energy restores its response. Wiseman and Milburn supply the language of states, instruments, trajectories, and feedback used to describe the experiment.
 
 ## Anchor and route
 
@@ -26,7 +26,7 @@ The canonical statements are in [Model and results](../science/model_and_results
 
 A spin has an empty state and an occupied state. Its occupation observable has possible readings zero and one. Exchange coupling moves an excitation between neighboring spins while preserving their total number. The known energy scale of that coupling is $`J`$.
 
-For one isolated two-state system with energy gap $`JE`$, thermal preparation gives the occupied-state probability
+For one isolated two-state system whose occupied state has energy $`JE`$ relative to the empty state, thermal preparation gives the occupied-state probability
 
 ```math
 p_b=f_b(E)=\frac{1}{1+e^{bE}},
@@ -47,7 +47,7 @@ The following notation translates the book's general measurement-and-control set
 | $`N_\tau`$ | The total detected loss count in the particular attaining experiment. It uses only part of the allowed output. |
 | $`R`$ | A bath cutoff introduced in the converse. It is an analysis variable, not an enlargement of the permitted contact $`r`$. |
 
-The chain's one-particle energies lie in $`[\nu-2,\nu+2]`$ in units of $`J`$, and the theorem fixes $`\nu\gt 2`$. It also fixes a known interval $`I=[b_-,b_+]`$ with $`0\lt b_-\lt b_+\lt \infty`$. These conditions make occupation uniformly responsive to temperature and keep the relevant states away from singular limiting cases. Every protocol has the hard elapsed-time budget $`\tau`$, including branches chosen adaptively from earlier outcomes.
+The chain's one-particle energies lie in $`[\nu-2,\nu+2]`$ in units of $`J`$. The field $`\nu`$ is fixed and known. If the band crosses zero, occupations at its positive and negative energies respond to cooling in opposite directions. At zero field, energies occur in particle–hole pairs. The fixed known interval $`I=[b_-,b_+]`$ with $`0\lt b_-\lt b_+\lt \infty`$ keeps all thermal occupations bounded away from zero and one. Every protocol has the hard elapsed-time budget $`\tau`$, including branches chosen adaptively from earlier outcomes.
 
 The loss measures error in logarithmic temperature. A hat denotes a reported estimate:
 
@@ -193,9 +193,9 @@ This is the bridge from WM's discrimination framework to the project's global co
 
 ## 5. From a quantum jump record to an attaining thermometer
 
-**Connections:** [M21–M25](MILESTONES.md#m21-build-the-fixed-counted-sensor). WM §§4.2–4.3 explain conditioned detection records; §3.5 supplies reservoir background. The count identity, extraction estimate, and global inversion are additional project steps.
+**Connections:** [M21–M25](MILESTONES.md#m21-build-the-fixed-counted-sensor). WM §§4.2–4.3 explain conditioned detection records, and §3.5 supplies reservoir background. The project relates the physical count law to the spectral response and uses it for global estimation.
 
-Attach one initially empty sensor at site zero, with the chain's exchange coupling and on-site energy. Count its loss events through the known jump operator
+Attach one initially empty sensor at site zero using the chain's exchange coupling $`J`$. Its on-site energy is $`J(\nu+d)`$, where the fixed, known detuning $`d`$ is positive for $`\nu\ge 0`$ and negative for $`\nu\lt 0`$. Count its loss events through the known jump operator
 
 ```math
 \ell=\sqrt{\kappa}\,\sigma_0^-,
@@ -214,7 +214,7 @@ A jump removes a sensor excitation and changes the conditional state. The record
 
 There are two different environments in this description. The **thermal chain** remains explicit in the microscopic dynamics. The **known vacuum detector** provides a temperature-independent reset instrument, idealized as continuously monitored loss. Its fresh vacuum ancillary inputs contain no information about the unknown bath temperature. This ideal detector model is an allowed apparatus resource; it does not assume a temperature-dependent Markov generator for the thermal chain.
 
-### The missing bridge to counting statistics
+### From the spin instrument to counting statistics
 
 Endpoint ordering makes the physical spin loss exactly $`\sigma_0^-=c_0`$, with no Jordan–Wigner string. The unconditional Gaussian covariance can therefore be propagated with a one-particle contraction:
 
@@ -251,62 +251,44 @@ Two consequences of the count law are enough for estimation:
 =\mathrm{Tr}(C_bM_\tau),\\
 \mathrm{Var}_b(N_\tau)
 &=\sum_jq_j(1-q_j)
-\le\mu_\tau(b).
+\le\mu_\tau(b)\le \kappa\tau.
 \end{aligned}
 ```
 
-The chain-specific [spectral argument](../science/counted_sensor.md#3-linear-extraction-from-the-initially-thermal-half-chain) separately proves
+For every fixed time the loss operator has finite trace, which makes the infinite-mode determinant and count moments well defined. The [finite-volume limit](../science/counted_sensor.md#infinite-volume-count-and-moments) connects them to actual finite spin instruments. A fixed finite chain eventually exhausts its supply.
 
-```math
-\begin{gathered}
-\kappa q\tau-1
-\le\mathrm{Tr}\,M_\tau\le\kappa\tau,\\
-q=1-\frac4{3\pi}\gt 0.
-\end{gathered}
-```
+### Make the count sensitive to temperature
 
-This continuing growth is an attainment ingredient, not a consequence of the locality upper bound alone. It follows from the half-chain's boundary return amplitude and its response to fixed loss. Increasingly many initial bath modes can contribute to the count while the same chain evolves.
+At $`\nu=0`$, consider energies $`E`$ and $`-E`$. Their total occupation is $`f_b(E)+f_b(-E)=1`$ at every temperature. The undetuned sensor weights the two signs equally, and the temperature derivatives cancel in the total mean at every time. This statement concerns the mean count. The other count statistics and the event times are separate observables.
 
-For every fixed time the loss operator has finite trace, which makes the infinite-mode determinant and count moments well defined. The [finite-volume limit](../science/counted_sensor.md#infinite-volume-count-and-moments) connects them to actual finite spin instruments. A fixed finite chain eventually exhausts its supply and has no corresponding all-time linear-growth guarantee.
+For the detuned sensor, the long-time count susceptibility is a spectral average. Each energy contributes $`g_b(E)=E f_b(E)[1-f_b(E)]`$ to the negative derivative of the occupation, with a detector weight determined by the boundary dynamics. With positive detuning at zero field, the larger weight at $`E\gt0`$ leaves a positive contribution after pairing it with $`-E`$. The same sign choice works when the band shifts to a nonnegative field. Reversing the sign of both the field and the detuning reverses the slope. The [spectral proof](../science/counted_sensor.md#3-linear-extraction-from-the-initially-thermal-half-chain) derives the weight from the damped boundary return, then uses the fixed temperature interval to bound the susceptibility away from zero uniformly. Thus at sufficiently long times the mean has a fixed direction of change and $`|\mu_\tau'(b)|\ge m\tau`$ for some $`m\gt0`$ independent of $`b`$.
 
 ### Invert a mean, with every outcome included
 
-Whenever $`\mathrm{Tr}\,M_\tau\gt 0`$, the positive band makes the calibrated count mean strictly decreasing in $`b`$. At zero time the loss trace and mean both vanish; that case uses the midpoint estimate below. Uniformly on the known interval,
-
-```math
-\begin{gathered}
--\mu_\tau'(b)\ge m\,\mathrm{Tr}\,M_\tau,\\
-m=\min_{\substack{b\in I\\E\in[\nu-2,\nu+2]}}
-E f_b(E)[1-f_b(E)]\gt 0.
-\end{gathered}
-```
-
-Thus a change in inverse temperature moves the mean by an amount proportional to the available loss weight. At long times that slope grows linearly, whereas the count's standard deviation grows at most as the square root of time.
-
-The estimator clips the observed count into the allowed mean range and then inverts the mean function. For a concrete calibration illustration, suppose that range were from 4 to 10. A recorded count of 12 would be clipped to 10 and assigned to the warm endpoint $`b_-`$. A count of 2 would be clipped to 4 and assigned to the cold endpoint $`b_+`$. Such observations are possible fluctuations; their probabilities remain in the risk.
+At sufficiently long times, the estimator clips the observed count into the calibrated mean range and inverts the mean function. For a decreasing mean with range from 4 to 10, a recorded count of 12 would be clipped to 10 and assigned to the warm endpoint $`b_-`$. A count of 2 would be clipped to 4 and assigned to the cold endpoint $`b_+`$. The assignments reverse for an increasing mean. These fluctuations contribute to the risk.
 
 Clipping cannot increase distance from the true mean. The uniform slope then converts count fluctuations into parameter error:
 
 ```math
 \mathbb E_b(\widehat b-b)^2
 \le\frac{\mathrm{Var}_b(N_\tau)}
-{m^2(\mathrm{Tr}\,M_\tau)^2}
-\le\frac{1}{2m^2\mathrm{Tr}\,M_\tau}.
+{m^2\tau^2}
+\le\frac{\kappa}{m^2\tau}.
 ```
 
-The last step also uses $`C_b\le I/2`$. Linear extraction gives the desired $`1/\tau`$ order at long times. A midpoint estimate covers short times, and the fixed interval converts the result to log-temperature loss. The [global estimator proof](../science/counted_sensor.md#4-a-global-estimator-including-biased-outcomes) makes these bounds uniform; no independent sequence of thermal samples or asymptotic normal distribution is assumed.
+A midpoint estimate covers short times, and the fixed interval converts the result to log-temperature loss. The [global estimator proof](../science/counted_sensor.md#4-a-global-estimator-including-biased-outcomes) uses the variance and the mean slope directly, so correlated fluctuations in the record are included.
 
 ## 6. Join the two resources and interpret the Markov comparison
 
 **Connections:** [M26–M30](MILESTONES.md#m26-join-spatial-access-and-elapsed-time).
 
-Direct access to $`r`$ initial bath sites provides a second attaining experiment. Measure their total occupation using the model's allowed instantaneous block instrument. Its variance is at most proportional to $`r`$ and its mean response is at least proportional to $`r`$. The same inversion reasoning gives risk of order $`1/r`$.
+Direct access to $`r`$ initial bath sites provides a second attaining experiment. Measure the block Hamiltonian, which includes on-site energies and the exchange terms inside the block. Weighting occupations by energy changes the paired derivative to $`E^2 f_b(E)[1-f_b(E)]`$ in the bulk trace, so both energy signs add. The [block proof](../science/counted_sensor.md#5-spatial-access-and-the-joint-law) accounts for the bond leaving the block and uses the actual reduced thermal state. The variance is at most a constant times $`r`$ and the slope magnitude is at least a positive multiple of $`r`$ at sufficiently large $`r`$. Inversion gives risk of order $`1/r`$, with a midpoint estimate for small blocks.
 
 Choose this initial-block experiment when $`r\ge\tau`$ and the counted sensor when $`\tau\gt r`$. The larger of $`r`$ and $`\tau`$ is at least $`(r+\tau)/2`$. This gives the matching upper bound without combining two potentially correlated data streams. The ideal instantaneous block access, including at zero elapsed time, is part of the [operational model](../science/model_and_results.md#operational-resources).
 
 WM's distinction between a microscopic derivation and a reduced master equation matters again for the [collective Markov comparison](../science/physical_consequences.md#a-collective-markov-experiment). A Lindblad generator defines legitimate state evolution, but its form alone does not guarantee approximation accuracy for every microscopic coupling and controller.
 
-In the reference Markov model, an even number $`N`$ of probe spins can be prepared in a central collective state, measured frequently, and restored after detected population changes. The preparation-and-measurement mechanism is due to [Sekatski and Perarnau-Llobet, §4.2](https://arxiv.org/html/2107.04425v2). For the chain's formal weak-coupling rates, the total event rate $`\Lambda_N`$ grows as $`N(N+2)`$ and the event directions retain temperature information. That controlled record has global risk of order $`(1+\Lambda_N\tau)^{-1}`$.
+In the reference Markov model, choose a positive probe spacing in the interior of the bath band. An even number $`N`$ of probe spins can be prepared in a central collective state, measured frequently, and restored after detected population changes. The preparation-and-measurement mechanism is due to [Sekatski and Perarnau-Llobet, §4.2](https://arxiv.org/html/2107.04425v2). For the chain's formal weak-coupling rates, the total event rate $`\Lambda_N`$ grows as $`N(N+2)`$ and the event directions retain temperature information. That controlled record has global risk of order $`(1+\Lambda_N\tau)^{-1}`$.
 
 The microscopic one-contact theorem remains uniform in probe number and control strength. At fixed time, it supplies a pair of temperatures whose complete microscopic outputs remain imperfectly distinguishable. If the formal Markov rate $`\Lambda_N`$ grows without bound, its records distinguish that same pair with error tending to zero. The triangle inequality forces a nonvanishing difference between the two models' predicted records for at least one temperature.
 
@@ -314,4 +296,4 @@ The compared records can be obtained by probe measurements; no free access to ba
 
 The matched theorem therefore concerns acquiring **initially encoded** information. Locality limits the initial thermal region that can influence the complete output; the covariance estimate limits that region's distinguishability; the counted sensor and initial block measurement attain the resulting order. Arbitrary apparatus at a fixed contact can improve constants or implementation while leaving these charged resources unchanged.
 
-These conclusions retain the positive-band XX half-chain, fixed compact temperature interval, one initial thermal preparation, fixed contacted sites, and unchanged outgoing bath bonds. The counted construction also uses ideal efficient monitoring. Moving contacts, additional temperature-bearing inputs, unbounded local bosonic systems, detector imperfections, or zero-temperature limits require further analysis. Finite [verification checks](../verification/README.md) support specific identities and limiting-case interpretations; the analytic proofs establish the scaling claims. The [scope and attribution](../references/RELATED_WORK.md#mathematical-and-physical-contribution) distinguish this complete-experiment result from the established locality, Gaussian, counting, and estimation methods used to prove it.
+The minimax law uses an XX half-chain with a fixed known field, fixed compact temperature interval, one initial thermal preparation, fixed contacted sites, and unchanged outgoing bath bonds. The counted construction uses ideal efficient monitoring. Moving contacts, additional temperature-bearing inputs, unbounded local bosonic systems, detector imperfections, and zero-temperature limits require further analysis. The analytic proofs establish the scaling, and finite checks test the count law and spectral response. [Verification](../verification/README.md) · [Scope and attribution](../references/RELATED_WORK.md#mathematical-and-physical-contribution)
