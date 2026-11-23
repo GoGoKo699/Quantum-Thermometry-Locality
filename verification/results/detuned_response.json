@@ -1,0 +1,150 @@
+{
+  "check": "detuned_boundary_count_response",
+  "status": "passed",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "scope": "Temperature derivatives of the mean count from one finite bath, compared at a fixed elapsed time to half-chain spectral quadrature.",
+  "bath_sites": 245,
+  "elapsed_time": 80.0,
+  "inverse_temperatures": [
+    0.5,
+    1.0,
+    2.0,
+    4.0
+  ],
+  "cases": [
+    {
+      "nu": 0.0,
+      "detuning": 0.0,
+      "kappa": 0.5,
+      "finite_susceptibility_per_time": [
+        5.7384830528052155e-18,
+        5.001316524615873e-18,
+        2.5757838710107025e-18,
+        1.7654994050912572e-18
+      ],
+      "continuum_susceptibility_per_time": [
+        -8.038075753686898e-18,
+        -3.763471025217607e-18,
+        -4.0246389108629636e-18,
+        -1.2228981849430251e-18
+      ],
+      "absolute_max_error": 1.3776558806492113e-17
+    },
+    {
+      "nu": 0.0,
+      "detuning": 0.5,
+      "kappa": 0.5,
+      "finite_susceptibility_per_time": [
+        0.025862350217486257,
+        0.01814985910365358,
+        0.006927483630513647,
+        0.0012240420496343646
+      ],
+      "continuum_susceptibility_per_time": [
+        0.026330256904722113,
+        0.018441078391570737,
+        0.007007809239310577,
+        0.0012324129197187087
+      ],
+      "absolute_max_error": 0.0004679066872358556,
+      "relative_max_error": 0.017770684461188846
+    },
+    {
+      "nu": 0.0,
+      "detuning": 0.5,
+      "kappa": 2.0,
+      "finite_susceptibility_per_time": [
+        0.018382661714846513,
+        0.012919056386334993,
+        0.004955497873862751,
+        0.0008847334995949536
+      ],
+      "continuum_susceptibility_per_time": [
+        0.018448478353972952,
+        0.012959881416237252,
+        0.004966759316804289,
+        0.0008859446330071383
+      ],
+      "absolute_max_error": 6.581663912643906e-05,
+      "relative_max_error": 0.003567591747330489
+    },
+    {
+      "nu": 0.25,
+      "detuning": 0.5,
+      "kappa": 0.5,
+      "finite_susceptibility_per_time": [
+        0.0418510512376248,
+        0.026932699979044305,
+        0.008665597228073836,
+        0.0013137754535585654
+      ],
+      "continuum_susceptibility_per_time": [
+        0.04243216269834757,
+        0.027253980484871876,
+        0.0087350638966645,
+        0.0013196145382013173
+      ],
+      "absolute_max_error": 0.0005811114607227677,
+      "relative_max_error": 0.013695070525957373
+    },
+    {
+      "nu": -0.25,
+      "detuning": -0.5,
+      "kappa": 0.5,
+      "finite_susceptibility_per_time": [
+        -0.04185105123762481,
+        -0.0269326999790443,
+        -0.008665597228073826,
+        -0.0013137754535585656
+      ],
+      "continuum_susceptibility_per_time": [
+        -0.04243216269834757,
+        -0.027253980484871876,
+        -0.008735063896664503,
+        -0.0013196145382013153
+      ],
+      "absolute_max_error": 0.0005811114607227608,
+      "relative_max_error": 0.01369507052595721
+    },
+    {
+      "nu": 2.0,
+      "detuning": 0.5,
+      "kappa": 0.5,
+      "finite_susceptibility_per_time": [
+        0.12058650761913654,
+        0.04981489506119315,
+        0.010963279674521924,
+        0.0019603866450330332
+      ],
+      "continuum_susceptibility_per_time": [
+        0.12163874508418723,
+        0.050152334269592404,
+        0.011026490977924698,
+        0.0019751391691372874
+      ],
+      "absolute_max_error": 0.00105223746505069,
+      "relative_max_error": 0.008650512337351288
+    },
+    {
+      "nu": -2.0,
+      "detuning": -0.5,
+      "kappa": 0.5,
+      "finite_susceptibility_per_time": [
+        -0.12058650761913658,
+        -0.04981489506119316,
+        -0.010963279674521924,
+        -0.0019603866450330332
+      ],
+      "continuum_susceptibility_per_time": [
+        -0.12163874508418722,
+        -0.050152334269592404,
+        -0.011026490977924694,
+        -0.0019751391691372874
+      ],
+      "absolute_max_error": 0.0010522374650506344,
+      "relative_max_error": 0.008650512337350832
+    }
+  ]
+}

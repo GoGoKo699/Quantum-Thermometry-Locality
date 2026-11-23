@@ -19,7 +19,7 @@ Define the positive constants
 
 ```math
 \begin{aligned}
-E_{\max}&=\nu+2,\\
+E_{\max}&=|\nu|+2,\\
 \eta&=(1+e^{b_+E_{\max}})^{-1},\\
 K&=\frac{E_{\max}^2}{32\eta(1-\eta)},\\
 W&=b_+-b_-,\\
@@ -259,12 +259,12 @@ The factor $`1/2`$ is the integral of $`1-s`$ from zero to one. This establishes
 
 ### Applying the estimate to thermal covariances
 
-Positivity of the band and the parameter interval give
+The bound on one-particle energies and the compact parameter interval give
 
 ```math
 \begin{aligned}
-\eta I&\le C_{b,R}\le\frac12 I\le(1-\eta)I,\\
-\eta&=(1+e^{b_+(\nu+2)})^{-1}.
+\eta I&\le C_{b,R}\le(1-\eta)I,\\
+\eta&=(1+e^{b_+E_{\max}})^{-1}.
 \end{aligned}
 ```
 
@@ -386,7 +386,7 @@ gives the stated log-temperature lower bound. All unfavorable records are includ
 
 The locality step limits the temperature information that can reach the complete accessible output during the elapsed time. The thermal step bounds distinguishability in the initial region of size $`R=O(r+\tau)`$. Their combination yields a global minimax statement even when the controller is large, fast, adaptive, and fully monitored.
 
-The argument requires fixed bath bonds outside the contacted region and an initially parameter-independent apparatus. It also uses a fixed compact positive inverse-temperature interval to keep the covariance spectra away from zero and one. It makes no claim about a pointwise Fisher-information derivative of the full output. The [counted sensor construction](counted_sensor.md) establishes attainability for the positive-band model and completes the matching resource law.
+The argument requires fixed bath bonds outside the contacted region and an initially parameter-independent apparatus. It also uses a fixed compact positive inverse-temperature interval to keep the covariance spectra away from zero and one. It makes no claim about a pointwise Fisher-information derivative of the full output. The [counted sensor construction](counted_sensor.md) establishes attainability for every fixed known field and completes the matching resource law.
 
 ## Primary references
 

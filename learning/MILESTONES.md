@@ -36,7 +36,7 @@ The progression is from one occupation and one bond to an entire temperature-est
 | [M02](#m02-a-bounded-exchange-link-and-its-time-scale) | Identify the microscopic coupling and time resource. |
 | [M03](#m03-from-the-endpoint-spin-chain-to-thermal-modes) | Represent the thermal chain by its covariance. |
 | [M04](#m04-the-state-of-an-accessible-block) | Preserve the actual correlated marginal. |
-| [M05](#m05-a-positive-band-and-a-fixed-temperature-interval) | Identify the assumptions behind uniform response. |
+| [M05](#m05-energy-signs-and-a-fixed-temperature-interval) | Identify the opposite responses of positive and negative energies. |
 | [M06](#m06-a-microscopic-bath-and-a-reduced-generator) | Separate the two roles of reduced dynamics. |
 | [M07](#m07-a-loss-event-and-its-measurement-record) | Relate detection, disturbance, and sensor reset. |
 | [M08](#m08-instruments-and-the-complete-output) | Include every accessible record and memory. |
@@ -95,17 +95,17 @@ The progression is from one occupation and one bond to an entire temperature-est
 
 **Sources.** Anchor: WM Appendix A.2, p. 404. Science: [actual local thermal states](../science/model_and_results.md#reservoir-and-temperature-parameter); [thermal distinguishability of the actual marginal](../science/locality_converse.md#thermal-distinguishability-of-the-actual-marginal).
 
-### M05. A positive band and a fixed temperature interval
+### M05. Energy signs and a fixed temperature interval
 
-**Central question.** Which assumptions keep thermal occupation uniformly responsive to the parameter?
+**Central question.** How do the bath field and the temperature interval govern thermal occupations?
 
-**Understanding target.** Explain the roles of $`\nu\gt 2`$ and a fixed compact interval $`0\lt b_-\lt b_+\lt\infty`$. The covariance eigenvalues stay away from zero and one, and every positive-energy occupation decreases with $`b`$. Distinguish a strictly positive response on a fixed interval from a response bound uniform down to zero temperature.
+**Understanding target.** Locate the band $`[\nu-2,\nu+2]`$ for a fixed known field $`\nu`$. Increasing $`b`$ lowers positive-energy occupations and raises negative-energy occupations. At zero field the band is symmetric, and $`f_b(E)+f_b(-E)=1`$. On a fixed compact interval $`0\lt b_-\lt b_+\lt\infty`$, the covariance eigenvalues stay away from zero and one even when the band crosses zero.
 
-**Dependencies and story role.** M01, M03, M04. Identify the quantitative assumptions shared by the information bound and the explicit estimator.
+**Dependencies and story role.** M01, M03, M04. Identify the spectral bounds for the converse and the sign cancellation the estimator must address.
 
-**Conceptual connection.** Spectral control supplies both an entropy constant and an inverse-mean stability constant; their physical roles are different.
+**Conceptual connection.** The entropy bound uses the full covariance range. An inverse-mean estimator also needs a measured statistic that weighs the energies so their responses survive averaging.
 
-**Sources.** Anchor: WM §3.5, p. 113. Science: [thermal covariance bounds](../science/locality_converse.md#applying-the-estimate-to-thermal-covariances); [uniform susceptibility](../science/counted_sensor.md#4-a-global-estimator-including-biased-outcomes); [scope](../science/model_and_results.md#scope-of-the-theorem).
+**Sources.** Anchor: WM §3.5, p. 113. Science: [thermal covariance bounds](../science/locality_converse.md#applying-the-estimate-to-thermal-covariances); [zero-field cancellation](../science/counted_sensor.md#the-undetuned-count-at-zero-field); [scope](../science/model_and_results.md#scope-of-the-theorem).
 
 ### M06. A microscopic bath and a reduced generator
 
@@ -229,7 +229,7 @@ The converse starts at the controlled boundary and reaches a statement about eve
 | [M20](#m20-convert-locality-into-a-global-risk-lower-bound) | Complete the all-control converse. |
 | [M21](#m21-build-the-fixed-counted-sensor) | Specify the attaining physical instrument. |
 | [M22](#m22-identify-the-physical-spin-count-distribution) | Derive the observed count law. |
-| [M23](#m23-prove-a-continuing-supply-of-detectable-modes) | Prove linear extraction from one bath. |
+| [M23](#m23-recover-temperature-response-by-detuning) | Prove a nonzero long-time temperature response. |
 | [M24](#m24-define-the-infinite-bath-count-and-its-finite-size-limits) | Control the infinite-volume and count limits. |
 | [M25](#m25-estimate-temperature-from-every-possible-count) | Obtain a uniform global upper bound. |
 | [M26](#m26-join-spatial-access-and-elapsed-time) | Establish the matching joint resource law. |
@@ -314,7 +314,7 @@ The converse starts at the controlled boundary and reaches a statement about eve
 
 **Central question.** Which fixed local apparatus converts the chain's existing excitations into an accessible record?
 
-**Understanding target.** Specify one initially empty sensor, exchange coupling $`J`$, matching on-site energy, and counted loss at physical rate $`J/(2\hbar)`$. Identify the detector and its classical count as apparatus resources. The reset channel is temperature independent, and the same thermal chain evolves throughout. Ideal continuous monitoring is an admissible instrument limit.
+**Understanding target.** Specify one initially empty sensor, exchange coupling $`J`$, on-site energy $`J(\nu+d)`$, and counted loss at physical rate $`J/(2\hbar)`$. The fixed detuning $`d`$ is positive for a nonnegative bath field and negative for a negative bath field. The reset channel is temperature independent, and the same thermal chain evolves throughout. Ideal continuous monitoring is an admissible instrument limit.
 
 **Dependencies and story role.** M02, M03, M06, M07, M14. Start the separate attaining branch with a concrete physical experiment.
 
@@ -334,17 +334,17 @@ The converse starts at the controlled boundary and reaches a statement about eve
 
 **Sources.** Anchor: WM §§4.2–4.3, pp. 149 and 154. Science: [Gaussian even-sector evolution](../science/counted_sensor.md#gaussian-evolution-in-the-even-sector); [jumps and lost excitations](../science/counted_sensor.md#relate-counted-jumps-to-lost-excitations); [count determinant](../science/counted_sensor.md#2-the-actual-spin-count-has-a-determinant-law).
 
-### M23. Prove a continuing supply of detectable modes
+### M23. Recover temperature response by detuning
 
-**Central question.** Why can a single boundary sensor keep extracting information from one unreprepared half-chain?
+**Central question.** How can one fixed change to the sensor produce a temperature-dependent mean count when the bath is particle–hole symmetric?
 
-**Understanding target.** Connect the loss trace to a boundary survival probability. Explain the roles of the semicircle spectral density, the finite squared return-amplitude integral, and the dissipative rank-one resolvent bound. Interpret $`\mathrm{Tr}\,M_\tau\ge\kappa q\tau-1`$ with fixed $`\kappa=1/2`$ and $`q=1-4/(3\pi)\gt 0`$: the linear term supplies growing loss channels, and the subtraction removes the initially empty sensor mode.
+**Understanding target.** At zero field and zero detuning, pair energies $`\pm E`$ to explain why the mean count has zero derivative with respect to temperature at every elapsed time. Describe how the damped boundary return and rank-one resolvent give a limiting detector weight. At positive detuning and zero field that weight favors positive energies, so the paired susceptibility has a strict sign. Explain how the fixed known field determines the sign of detuning, and how uniform convergence on the temperature interval gives $`|\partial_b\mathbb E_b N_\tau|\ge m\tau`$ for sufficiently long times.
 
-**Dependencies and story role.** M02, M03, M21, M22. Establish the dynamical supply needed for an inverse-time upper bound.
+**Dependencies and story role.** M02, M03, M05, M21, M22. Establish the dynamical temperature response needed for an inverse-time upper bound.
 
-**Conceptual connection.** The available modes grow because excitations propagate from an extended initial bath, not because the detector creates new thermal samples.
+**Conceptual connection.** A detector can register many events even when its mean carries no temperature dependence. The asymmetry of the detector weight makes the mean useful, and propagation from the extended initial bath sustains the signal.
 
-**Sources.** Anchor: WM §3.5, p. 113, and §4.2, p. 149; the return-amplitude estimate is supplied by the project. Science: [linear extraction](../science/counted_sensor.md#3-linear-extraction-from-the-initially-thermal-half-chain); [free boundary return](../science/counted_sensor.md#the-free-boundary-return-has-finite-squared-integral); [dissipative bound](../science/counted_sensor.md#dissipation-cannot-increase-that-squared-integral).
+**Sources.** Anchor: WM §3.5, p. 113, and §4.2, p. 149. Science: [zero-field cancellation](../science/counted_sensor.md#the-undetuned-count-at-zero-field); [detuned spectral weight](../science/counted_sensor.md#detuned-thermal-response-at-any-known-field); [strict temperature response](../science/counted_sensor.md#strict-temperature-response).
 
 ### M24. Define the infinite-bath count and its finite-size limits
 
@@ -362,7 +362,7 @@ The converse starts at the controlled boundary and reaches a statement about eve
 
 **Central question.** How can the count produce a global error bound without local unbiasedness or asymptotic normality?
 
-**Understanding target.** Use the positive-band susceptibility to bound the slope of the calibrated mean, and the count law to bound its variance. Explain clipping to the mean range and inversion, including counts outside that range. Combine the resulting error bound with a midpoint estimate at short times, then convert to squared log-temperature loss on the fixed interval.
+**Understanding target.** Use the detuned susceptibility to bound the magnitude of the calibrated mean slope, and the count law to bound its variance by $`\kappa\tau`$. Explain clipping to the mean range and inversion for both slope signs, including counts outside that range. Combine the resulting error bound with a midpoint estimate at short times, then convert to squared log-temperature loss on the fixed interval.
 
 **Dependencies and story role.** M05, M13, M22, M23, M24. Complete the temporal attaining construction with an estimator defined for every outcome.
 
@@ -374,7 +374,7 @@ The converse starts at the controlled boundary and reaches a statement about eve
 
 **Central question.** How do the converse and two simple measurements establish the full $`1/(r+\tau)`$ law?
 
-**Understanding target.** Explain the initial block-occupation measurement, its true marginal covariance, variance of order $`r`$, and susceptibility of order $`r`$. Use the permitted instantaneous instrument when $`r\ge\tau`$ and the counted-sensor construction otherwise. Combine this all-time upper bound with the converse, without assuming independence between block and temporal samples.
+**Understanding target.** Explain the initial block-energy measurement using the true marginal covariance. Identify the bulk energy susceptibility, which has the same sign for both energy signs, and the bounded correction from the cut bond. The slope has magnitude at least proportional to $`r`$ for large $`r`$, and the variance is bounded by a constant times $`r`$. Choose the instantaneous block experiment when $`r\ge\tau`$ and the counted-sensor construction otherwise, then combine with the converse.
 
 **Dependencies and story role.** M04, M13, M14, M20, M25. Join the two proof branches into the exact minimax order for every $`r\ge1`$ and $`\tau\ge0`$.
 
@@ -386,7 +386,7 @@ The converse starts at the controlled boundary and reaches a statement about eve
 
 **Central question.** Which operationally accessible record displays the collective enhancement predicted by the reference Markov model?
 
-**Understanding target.** Explain the central Dicke-state preparation, frequent probe-population measurements, recorded transition direction, and restoration. Identify the enhanced, temperature-independent total rate $`\Lambda_N=a_N\Gamma`$ and the temperature-dependent labels of the marked Poisson record. Interpret its global risk of order $`(1+\Lambda_N\tau)^{-1}`$ as an attainable property of this record, not an assertion about every possible Markov protocol.
+**Understanding target.** Specify a positive probe spacing in the interior of the bath band. Explain the central Dicke-state preparation, frequent probe-population measurements, recorded transition direction, and restoration. Identify the enhanced, temperature-independent total rate $`\Lambda_N=a_N\Gamma`$ and the temperature-dependent labels of the marked Poisson record. Interpret its global risk of order $`(1+\Lambda_N\tau)^{-1}`$ as an attainable property of this record, not an assertion about every possible Markov protocol.
 
 **Dependencies and story role.** M06, M07, M09, M13, M26. Define a concrete statistical experiment against which microscopic locality can be compared.
 
@@ -410,7 +410,7 @@ The converse starts at the controlled boundary and reaches a statement about eve
 
 **Central question.** What is established, what is inherited, and which changes would require a new theorem?
 
-**Understanding target.** State the roles of a positive band, fixed compact interval, one initially thermal half-chain, fixed contacts, and bounded outgoing bonds. Explain how a moving contact, fresh thermal inputs, a temperature-bearing actuator, or an unbounded local bosonic degree of freedom changes the model. Separate the matched complete-experiment result from its established locality, Gaussian, counting, and statistical ingredients.
+**Understanding target.** State the roles of the fixed known field, fixed compact interval, one initially thermal half-chain, fixed contacts, and bounded outgoing bonds. Explain how an unknown field, moving contact, fresh thermal input, temperature-bearing actuator, or unbounded local bosonic degree of freedom changes the model. Identify which parts of the complete-experiment result use established locality, Gaussian, counting, and statistical methods.
 
 **Dependencies and story role.** M05, M14, M24, M26, M28. Delimit the interpretation before the final synthesis.
 
@@ -422,7 +422,7 @@ The converse starts at the controlled boundary and reaches a statement about eve
 
 **Central question.** Why does $`r+Jt/\hbar`$ control optimal thermometric precision in this model?
 
-**Understanding target.** Give a connected account: the unknown temperature is initially encoded in the bath; bounded links limit which initial region can influence every accessible record; that region has bounded thermal distinguishability; a fixed counted sensor and initial block readout attain the resulting order. Interpret the mean squared log-temperature law and its square root, with constants and scope intact.
+**Understanding target.** Explain how bounded links limit which initially thermal region can influence every accessible record, and how that region's distinguishability bounds estimation. Explain why the detuned counted sensor and initial block-energy readout attain the resulting order, including at zero field. Interpret the mean squared log-temperature law and its square root.
 
 **Dependencies and story role.** M14, M20, M26, M28, M29. Complete the narrative by joining mechanisms, global statistics, and physical implications.
 

@@ -50,7 +50,7 @@ def spin_chain(sites: int, nu: float):
 
 
 def spin_count_distribution(bath_sites: int, nu: float, b: float,
-                            kappa: float, tau: float):
+                            kappa: float, tau: float, detuning: float):
     bath_hamiltonian, _, _ = spin_chain(bath_sites, nu)
     thermal = expm(-b * bath_hamiltonian.toarray())
     thermal /= np.trace(thermal)
@@ -60,6 +60,7 @@ def spin_count_distribution(bath_sites: int, nu: float, b: float,
     dimension = hamiltonian.shape[0]
     identity = sparse.eye(dimension, format="csr", dtype=complex)
     n0 = number[0]
+    hamiltonian += detuning * n0
     # Column-major vectorization: vec(A rho B) = (B.T tensor A) vec(rho).
     no_jump = (
         -1j * (sparse.kron(identity, hamiltonian)
@@ -105,7 +106,7 @@ def spin_count_distribution(bath_sites: int, nu: float, b: float,
 
 
 def gaussian_prediction(bath_sites: int, nu: float, b: float,
-                        kappa: float, tau: float):
+                        kappa: float, tau: float, detuning: float):
     h_bath = (
         nu * np.eye(bath_sites)
         - np.eye(bath_sites, k=1) - np.eye(bath_sites, k=-1)
@@ -118,7 +119,7 @@ def gaussian_prediction(bath_sites: int, nu: float, b: float,
         - np.eye(total_sites, k=1) - np.eye(total_sites, k=-1)
     )
     generator = -1j * h_extended
-    generator[0, 0] -= kappa / 2
+    generator[0, 0] -= kappa / 2 + 1j * detuning
     propagator = expm(tau * generator)
     loss = np.eye(total_sites) - propagator.conj().T @ propagator
     q = root_covariance @ loss[1:, 1:] @ root_covariance
@@ -134,11 +135,11 @@ def gaussian_prediction(bath_sites: int, nu: float, b: float,
 
 
 def verify_case(bath_sites: int, nu: float, b: float,
-                kappa: float, tau: float) -> dict:
+                kappa: float, tau: float, detuning: float = 0.0) -> dict:
     actual, diagnostics = spin_count_distribution(
-        bath_sites, nu, b, kappa, tau
+        bath_sites, nu, b, kappa, tau, detuning
     )
-    predicted, q = gaussian_prediction(bath_sites, nu, b, kappa, tau)
+    predicted, q = gaussian_prediction(bath_sites, nu, b, kappa, tau, detuning)
     count = np.arange(bath_sites + 1)
     mean = float(count @ actual)
     variance = float((count - mean)**2 @ actual)
@@ -168,6 +169,7 @@ def verify_case(bath_sites: int, nu: float, b: float,
         "b": b,
         "kappa": kappa,
         "tau": tau,
+        "detuning": detuning,
         "full_pmf_max_error": distribution_error,
         "characteristic_max_error": characteristic_error,
         "mean": mean,
@@ -183,14 +185,18 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, help="Also save the JSON report.")
     arguments = parser.parse_args()
-    # Includes vacuum-at-zero-time, weak initial exposure, and several
-    # nontrivial interacting spin evolutions. Fixed kappa=1/2 is the protocol.
+    # Keep the positive-band benchmarks and test the detuned sensor at
+    # half filling and on both sides of the symmetric band.
     cases = [
         (2, 3.0, 0.7, 0.5, 0.0),
         (2, 2.2, 0.3, 0.5, 0.1),
         (1, 3.0, 0.7, 0.5, 2.3),
         (3, 3.0, 1.2, 0.5, 4.0),
         (4, 2.4, 0.4, 0.5, 2.3),
+        (3, 0.0, 1.2, 0.5, 4.0, 0.5),
+        (4, 0.0, 0.4, 2.0, 2.3, 0.5),
+        (3, 0.25, 0.7, 0.5, 3.0, 0.5),
+        (3, -0.25, 0.7, 0.5, 3.0, -0.5),
     ]
     results = [verify_case(*case) for case in cases]
     report = {
