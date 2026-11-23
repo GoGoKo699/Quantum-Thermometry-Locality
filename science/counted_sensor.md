@@ -144,15 +144,15 @@ L_\tau&=\kappa\int_0^\tau
 \end{aligned}
 ```
 
-This is a positive trace-class operator: differentiate $`K_s^*K_s`$ and use $`\|K_s\|\le1`$. Thus $`M_\tau`$ and $`Q_\tau(b)`$ are trace class, and the infinite determinant is a well-defined Fredholm determinant.
+This is a positive trace-class operator: differentiate $`K_s^*K_s`$ and use $`\Vert K_s\Vert\le1`$. Thus $`M_\tau`$ and $`Q_\tau(b)`$ are trace class, and the infinite determinant is a well-defined Fredholm determinant.
 
 There is also a direct limit from finite spin experiments. Truncate the bath after site $`n`$ and embed its one-particle vectors into the half-chain. Bounded finite-range generators imply $`K_{n,s}^*|0\rangle\to K_s^*|0\rangle`$, uniformly on a fixed compact time interval. Polynomial approximation of the exponentials proves this assertion directly. The rank-one integral above then gives $`L_{n,\tau}\to L_\tau`$ in trace norm. Finite-volume thermal covariances, extended by zero, converge strongly to $`C_b`$, by continuous functional calculus for the bounded one-particle Hamiltonians. Their norms are at most $`1`$. Strong convergence of their square roots, together with the trace-norm convergence of $`M_{n,\tau}`$, gives
 
 ```math
-\|Q_{n,\tau}(b)-Q_\tau(b)\|_1\longrightarrow0.
+\Vert Q_{n,\tau}(b)-Q_\tau(b)\Vert_1\longrightarrow0.
 ```
 
-Fredholm determinant continuity proves convergence of the count generating functions on the unit circle. Traces of $`Q`$ and $`Q^2`$ also converge. To identify this with the actual infinite spin experiment, construct its local dynamics as the thermodynamic limit of the finite spin channels. Each number-resolved Dyson term contains finitely many local jump insertions; the term with $`k`$ insertions is bounded by $`(\kappa\tau)^k/k!`$, so the finite-volume limit passes through the sum. At all times, the conditional jump intensity is at most $`\|\ell^*\ell\|=\kappa`$. A Poisson process of rate $`\kappa`$ therefore dominates the count, uniformly in bath length, giving convergence of all fixed count moments along with the local instrument limit. In particular, the displayed mean and variance are the physical infinite-volume moments. No infinite total bath-excitation observable or global thermal density matrix is required.
+Fredholm determinant continuity proves convergence of the count generating functions on the unit circle. Traces of $`Q`$ and $`Q^2`$ also converge. To identify this with the actual infinite spin experiment, construct its local dynamics as the thermodynamic limit of the finite spin channels. Each number-resolved Dyson term contains finitely many local jump insertions; the term with $`k`$ insertions is bounded by $`(\kappa\tau)^k/k!`$, so the finite-volume limit passes through the sum. At all times, the conditional jump intensity is at most $`\Vert\ell^*\ell\Vert=\kappa`$. A Poisson process of rate $`\kappa`$ therefore dominates the count, uniformly in bath length, giving convergence of all fixed count moments along with the local instrument limit. In particular, the displayed mean and variance are the physical infinite-volume moments. No infinite total bath-excitation observable or global thermal density matrix is required.
 
 ## 3. Linear extraction from the initially thermal half-chain
 
@@ -178,9 +178,9 @@ For $`\nu=d=0`$, let $`\Theta`$ conjugate the site amplitudes and multiply the a
 **Separate the vacuum preparation from the spectral calculation.** The operator $`h_{\mathrm{cut}}=\nu P_0\oplus h_B`$ differs from $`h_0`$ by the rank-two coupling across the sensor bond. Take a contour enclosing both real spectra with imaginary parts of magnitude strictly less than $`\pi/b_+`$. Let $`\ell_{\mathrm c}`$ be its length, $`M_g`$ a uniform bound on the analytic functions $`g_b(z)`$ there for $`b\in B`$, and $`M_R`$ a common bound on the two resolvent norms. The resolvent identity gives
 
 ```math
-\sup_{b\in B}\|g_b(h_0)-g_b(h_{\mathrm{cut}})\|_1
+\sup_{b\in B}\Vert g_b(h_0)-g_b(h_{\mathrm{cut}})\Vert_1
 \le\frac{\ell_{\mathrm c}}{2\pi}\,
-\|h_0-h_{\mathrm{cut}}\|_1 M_g M_R^2
+\Vert h_0-h_{\mathrm{cut}}\Vert_1 M_g M_R^2
 \lt\infty.
 ```
 
@@ -189,7 +189,7 @@ Removing the single entry $`g_b(\nu)P_0`$ from $`g_b(h_{\mathrm{cut}})`$ gives $
 **Compute the continuum response.** Let $`c=d+i\kappa/2`$. Then $`u_s=e^{i(h_0+cP_0)s}|0\rangle`$. The boundary amplitude $`a(s)=\langle0|u_s\rangle`$ satisfies
 
 ```math
-\frac{d}{ds}\|u_s\|^2=-\kappa |a(s)|^2,
+\frac{d}{ds}\Vert u_s\Vert^2=-\kappa |a(s)|^2,
 \qquad \int_0^\infty |a(s)|^2\,ds\le\kappa^{-1}.
 ```
 
@@ -233,8 +233,8 @@ The denominator is strictly positive since $`1+d^2-dx\ge(1-|d|)^2`$ and $`\kappa
 \int g_b(E)\frac{w_\nu(E)}{D(E)}\,dE
 ```
 
-uniformly in $`b`$. Indeed $`\|v_s\|_{L^2(w_\nu)}\le1`$ by contractivity, and the difference of the quadratic forms is bounded by
-$`\sup_{b\in B}\|g_b(h_0)\|\,\|v_s-v_\infty\|_{L^2(w_\nu)}(\|v_s\|_{L^2(w_\nu)}+\|v_\infty\|_{L^2(w_\nu)})`$. Averaging in time and using the preparation bound gives the uniform limiting count slope
+uniformly in $`b`$. Indeed $`\Vert v_s\Vert_{L^2(w_\nu)}\le1`$ by contractivity, and the difference of the quadratic forms is bounded by
+$`\sup_{b\in B}\Vert g_b(h_0)\Vert\,\Vert v_s-v_\infty\Vert_{L^2(w_\nu)}(\Vert v_s\Vert_{L^2(w_\nu)}+\Vert v_\infty\Vert_{L^2(w_\nu)})`$. Averaging in time and using the preparation bound gives the uniform limiting count slope
 
 ```math
 \boxed{
@@ -289,7 +289,7 @@ To bound the slope, let $`m_*=\min_{b\in B,\ E\in[\nu-2,\nu+2]} f_b(E)[1-f_b(E)]
 &=\mathrm{Tr}(A_r P_r g_b(h_B)P_r)\\
 &\ge m_*\mathrm{Tr}(P_r h_B^2 P_r)
 -\big|\mathrm{Tr}\big(P_r h_B(I-P_r)g_b(h_B)P_r\big)\big|\\
-&\ge m_*[r(\nu^2+2)-1]-\|g_b(h_B)\|.
+&\ge m_*[r(\nu^2+2)-1]-\Vert g_b(h_B)\Vert.
 \end{aligned}
 ```
 

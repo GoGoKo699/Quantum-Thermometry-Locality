@@ -149,7 +149,7 @@ uniformly over $`N`$, $`\lambda`$, the probe preparation and all subsequent cont
 Fix $`\tau>0`$. The [two-point converse](locality_converse.md) supplies distinct parameters $`b_0,b_1`$ in the interval, separated by a constant times $`(1+\tau)^{-1/2}`$, such that
 
 ```math
-\|P^{\rm mic}_{b_0,N}-P^{\rm mic}_{b_1,N}\|_{\rm TV}
+\Vert P^{\rm mic}_{b_0,N}-P^{\rm mic}_{b_1,N}\Vert_{\rm TV}
 \leq q_0<1
 ```
 
@@ -158,7 +158,7 @@ for every allowed microscopic protocol, with $`q_0`$ independent of $`N`$ and it
 Suppose $`\Lambda_N\to\infty`$ at this fixed time. Under the Markov model, the normalized upward count consistently estimates $`p_b`$, and $`p_{b_0}\ne p_{b_1}`$. Thresholding that estimate distinguishes the two parameters with error tending to zero. Choosing a sufficiently fine finite cadence therefore yields
 
 ```math
-\|P^{\rm M}_{b_0,N}-P^{\rm M}_{b_1,N}\|_{\rm TV}\longrightarrow1.
+\Vert P^{\rm M}_{b_0,N}-P^{\rm M}_{b_1,N}\Vert_{\rm TV}\longrightarrow1.
 ```
 
 The microscopic and Markov distributions here refer to the same probe-measurement record for each $`N`$. If
@@ -166,7 +166,7 @@ The microscopic and Markov distributions here refer to the same probe-measuremen
 ```math
 \epsilon_N=
 \max_{j\in\{0,1\}}
-\|P^{\rm mic}_{b_j,N}-P^{\rm M}_{b_j,N}\|_{\rm TV},
+\Vert P^{\rm mic}_{b_j,N}-P^{\rm M}_{b_j,N}\Vert_{\rm TV},
 ```
 
 the triangle inequality gives
@@ -174,7 +174,7 @@ the triangle inequality gives
 ```math
 \begin{aligned}
 2\epsilon_N&\geq
-\|P^{\rm M}_{b_0,N}-P^{\rm M}_{b_1,N}\|_{\rm TV}-q_0,\\
+\Vert P^{\rm M}_{b_0,N}-P^{\rm M}_{b_1,N}\Vert_{\rm TV}-q_0,\\
 \liminf_{N\to\infty}\epsilon_N
 &\geq\frac{1-q_0}{2}>0.
 \end{aligned}

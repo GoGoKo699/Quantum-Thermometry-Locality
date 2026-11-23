@@ -105,7 +105,7 @@ The progression is from one occupation and one bond to an entire temperature-est
 
 **Conceptual connection.** The entropy bound uses the full covariance range. An inverse-mean estimator also needs a measured statistic that weighs the energies so their responses survive averaging.
 
-**Sources.** Anchor: WM §3.5, p. 113. Science: [thermal covariance bounds](../science/locality_converse.md#applying-the-estimate-to-thermal-covariances); [zero-field cancellation](../science/counted_sensor.md#the-undetuned-count-at-zero-field); [scope](../science/model_and_results.md#scope-of-the-theorem).
+**Sources.** WM §3.5, p. 113. See the proofs of the [thermal covariance bounds](../science/locality_converse.md#applying-the-estimate-to-thermal-covariances) and [zero-field cancellation](../science/counted_sensor.md#the-undetuned-count-at-zero-field), and the [theorem scope](../science/model_and_results.md#scope-of-the-theorem).
 
 ### M06. A microscopic bath and a reduced generator
 
@@ -344,7 +344,7 @@ The converse starts at the controlled boundary and reaches a statement about eve
 
 **Conceptual connection.** A detector can register many events even when its mean carries no temperature dependence. The asymmetry of the detector weight makes the mean useful, and propagation from the extended initial bath sustains the signal.
 
-**Sources.** Anchor: WM §3.5, p. 113, and §4.2, p. 149. Science: [zero-field cancellation](../science/counted_sensor.md#the-undetuned-count-at-zero-field); [detuned spectral weight](../science/counted_sensor.md#detuned-thermal-response-at-any-known-field); [strict temperature response](../science/counted_sensor.md#strict-temperature-response).
+**Sources.** WM §3.5, p. 113, and §4.2, p. 149. Follow the derivation from [zero-field cancellation](../science/counted_sensor.md#the-undetuned-count-at-zero-field) through the [detuned spectral weight](../science/counted_sensor.md#detuned-thermal-response-at-any-known-field) to the [strict temperature response](../science/counted_sensor.md#strict-temperature-response).
 
 ### M24. Define the infinite-bath count and its finite-size limits
 

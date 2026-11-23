@@ -6,7 +6,7 @@ Throughout, time is dimensionless, $`\tau=Jt/\hbar`$, inverse temperature is $`b
 
 ```math
 \begin{aligned}
-T(\rho,\sigma)&=\frac12\|\rho-\sigma\|_1,\\
+T(\rho,\sigma)&=\frac12\Vert\rho-\sigma\Vert_1,\\
 D(\rho\Vert\sigma)&=\mathrm{tr}\,\rho(\log\rho-\log\sigma).
 \end{aligned}
 ```
@@ -54,7 +54,7 @@ Go to the interaction picture of the complete Hamiltonian internal to vertex $`0
 \begin{aligned}
 H(s)&=\sum_{j\ge0}v_j(s),\\
 \mathrm{supp}\,v_j(s)&\subseteq\{j,j+1\},\\
-\|v_j(s)\|&\le1.
+\Vert v_j(s)\Vert&\le1.
 \end{aligned}
 ```
 
@@ -65,7 +65,7 @@ For a Heisenberg propagator $`\alpha_{s,t}`$, define the local generators
 ```math
 \begin{aligned}
 \mathcal L_j(s)(O)&=i[v_j(s),O],\\
-\|\mathcal L_j(s)\|_{\infty\to\infty}&\le2.
+\Vert\mathcal L_j(s)\Vert_{\infty\to\infty}&\le2.
 \end{aligned}
 ```
 
@@ -80,11 +80,11 @@ Let $`O`$ be supported on vertex $`0`$. For an edge support $`X`$, let
 ```math
 F_X(s)
 =\sup_{\mathcal K_X\ne0}
-\frac{\|\mathcal K_X\alpha_{s,t}(O)\|}
-{\|\mathcal K_X\|},
+\frac{\Vert\mathcal K_X\alpha_{s,t}(O)\Vert}
+{\Vert\mathcal K_X\Vert},
 ```
 
-where the supremum is over linear maps supported on $`X`$ that annihilate the identity, with their induced operator norm on the full finite system. In particular, local commutators and the generators $`\mathcal L_j(s)`$ belong to this class. Always $`F_X(s)\le\|O\|`$.
+where the supremum is over linear maps supported on $`X`$ that annihilate the identity, with their induced operator norm on the full finite system. In particular, local commutators and the generators $`\mathcal L_j(s)`$ belong to this class. Always $`F_X(s)\le\Vert O\Vert`$.
 
 Split the generator into terms disjoint from $`X`$ and terms touching $`X`$. A map supported on $`X`$ commutes with the former terms. Variation of constants, followed by norm preservation of unitary Heisenberg evolution, gives
 
@@ -95,21 +95,21 @@ Equation (1).
 F_X(s)
 &\le F_X(t)\\
 &\quad+\sum_{Y:\,Y\cap X\ne\varnothing}
-\int_s^t\|\mathcal L_Y(u)\|\,F_Y(u)\,du.
+\int_s^t\Vert\mathcal L_Y(u)\Vert\,F_Y(u)\,du.
 \end{aligned}
 ```
 
-For completeness, apply this to $`G(s)=\mathcal K_X\alpha_{s,t}(O)`$. Its differential equation contains the homogeneous term $`-\mathcal L_{\mathrm{disjoint}\,X}(s)G(s)`$ and the inhomogeneous terms $`-\mathcal K_X\mathcal L_Y(s)\alpha_{s,t}(O)`$ for edges touching $`X`$. The propagator of the homogeneous term has norm one. Dividing its integral equation by $`\|\mathcal K_X\|`$ and taking the supremum yields (1).
+For completeness, apply this to $`G(s)=\mathcal K_X\alpha_{s,t}(O)`$. Its differential equation contains the homogeneous term $`-\mathcal L_{\mathrm{disjoint}\,X}(s)G(s)`$ and the inhomogeneous terms $`-\mathcal K_X\mathcal L_Y(s)\alpha_{s,t}(O)`$ for edges touching $`X`$. The propagator of the homogeneous term has norm one. Dividing its integral equation by $`\Vert\mathcal K_X\Vert`$ and taking the supremum yields (1).
 
-Now take $`X=\{d,d+1\}`$ with $`d\ge1`$. Iterating (1) produces paths of overlapping edges. A nonzero terminal term must meet vertex $`0`$, so it requires at least $`d`$ steps. There are at most $`3^n`$ paths of length $`n`$, each contributes at most $`2^n`$ from the generator norms, and its ordered time integrals have volume $`(t-s)^n/n!`$. The remainder vanishes because $`F_Y\le\|O\|`$ and this factorial dominates the bounded branching. Thus
+Now take $`X=\{d,d+1\}`$ with $`d\ge1`$. Iterating (1) produces paths of overlapping edges. A nonzero terminal term must meet vertex $`0`$, so it requires at least $`d`$ steps. There are at most $`3^n`$ paths of length $`n`$, each contributes at most $`2^n`$ from the generator norms, and its ordered time integrals have volume $`(t-s)^n/n!`$. The remainder vanishes because $`F_Y\le\Vert O\Vert`$ and this factorial dominates the bounded branching. Thus
 
 Equation (2).
 
 ```math
 \begin{aligned}
 F_X(s)
-&\le\|O\|\sum_{n\ge d}\frac{[6(t-s)]^n}{n!}\\
-&\le\|O\|e^{6e(t-s)-d}.
+&\le\Vert O\Vert\sum_{n\ge d}\frac{[6(t-s)]^n}{n!}\\
+&\le\Vert O\Vert e^{6e(t-s)-d}.
 \end{aligned}
 ```
 
@@ -119,8 +119,8 @@ Equation (3).
 
 ```math
 \begin{aligned}
-\|[V_X,\alpha_{s,t}(O)]\|
-&\le2\|O\|e^{v(t-s)-d},\\
+\Vert[V_X,\alpha_{s,t}(O)]\Vert
+&\le2\Vert O\Vert e^{v(t-s)-d},\\
 v&=6e.
 \end{aligned}
 ```
@@ -137,11 +137,11 @@ Equation (4).
 
 ```math
 \begin{aligned}
-&\|\alpha^{\mathrm f}_{0,\tau}(O)
--\alpha^{\mathrm c}_{0,\tau}(O)\|\\
+&\Vert\alpha^{\mathrm f}_{0,\tau}(O)
+-\alpha^{\mathrm c}_{0,\tau}(O)\Vert\\
 &\quad\le\int_0^\tau
-\|[v_d(s),\alpha^{\mathrm c}_{s,\tau}(O)]\|\,ds\\
-&\quad\le\frac{2}{v}(e^{v\tau}-1)e^{-(R-r)}\|O\|.
+\Vert[v_d(s),\alpha^{\mathrm c}_{s,\tau}(O)]\Vert\,ds\\
+&\quad\le\frac{2}{v}(e^{v\tau}-1)e^{-(R-r)}\Vert O\Vert.
 \end{aligned}
 ```
 
@@ -252,7 +252,7 @@ Equation (11).
 
 ```math
 D(\rho_C\Vert\rho_D)
-\le\frac{\|C-D\|_F^2}{2\eta(1-\eta)}.
+\le\frac{\Vert C-D\Vert_F^2}{2\eta(1-\eta)}.
 ```
 
 The factor $`1/2`$ is the integral of $`1-s`$ from zero to one. This establishes the needed noncommutative estimate directly.
@@ -274,7 +274,7 @@ These inequalities follow first for $`f_b(h_B)`$ and then survive compression. O
 \begin{aligned}
 \partial_b f_b(h_B)
 &=-h_B f_b(h_B)[I-f_b(h_B)],\\
-\|\partial_b f_b(h_B)\|&\le\frac{E_{\max}}4.
+\Vert\partial_b f_b(h_B)\Vert&\le\frac{E_{\max}}4.
 \end{aligned}
 ```
 
@@ -282,9 +282,9 @@ Compression is contractive in operator norm, so integration in $`b`$ gives
 
 ```math
 \begin{aligned}
-\|C_{b,R}-C_{b',R}\|
+\Vert C_{b,R}-C_{b',R}\Vert
 &\le\frac{E_{\max}}4|b-b'|,\\
-\|C_{b,R}-C_{b',R}\|_F^2
+\Vert C_{b,R}-C_{b',R}\Vert_F^2
 &\le\frac{R E_{\max}^2}{16}(b-b')^2.
 \end{aligned}
 ```

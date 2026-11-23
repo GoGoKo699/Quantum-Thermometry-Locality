@@ -226,14 +226,14 @@
     {
       "path": "science/counted_sensor.md",
       "index": 115,
-      "source_sha256": "9e6e50627d563e76a0d4a3c44bc091d6e067fcdfe684eaebb29c30228fac17d3",
-      "expected_text": "supb∈B∥gb(h0)−gb(hcut)∥1≤lc2π∥h0−hcut∥1MgMR2<∞."
+      "source_sha256": "952c933b713bff18f9092712e2fdbdf1954bf525ce8177b91684ba5411fb94e8",
+      "expected_text": "supb∈B‖gb(h0)−gb(hcut)‖1≤lc2π‖h0−hcut‖1MgMR2<∞."
     },
     {
       "path": "science/counted_sensor.md",
       "index": 128,
-      "source_sha256": "522a1838ae0fc5310f48bd96db1579a34eac209748dcb41423846e3fe58d1a80",
-      "expected_text": "dds∥us∥2=−κ|a(s)|2,∫0∞|a(s)|2ds≤κ−1."
+      "source_sha256": "dfd91ee1eaa0aa73b2a97731d1523953bf8df41eaeab937ccd30600775d8c44a",
+      "expected_text": "dds‖us‖2=−κ|a(s)|2,∫0∞|a(s)|2ds≤κ−1."
     },
     {
       "path": "science/counted_sensor.md",
@@ -286,8 +286,8 @@
     {
       "path": "science/counted_sensor.md",
       "index": 216,
-      "source_sha256": "c2be81286c874c1dc93c03d1bd744b12f77adef4025f97cfee7732119ceb2f50",
-      "expected_text": "−er′(b)=Tr(ArPrgb(hB)Pr)≥m∗Tr(PrhB2Pr)−|Tr(PrhB(I−Pr)gb(hB)Pr)|≥m∗[r(ν2+2)−1]−∥gb(hB)∥."
+      "source_sha256": "74ea76430bced86f2efab541a012d56bdc33905fadbb771b0c69f3040f655267",
+      "expected_text": "−er′(b)=Tr(ArPrgb(hB)Pr)≥m∗Tr(PrhB2Pr)−|Tr(PrhB(I−Pr)gb(hB)Pr)|≥m∗[r(ν2+2)−1]−‖gb(hB)‖."
     },
     {
       "path": "science/counted_sensor.md",
@@ -304,8 +304,8 @@
     {
       "path": "science/locality_converse.md",
       "index": 5,
-      "source_sha256": "9230a125444c372e98cddbde7e99653d56cd9c332dc7bc6ac0581d1dc744242a",
-      "expected_text": "T(ρ,σ)=12∥ρ−σ∥1,D(ρ‖σ)=trρ(logρ−logσ)."
+      "source_sha256": "e2fdcd68d91d36e5cf464d3d6244d57e585c21f60432f2edc17c52a42b755902",
+      "expected_text": "T(ρ,σ)=12‖ρ−σ‖1,D(ρ‖σ)=trρ(logρ−logσ)."
     },
     {
       "path": "science/locality_converse.md",
@@ -322,38 +322,38 @@
     {
       "path": "science/locality_converse.md",
       "index": 18,
-      "source_sha256": "ebe0773a1736c73a3ae173edd699990aa94409e8c24391a914da6d57d3101d68",
-      "expected_text": "H(s)=∑j≥0vj(s),suppvj(s)⊆{j,j+1},∥vj(s)∥≤1."
+      "source_sha256": "c71d28f6f087125fdbaa69d8da13c306872309e91f8dc2cfd970a0ce27019e8a",
+      "expected_text": "H(s)=∑j≥0vj(s),suppvj(s)⊆{j,j+1},‖vj(s)‖≤1."
     },
     {
       "path": "science/locality_converse.md",
       "index": 21,
-      "source_sha256": "35933233b867ea8c718c54b2537e2ac44a1945329374c450f58d99efcb98041d",
-      "expected_text": "Lj(s)(O)=i[vj(s),O],∥Lj(s)∥∞→∞≤2."
+      "source_sha256": "320a3217bc55b4ca82275e15bc2f72528c838ad308cbb7a8e4821bf2877ff65b",
+      "expected_text": "Lj(s)(O)=i[vj(s),O],‖Lj(s)‖∞→∞≤2."
     },
     {
       "path": "science/locality_converse.md",
       "index": 32,
-      "source_sha256": "5247fdc21d6bd8c0720a36c78316e958b59f70d853994532bb66ef2f2d981640",
-      "expected_text": "FX(s)≤FX(t)+∑Y:Y∩X≠∅∫st∥LY(u)∥FY(u)du."
+      "source_sha256": "3bab33f3eb774798df93e73a23851f5cf2fb6d4e13c0b45d67b6a543e3a7568f",
+      "expected_text": "FX(s)≤FX(t)+∑Y:Y∩X≠∅∫st‖LY(u)‖FY(u)du."
     },
     {
       "path": "science/locality_converse.md",
       "index": 47,
-      "source_sha256": "b157bfc808b783310ee5889f4bc1408ebbe1f42dd67d2a527e6cfb2e19135373",
-      "expected_text": "FX(s)≤∥O∥∑n≥d[6(t−s)]nn!≤∥O∥e6e(t−s)−d."
+      "source_sha256": "4a57e9f08a8eaf2a2f238ed6d80bb9add83666970d26bd566c91caae65e35335",
+      "expected_text": "FX(s)≤‖O‖∑n≥d[6(t−s)]nn!≤‖O‖e6e(t−s)−d."
     },
     {
       "path": "science/locality_converse.md",
       "index": 51,
-      "source_sha256": "b9d13fc6d53095d2d043233cd5ec1e0339bffaec689ddf904c73a638c14a2fcd",
-      "expected_text": "∥[VX,αs,t(O)]∥≤2∥O∥ev(t−s)−d,v=6e."
+      "source_sha256": "c0bad04b1312bf48da01067252379f53b5b097459ff14a2ff3ddfd1dda79fcaf",
+      "expected_text": "‖[VX,αs,t(O)]‖≤2‖O‖ev(t−s)−d,v=6e."
     },
     {
       "path": "science/locality_converse.md",
       "index": 61,
-      "source_sha256": "e71d286f0e982fb2d95382287bffdc844be9bfeba5e7f20ad7d06302120e3c07",
-      "expected_text": "∥α0,τf(O)−α0,τc(O)∥≤∫0τ∥[vd(s),αs,τc(O)]∥ds≤2v(evτ−1)e−(R−r)∥O∥."
+      "source_sha256": "bb4f1d061402dfd8aaee61cafbe6ea0f886f0234599815fabeedf4f6facfef35",
+      "expected_text": "‖α0,τf(O)−α0,τc(O)‖≤∫0τ‖[vd(s),αs,τc(O)]‖ds≤2v(evτ−1)e−(R−r)‖O‖."
     },
     {
       "path": "science/locality_converse.md",
@@ -436,14 +436,14 @@
     {
       "path": "science/locality_converse.md",
       "index": 101,
-      "source_sha256": "7b6c048cb5e03353ed8b833fe9132f5132611d5156e4d1a2a9087003c92e1b31",
-      "expected_text": "D(ρC‖ρD)≤∥C−D∥F22η(1−η)."
+      "source_sha256": "c12c6c0a6d5f4911250e0fa2519b943278b7bbd284637f95da04c6415de6fcec",
+      "expected_text": "D(ρC‖ρD)≤‖C−D‖F22η(1−η)."
     },
     {
       "path": "science/locality_converse.md",
       "index": 106,
-      "source_sha256": "1d1ca738e247710e166dcb196859b9aa7e44cd8033f2e74ad739b07fdcbf670d",
-      "expected_text": "∂bfb(hB)=−hBfb(hB)[I−fb(hB)],∥∂bfb(hB)∥≤Emax4."
+      "source_sha256": "b677d70d5f7f21ab152965160ce6aa1d3aa67ddc205c9ef02d628b1d59e1fbda",
+      "expected_text": "∂bfb(hB)=−hBfb(hB)[I−fb(hB)],‖∂bfb(hB)‖≤Emax4."
     },
     {
       "path": "science/locality_converse.md",
@@ -550,8 +550,8 @@
     {
       "path": "science/physical_consequences.md",
       "index": 72,
-      "source_sha256": "be42a96ef2f665a31fb29c88344576c2f46964ed9dea3e7d73ac91830636c7e1",
-      "expected_text": "2εN≥∥Pb0,NM−Pb1,NM∥TV−q0,liminfN→∞εN≥1−q02>0."
+      "source_sha256": "568397555df06c9094a787345f7f47b545e4992f0508cfbcd1c5f66a516d63d3",
+      "expected_text": "2εN≥‖Pb0,NM−Pb1,NM‖TV−q0,liminfN→∞εN≥1−q02>0."
     },
     {
       "path": "science/physical_consequences.md",
