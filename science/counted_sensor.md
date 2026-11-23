@@ -175,16 +175,12 @@ For $`\nu=d=0`$, let $`\Theta`$ conjugate the site amplitudes and multiply the a
 
 ### Detuned thermal response at any known field
 
-**Separate the vacuum preparation from the spectral calculation.** The operator $`h_{\mathrm{cut}}=\nu P_0\oplus h_B`$ differs from $`h_0`$ by the rank-two coupling across the sensor bond. Take a contour enclosing both real spectra with imaginary parts of magnitude strictly less than $`\pi/b_+`$. The functions $`g_b(z)`$ are analytic and uniformly bounded on this contour for $`b\in B`$. The resolvent identity and the finite trace norm of the coupling give
+**Separate the vacuum preparation from the spectral calculation.** The operator $`h_{\mathrm{cut}}=\nu P_0\oplus h_B`$ differs from $`h_0`$ by the rank-two coupling across the sensor bond. Take a contour enclosing both real spectra with imaginary parts of magnitude strictly less than $`\pi/b_+`$. Let $`\ell_{\mathrm c}`$ be its length, $`M_g`$ a uniform bound on the analytic functions $`g_b(z)`$ there for $`b\in B`$, and $`M_R`$ a common bound on the two resolvent norms. The resolvent identity gives
 
 ```math
 \sup_{b\in B}\|g_b(h_0)-g_b(h_{\mathrm{cut}})\|_1
-\le
-\frac{\|h_0-h_{\mathrm{cut}}\|_1}{2\pi}
-\int_{\mathrm{contour}}
-\sup_{b\in B}|g_b(z)|\,
-\|(z-h_0)^{-1}\|\,
-\|(z-h_{\mathrm{cut}})^{-1}\|\,|dz|
+\le\frac{\ell_{\mathrm c}}{2\pi}\,
+\|h_0-h_{\mathrm{cut}}\|_1 M_g M_R^2
 \lt\infty.
 ```
 
