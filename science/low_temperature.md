@@ -30,7 +30,7 @@ Write $`C_{b,R}=P_R f_b(h_B)P_R`$ for the covariance of the actual initial margi
 \begin{aligned}
 C_{b,R}&=\int f_b(E)A_E\,dE,\\
 I_R-C_{b,R}&=\int [1-f_b(E)]A_E\,dE,\\
-\operatorname{Tr}A_E
+\mathrm{Tr}A_E
 &\le \frac{2R}{\pi\sqrt{4-(E-\nu)^2}},\qquad |E-\nu|<2.
 \end{aligned}
 ```
@@ -39,14 +39,14 @@ The last line follows by bounding each squared sine by one. The compressed covar
 
 ```math
 \mathfrak D(X\|Y)=
-\operatorname{Tr}[X(\log X-\log Y)-X+Y].
+\mathrm{Tr}[X(\log X-\log Y)-X+Y].
 ```
 
-The trace terms cancel across the two complementary covariance blocks. The functional is jointly convex and homogeneous. On the common support of positive scalar multiples of a matrix $`A`$ it satisfies $`\mathfrak D(aA\|a'A)=\operatorname{Tr}(A)[a\log(a/a')-a+a']`$. Applying these facts to the two spectral integrals yields
+The trace terms cancel across the two complementary covariance blocks. The functional is jointly convex and homogeneous. On the common support of positive scalar multiples of a matrix $`A`$ it satisfies $`\mathfrak D(aA\|a'A)=\mathrm{Tr}(A)[a\log(a/a')-a+a']`$. Applying these facts to the two spectral integrals yields
 
 ```math
 D(\rho_{b,R}\|\rho_{b',R})
-\le \int \operatorname{Tr}(A_E)
+\le \int \mathrm{Tr}(A_E)
 \,D_{\rm Ber}\big(f_b(E)\|f_{b'}(E)\big)\,dE .
 ```
 
@@ -126,7 +126,7 @@ On $`\mathcal I_B`$ and for $`b\in[B,2B]`$, one has $`bE\in[1/2,3]`$, so
 ```
 is bounded below by a positive constant. Its absolute value is bounded by one at every energy. With the stated concentration, each occupation mean decreases with slope bounded away from zero in $`\log b`$, uniformly on the octave. Its functional dependence is determined by the known model and receiver.
 
-An internal number-preserving mode rotation followed by occupation readout measures the commuting mode occupations. Wick's identity gives the total count $`N`$ variance $`\operatorname{Var}(N)=\operatorname{Tr}[C_M(I-C_M)]\le M/4`$, where $`C_M`$ is the compressed covariance. This bound includes correlations between modes. Clip $`N`$ to the known range of its mean and invert that mean as a function of $`\log b`$. The mean has slope of magnitude at least a constant times $`M`$, so the estimate has squared log error bounded in expectation by a constant times $`\operatorname{Var}(N)/M^2=O(1/M)`$.
+An internal number-preserving mode rotation followed by occupation readout measures the commuting mode occupations. Wick's identity gives the total count $`N`$ variance $`\mathrm{Var}(N)=\mathrm{Tr}[C_M(I-C_M)]\le M/4`$, where $`C_M`$ is the compressed covariance. This bound includes correlations between modes. Clip $`N`$ to the known range of its mean and invert that mean as a function of $`\log b`$. The mean has slope of magnitude at least a constant times $`M`$, so the estimate has squared log error bounded in expectation by a constant times $`\mathrm{Var}(N)/M^2=O(1/M)`$.
 
 Choose the receiver according to the larger of $`r`$ and $`\tau`$. Above a field-dependent constant times $`B`$, this supplies $`M`$ proportional to $`\max\{r,\tau\}/B`$. Below that threshold, the midpoint of the known log-temperature interval gives constant risk. Since $`r+\tau`$ and $`\max\{r,\tau\}`$ are within a factor of two, this proves the upper bound.
 
