@@ -2,7 +2,7 @@
 
 A thermometer touches a sample, changes as a result of that interaction, and produces a reading. Repeating the readout, resetting the sensor, or attaching more sensors gives more opportunities to observe the sample. The question here is how much temperature information those operations can acquire when they all use the same small contact with one microscopic reservoir.
 
-The reservoir is a chain of two-state spins, prepared thermally once. Its nearest-neighbor couplings transport excitations toward the contacted region. The project proves a limit for every permitted controller and shows how a fixed boundary sensor attains it. At zero bath field, the undetuned sensor's mean count is independent of temperature. A known shift of the sensor's own energy restores its response. Wiseman and Milburn supply the language of states, instruments, trajectories, and feedback used to describe the experiment.
+The reservoir is a chain of two-state spins, prepared thermally once. Its nearest-neighbor couplings transport excitations toward the contacted region. The project proves a limit for every permitted controller. On a fixed temperature interval, a block-energy measurement attains the spatial rate and a fixed boundary sensor attains the temporal rate. At zero bath field, the undetuned sensor's mean count is independent of temperature. A known shift of the sensor's own energy restores its response. A low-temperature law for an interior band crossing gives the dependence on temperature itself. Wiseman and Milburn supply the language of states, instruments, trajectories, and feedback used to describe the experiment.
 
 ## Anchor and route
 
@@ -17,8 +17,9 @@ The [30-milestone map](MILESTONES.md) gives the complete understanding targets. 
 | §§2.2, 2.7 and 3.11 | Estimation, discrimination, and observable evolution become a locality-based global converse. | [M10–M20](MILESTONES.md#m10-distinguishing-two-temperatures) |
 | §§3.5, 4.2–4.3 | A physical loss record becomes a computable count law and a uniform estimator. | [M21–M26](MILESTONES.md#m21-build-the-fixed-counted-sensor) |
 | §3.2; §5.4 and Chapter 6 | A controlled Markov experiment is compared with the microscopic resource limit. | [M27–M30](MILESTONES.md#m27-construct-the-collective-markov-comparison-record) |
+| §§2.7, 3.5 and 3.11 | Discrimination, thermal occupations, and time evolution combine to give the low-temperature dependence. | [M19](MILESTONES.md#m19-bound-distinguishability-of-the-correlated-thermal-block), [M26](MILESTONES.md#m26-join-spatial-access-and-elapsed-time), [M30](MILESTONES.md#m30-synthesize-the-resource-law-and-its-physical-meaning) |
 
-The canonical statements are in [Model and results](../science/model_and_results.md). The [converse](../science/locality_converse.md), [sensor construction](../science/counted_sensor.md), and [physical consequences](../science/physical_consequences.md) contain the full arguments.
+The canonical statements are in [Model and results](../science/model_and_results.md). The [converse](../science/locality_converse.md), [sensor construction](../science/counted_sensor.md), and [physical consequences](../science/physical_consequences.md) develop the fixed-interval result. The [low-temperature proof](../science/low_temperature.md#uniform-minimax-law) gives the uniform rate and the apparatus resources for attaining it.
 
 ## 1. Locate the parameter and the resources
 
@@ -296,4 +297,22 @@ The compared records can be obtained by probe measurements; no free access to ba
 
 The matched theorem therefore concerns acquiring **initially encoded** information. Locality limits the initial thermal region that can influence the complete output; the covariance estimate limits that region's distinguishability; the counted sensor and initial block measurement attain the resulting order. Arbitrary apparatus at a fixed contact can improve constants or implementation while leaving these charged resources unchanged.
 
-The minimax law uses an XX half-chain with a fixed known field, fixed compact temperature interval, one initial thermal preparation, fixed contacted sites, and unchanged outgoing bath bonds. The counted construction uses ideal efficient monitoring. Moving contacts, additional temperature-bearing inputs, unbounded local bosonic systems, detector imperfections, and zero-temperature limits require further analysis. The analytic proofs establish the scaling, and finite checks test the count law and spectral response. [Verification](../verification/README.md) · [Scope and attribution](../references/RELATED_WORK.md#mathematical-and-physical-contribution)
+The minimax law uses an XX half-chain with a fixed known field, fixed compact temperature interval, one initial thermal preparation, fixed contacted sites, and unchanged outgoing bath bonds. The counted construction uses ideal efficient monitoring. Moving contacts, additional temperature-bearing inputs, unbounded local bosonic systems, and detector imperfections raise separate questions. The next section gives the low-temperature result for an interior band crossing. The analytic proofs establish the scaling, and finite checks test the count law and spectral response. [Verification](../verification/README.md) · [Scope and attribution](../references/RELATED_WORK.md#mathematical-and-physical-contribution)
+
+## 7. Resolve the thermal energy window
+
+**Connections.** [M05](MILESTONES.md#m05-energy-signs-and-a-fixed-temperature-interval), [M19–M20](MILESTONES.md#m19-bound-distinguishability-of-the-correlated-thermal-block), [M25–M26](MILESTONES.md#m25-estimate-temperature-from-every-possible-count), [M29–M30](MILESTONES.md#m29-delimit-the-claim-and-account-for-its-ingredients).
+
+Now let the known interval be $`b\in[B,2B]`$ and let $`B`$ grow, with the field fixed at $`|\nu|\lt 2`$. The one-particle band crosses zero with nonzero group velocity. For an energy near $`1/B`$, changing the temperature by a fixed factor changes its Fermi occupation by a constant amount. In particular, the magnitude of the derivative with respect to $`\log b`$ is $`bE f_b(E)[1-f_b(E)]`$ at positive energy $`E`$. It stays bounded below on the interval $`E\in[1/(2B),3/(2B)]`$. Well outside an energy window of order $`1/B`$ around zero, the occupations respond much less.
+
+### Count the available information
+
+The fixed-interval entropy estimate uses a spectral floor that decreases with $`B`$. The [uniform converse](../science/low_temperature.md#converse) first expresses the compressed covariances as averages over a common positive operator-valued spectral measure. Joint convexity bounds the block's relative entropy by the integral of classical Bernoulli divergences against that measure's trace. At large $`B`$, the integral is concentrated near zero energy, where the density of states is bounded. The resulting factor is $`R/B`$, so the two temperatures in the testing reduction are separated in $`\log b`$ by a small multiple of $`\min\{1,\sqrt{B/R}\}`$. Locality still gives $`R=O(r+\tau)`$.
+
+### Resolve and read out the occupied modes
+
+A packet of length proportional to $`B`$ can resolve the positive thermal energy band. With initial block access, measure the occupations of disjoint packets in the contacted spins. For time access, attach a finite, initially empty XX lead at one bath site. The packet calculation traces each selected lead mode backward into the initially thermal bath. Its carrier has nonzero velocity, so the usable lead interval grows linearly in $`\tau`$. The coherent lead uses order $`\tau`$ ancillary spins, and the bath is prepared once.
+
+Each mode contributes a slope bounded below by a positive constant to the mean total count as a function of log temperature. Gaussian occupation statistics bound the variance by the number of measured modes, even when their outcomes are correlated. The same clipping-and-inversion idea from Section 5 bounds squared error by a constant times $`1/M`$ for $`M`$ such modes. Choosing the spatial or temporal measurement gives the [matching receiver](../science/low_temperature.md#attaining-receiver).
+
+The uniform law is $`\Theta_\nu(\min\{1,B/(r+\tau)\})`$. At a fixed contact, reaching a fixed small relative error takes time of order $`\hbar/(k_BT)`$. This extension assumes an interior band crossing and a known temperature interval within a factor of two. A matching construction with a fixed-size detector remains open. [Full theorem](../science/low_temperature.md#uniform-minimax-law) · [Finite checks](../verification/README.md)

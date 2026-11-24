@@ -18,7 +18,7 @@ def main():
     )
     arguments = parser.parse_args()
     directory = Path(__file__).resolve().parent
-    for name in ("relative_entropy", "counting", "extraction", "detuned_response"):
+    for name in ("relative_entropy", "counting", "extraction", "detuned_response", "low_temperature"):
         command = [sys.executable, str(directory / f"check_{name}.py")]
         if arguments.output_dir:
             command += ["--output", str(arguments.output_dir / f"{name}.json")]
