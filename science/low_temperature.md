@@ -38,16 +38,16 @@ I_R-C_{b,R}&=\int [1-f_b(E)]A_E\,dE,\\
 The last line follows by bounding each squared sine by one. The compressed covariances at two temperatures can fail to commute. To handle them, use the [Gaussian relative entropy identity](locality_converse.md#gaussian-logarithms-and-relative-entropy) and the generalized matrix relative entropy
 
 ```math
-\mathfrak D(X\|Y)=
+\mathfrak D(X\Vert Y)=
 \mathrm{Tr}[X(\log X-\log Y)-X+Y].
 ```
 
-The trace terms cancel across the two complementary covariance blocks. The functional is jointly convex and homogeneous. On the common support of positive scalar multiples of a matrix $`A`$ it satisfies $`\mathfrak D(aA\|a'A)=\mathrm{Tr}(A)[a\log(a/a')-a+a']`$. Applying these facts to the two spectral integrals yields
+The trace terms cancel across the two complementary covariance blocks. The functional is jointly convex and homogeneous. On the common support of positive scalar multiples of a matrix $`A`$ it satisfies $`\mathfrak D(aA\Vert a'A)=\mathrm{Tr}(A)[a\log(a/a')-a+a']`$. Applying these facts to the two spectral integrals yields
 
 ```math
-D(\rho_{b,R}\|\rho_{b',R})
+D(\rho_{b,R}\Vert \rho_{b',R})
 \le \int \mathrm{Tr}(A_E)
-\,D_{\rm Ber}\big(f_b(E)\|f_{b'}(E)\big)\,dE .
+\,D_{\rm Ber}\big(f_b(E)\Vert f_{b'}(E)\big)\,dE .
 ```
 
 One can apply the inequality first to positive spectral bins and take their mesh to zero. For finite $`b,b'`$ the limiting covariances and their complements are positive definite.
@@ -55,20 +55,20 @@ One can apply the inequality first to positive spectral bins and take their mesh
 The Bernoulli log-partition function $`g(u)=\log(1+e^u)`$ has second derivative at most $`e^{-|u|}`$. The natural parameters $`-bE`$ and $`-b'E`$ have the same sign and magnitude at least $`B|E|`$ throughout their connecting segment. Taylor's integral remainder and $`|b-b'|\le 2B|\log(b/b')|`$ give
 
 ```math
-D_{\rm Ber}\big(f_b(E)\|f_{b'}(E)\big)
+D_{\rm Ber}\big(f_b(E)\Vert f_{b'}(E)\big)
 \le 2(BE)^2e^{-B|E|}\,|\log(b/b')|^2.
 ```
 
 In a neighborhood of zero strictly inside the band, the spectral density is bounded by a field-dependent constant times $`R`$. The integral of the thermal factor there is $`O(1/B)`$ by rescaling $`E`$. On the rest of the band that factor is exponentially small, while the spectral density has total mass $`R`$. Thus
 
 ```math
-D(\rho_{b,R}\|\rho_{b',R})
+D(\rho_{b,R}\Vert \rho_{b',R})
 \le C_\nu\frac{R}{B}|\log(b/b')|^2.
 ```
 
 ### From the marginal to the complete experiment
 
-Use the [complete-record truncation](locality_converse.md#truncating-the-complete-output) with $`R=r+\lceil 6e\tau+\log 16\rceil`$. Cutting the far bond changes the output of either hypothesis by trace distance at most $`1/16`$. The cut output is a parameter-independent channel of the actual initial marginal. Data processing and Pinsker's inequality bound the distance of the two cut outputs by $`\sqrt{D(\rho_{b,R}\|\rho_{b',R})/2}`$.
+Use the [complete-record truncation](locality_converse.md#truncating-the-complete-output) with $`R=r+\lceil 6e\tau+\log 16\rceil`$. Cutting the far bond changes the output of either hypothesis by trace distance at most $`1/16`$. The cut output is a parameter-independent channel of the actual initial marginal. Data processing and Pinsker's inequality bound the distance of the two cut outputs by $`\sqrt{D(\rho_{b,R}\Vert \rho_{b',R})/2}`$.
 
 Take $`b=B`$ and $`b'=Be^\delta`$, with $`\delta=a\min\{1,\sqrt{B/R}\}`$ and a sufficiently small fixed $`a\le\log 2`$. The two complete outputs have trace distance at most $`1/2`$. An estimator induces a test by choosing the nearest log temperature. A wrong decision incurs squared error at least $`\delta^2/4`$, and at least one hypothesis has error probability at least $`1/4`$. Thus the risk is at least $`\delta^2/16`$. Since $`R`$ is comparable to $`r+\tau`$ for $`r\ge1`$, this proves the lower bound for every budget, including operational limits of finite experiments.
 
