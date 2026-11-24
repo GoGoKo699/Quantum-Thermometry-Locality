@@ -81,7 +81,7 @@ On the full line, the one-particle dispersion and group velocity are $`E(k)=\nu-
 ```math
 \psi(j)=
 \sqrt{\frac{2}{L+1}}\sin\!\left(\frac{\pi(j-a)}{L+1}\right)
-e^{ik_*j},\qquad a<j\le a+L ,
+e^{ik_*j},\qquad a\lt j\le a+L ,
 ```
 zero elsewhere, with $`L=\lceil KB\rceil`$. The first difference of the zero-padded normalized envelope has norm $`2\sin(\pi/(2(L+1)))`$. Applying the shift and its adjoint gives
 
