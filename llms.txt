@@ -2,8 +2,9 @@
 
 This repository establishes an attained global estimation law for the initial
 temperature of a semi-infinite XX spin bath under fixed local access, for every
-fixed known field, including zero field. The full
-scientific account is organized by topic under science/.
+fixed known field, including zero field. A uniform low-temperature theorem
+also covers each fixed field with an interior band crossing. The scientific
+account is organized by topic under science/.
 
 Canonical entrypoints:
 - README.md: scientific question, principal result, reading routes, reproduction
@@ -17,6 +18,9 @@ Canonical entrypoints:
 - science/counted_sensor.md: physical spin count determinant, infinite-volume
   limit, zero-field cancellation of the undetuned mean, detuned spectral response,
   calibrated inverse-count estimator, and initial block-energy measurement.
+- science/low_temperature.md: the uniform low-temperature minimax theorem, the
+  thermal-bandwidth relative-entropy estimate, and matching spatial and temporal
+  occupation measurements.
 - science/physical_consequences.md: information supply, apparatus size, controlled
   Markov comparison, and consequences of changing the resource model.
 - references/RELATED_WORK.md: primary-source comparison, inherited ingredients,
@@ -24,6 +28,8 @@ Canonical entrypoints:
 - references/references.bib: structured source metadata.
 - verification/README.md: commands, dependencies, finite checks and their limits.
 - verification/run_all.py: focused verification entrypoint.
+- verification/check_low_temperature.py: finite checks of energy-selected
+  packets, their propagation into the lead, and occupation response.
 - verification/hosted/README.md: read-only actual GitHub math capture, source
   comparison, text contracts, screenshots and the limits of renderer checks.
 
@@ -53,20 +59,27 @@ Preserve these distinctions when explaining or editing:
   preparation and controls are temperature independent.
 - All contact is confined to the first r sites. The bond leaving that region
   is an untouched bath bond of fixed strength J.
-- The risk is worst-case squared log-temperature error on a fixed positive
-  compact interval. It allows biased estimators and is not a pointwise QFI bound.
+- The risk is worst-case squared log-temperature error on the stated known
+  interval, with biased estimators permitted. The fixed-interval theorem has
+  order 1/(r + tau), with constants depending on the interval. For fixed
+  |nu| < 2 and b in [B, 2B], the uniform low-temperature risk has order
+  min(1, B/(r + tau)) for sufficiently large B.
 - Arbitrary finite apparatus, quantum memory, feedback and retained records
   are included in the converse; continuous instruments are limits of them.
 - Strong controls inside the contacted block do not increase the norm of the
   bath bond outside it.
-- The attaining sensor uses a known detuning and a temperature-independent
-  counted vacuum reset. The bath is prepared thermally once.
+- The fixed-interval counted sensor uses a known detuning and a
+  temperature-independent counted vacuum reset. The low-temperature temporal
+  receiver uses one bath contact and an initially empty auxiliary XX lead with
+  order tau auxiliary spins. Both use one initial thermal bath preparation.
 - Generalized-binomial count statistics do not make jump times independent.
-- The two upper-bound protocols are alternatives. Their correlated outputs
-  are not assumed to provide additive independent samples.
-- The known Hamiltonian, fixed temperature interval and infinite bath specify
-  the attainment theorem and its constants. At zero field the undetuned mean
-  is temperature-independent; this statement is about the mean count.
+- Each upper bound selects a spatial or temporal measurement according to
+  the larger available resource. The variance of the total mode count
+  includes correlations.
+- At zero field the undetuned sensor's mean count is temperature-independent.
+  The uniform low-temperature law applies to an interior band crossing. The
+  band edges and low-temperature attainment with a fixed-size detector remain
+  open in this account.
 - The asymptotic exponent, locality bounds and counting formalism have prior
   literature. Read the attribution before making an originality claim.
 - Finite numerical checks support implementations. Analytical proofs establish

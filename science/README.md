@@ -8,6 +8,7 @@ The central resource is access to temperature information already present in a b
 2. **[Locality converse](locality_converse.md).** Group the entire apparatus and contacted region into a single boundary block. Locality then limits the temperature distinguishability available to the complete experiment. A relative-entropy estimate for restricted Gaussian thermal states and a two-point testing argument turn this into a global estimation lower bound.
 3. **[Counted sensor and attainment](counted_sensor.md).** Derive the physical spin count distribution and the linear temperature response of the detuned detector, including at zero field. Combine a calibrated count estimator with an initial block-energy measurement to attain the joint spatial and temporal order.
 4. **[Physical consequences](physical_consequences.md).** Interpret the result as a limit on information acquisition from a fixed bath contact. Compare the microscopic experiment with controlled Markov models, and identify the assumptions that change the conclusion.
+5. **[Low-temperature law](low_temperature.md).** Resolve the constants' temperature dependence for a fixed interior gapless field. Compress the thermal spectral distinguishability to get a complete-output converse, and measure energy-selective packets to attain the bound in space or time.
 
 ## Proof dependencies and attribution
 
@@ -15,7 +16,7 @@ The converse and the construction share the [model](model_and_results.md) but ha
 
 The [related-work account](../references/RELATED_WORK.md) identifies imported ingredients and the closest thermometry models. Primary source identities are collected in the [bibliography](../references/references.bib). The [verification guide](../verification/README.md) describes the finite calculations and their limits.
 
-For a quick result-first route, read the model, then the physical consequences. To audit the theorem, read both proof pages in full, including the continuous-instrument and infinite-volume limits.
+For a quick result-first route, read the model, then the physical consequences. For the joint low-temperature limit, start with the low-temperature theorem and use the locality converse for the complete-record truncation.
 
 ## Learning route
 

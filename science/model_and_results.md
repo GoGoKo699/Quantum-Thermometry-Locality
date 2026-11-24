@@ -9,6 +9,8 @@ A thermometer that contacts the first $`r`$ sites of a spin reservoir can use th
 
 Here $`\mathcal R`$ is the worst-case mean squared error in **logarithmic temperature**, minimized over all allowed protocols and estimators. The lower bound includes arbitrary ancillas, adaptive measurements, feedback, resets, strong control inside the contacted region, and the complete retained measurement record. A single detuned counted sensor attains the time dependence. An energy measurement of the initially accessible bath block supplies the spatial dependence.
 
+The separate [low-temperature theorem](low_temperature.md#uniform-minimax-law) gives the joint temperature, contact and time dependence for a fixed interior gapless field and a known inverse-temperature octave that moves towards zero physical temperature.
+
 The [locality converse](locality_converse.md) proves the lower bound with explicit constants. The [counted sensor construction](counted_sensor.md) proves the matching upper bound. [Physical consequences](physical_consequences.md) discusses the meaning of the result for local sensing and reduced dynamical descriptions.
 
 ## Reservoir and temperature parameter

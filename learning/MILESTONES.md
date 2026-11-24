@@ -2,7 +2,7 @@
 
 This map follows the [canonical scientific account](../science/README.md) from a single thermal occupation to the optimal precision of a complete controlled experiment. Its 30 understanding targets describe the project itself. The exact assumptions and theorem remain in [Model and results](../science/model_and_results.md); the proof pages own the specialist derivations.
 
-The allocation is **14 background/preliminary milestones and 16 narrative/innovation milestones**. The background connects local states and exchange links to measurement records, distinguishability, and the complete estimation problem. The narrative develops two complementary arguments: the converse limits every accessible output, while the construction extracts a useful count with one fixed sensor. They meet at the joint spatial and temporal law; the last milestones interpret its Markov comparison, scope, and significance. Each phase ends by integrating its components. The map covers the load-bearing ideas without treating every proof calculation or neighboring subject as a separate milestone.
+The allocation is **14 background/preliminary milestones and 16 narrative/innovation milestones**. The background connects local states and exchange links to measurement records, distinguishability, and the complete estimation problem. The narrative develops two complementary arguments: the converse limits every accessible output, while the construction extracts a useful count with one fixed sensor. They meet at the joint spatial and temporal law. The map then connects the low-temperature result to that proof and interprets the controlled Markov comparison, scope, and significance. Each phase ends by integrating its components. The map covers the load-bearing ideas without treating every proof calculation or neighboring subject as a separate milestone.
 
 ## Selected educational anchor
 
@@ -99,13 +99,13 @@ The progression is from one occupation and one bond to an entire temperature-est
 
 **Central question.** How do the bath field and the temperature interval govern thermal occupations?
 
-**Understanding target.** Locate the band $`[\nu-2,\nu+2]`$ for a fixed known field $`\nu`$. Increasing $`b`$ lowers positive-energy occupations and raises negative-energy occupations. At zero field the band is symmetric, and $`f_b(E)+f_b(-E)=1`$. On a fixed compact interval $`0\lt b_-\lt b_+\lt\infty`$, the covariance eigenvalues stay away from zero and one even when the band crosses zero.
+**Understanding target.** Locate the band $`[\nu-2,\nu+2]`$ for a fixed known field $`\nu`$. Increasing $`b`$ lowers positive-energy occupations and raises negative-energy occupations. At zero field the band is symmetric, and $`f_b(E)+f_b(-E)=1`$. On a fixed compact interval $`0\lt b_-\lt b_+\lt\infty`$, the covariance eigenvalues stay away from zero and one even when the band crosses zero. When $`b\in[B,2B]`$ with large $`B`$, identify why an interior band crossing provides modes with energy of order $`1/B`$ whose occupation has a log-temperature slope bounded away from zero.
 
 **Dependencies and story role.** M01, M03, M04. Identify the spectral bounds for the converse and the sign cancellation the estimator must address.
 
 **Conceptual connection.** The entropy bound uses the full covariance range. An inverse-mean estimator also needs a measured statistic that weighs the energies so their responses survive averaging.
 
-**Sources.** WM §3.5, p. 113. See the proofs of the [thermal covariance bounds](../science/locality_converse.md#applying-the-estimate-to-thermal-covariances) and [zero-field cancellation](../science/counted_sensor.md#the-undetuned-count-at-zero-field), and the [theorem scope](../science/model_and_results.md#scope-of-the-theorem).
+**Sources.** WM §3.5, p. 113. See the proofs of the [thermal covariance bounds](../science/locality_converse.md#applying-the-estimate-to-thermal-covariances) and [zero-field cancellation](../science/counted_sensor.md#the-undetuned-count-at-zero-field), and the [theorem scope](../science/model_and_results.md#scope-of-the-theorem). See also the [low-temperature law](../science/low_temperature.md#uniform-minimax-law).
 
 ### M06. A microscopic bath and a reduced generator
 
@@ -217,7 +217,7 @@ The progression is from one occupation and one bond to an entire temperature-est
 
 ## Phase II — Narrative and innovation, M15–M30
 
-The converse starts at the controlled boundary and reaches a statement about every complete output. The construction starts at one sensor and reaches a global estimator. Their combination supports the final resource interpretation and the controlled Markov comparison.
+The converse starts at the controlled boundary and reaches a statement about every complete output. The fixed-interval construction starts at one sensor and reaches a global estimator. The low-temperature extension uses the same testing and estimation ideas with an energy-resolved measurement. Together the results support the final resource interpretation and the controlled Markov comparison.
 
 | Milestone | Place in the argument |
 | --- | --- |
@@ -290,25 +290,25 @@ The converse starts at the controlled boundary and reaches a statement about eve
 
 **Central question.** Why is the block's relative entropy at most proportional to its size and squared temperature-parameter separation?
 
-**Understanding target.** Explain how Gaussian density-matrix logarithms reduce relative entropy to a one-particle matrix expression. Identify why compressed covariances cannot be treated as simultaneously diagonal, and how the matrix-entropy Hessian and the spectral floor handle this. Connect the covariance derivative bound to $`D(\rho_{b,R}\Vert\rho_{b',R})\le KR(b-b')^2`$.
+**Understanding target.** Explain how Gaussian density-matrix logarithms reduce relative entropy to a one-particle matrix expression. Identify why compressed covariances cannot be treated as simultaneously diagonal, and how the matrix-entropy Hessian and the spectral floor handle this. Connect the covariance derivative bound to $`D(\rho_{b,R}\Vert\rho_{b',R})\le KR(b-b')^2`$. For the low-temperature interval, explain how a common positive spectral measure and joint convexity reduce the entropy bound to an integral of Bernoulli divergences, giving $`O_\nu((R/B)|\log b-\log b'|^2)`$.
 
 **Dependencies and story role.** M03, M04, M05, M11, M18. Supply the information-density estimate for the finite input isolated by locality.
 
 **Conceptual connection.** Correlations and noncommutativity are retained while the information bound remains extensive in $`R`$.
 
-**Sources.** Anchor: WM §2.7, p. 85, and §3.5, p. 113, as statistical and reservoir background. Science: [Gaussian relative entropy](../science/locality_converse.md#gaussian-logarithms-and-relative-entropy); [application to thermal covariances](../science/locality_converse.md#applying-the-estimate-to-thermal-covariances).
+**Sources.** Anchor: WM §2.7, p. 85, and §3.5, p. 113, as statistical and reservoir background. Science: [Gaussian relative entropy](../science/locality_converse.md#gaussian-logarithms-and-relative-entropy); [application to thermal covariances](../science/locality_converse.md#applying-the-estimate-to-thermal-covariances). See the [thermal-window entropy bound](../science/low_temperature.md#converse).
 
 ### M20. Convert locality into a global risk lower bound
 
 **Central question.** How do a constant truncation error and a finite-region information bound constrain every estimator?
 
-**Understanding target.** Choose $`R=O(r+\tau)`$ and two parameters separated by order $`R^{-1/2}`$, with the same pair usable for every controller. Combine data processing, Pinsker's inequality, and the two truncation errors. Explain why a decision error forces estimation error and yields the global lower bound, including biased estimates and unfavorable records.
+**Understanding target.** Choose $`R=O(r+\tau)`$ and two parameters separated by order $`R^{-1/2}`$, with the same pair usable for every controller. Combine data processing, Pinsker's inequality, and the two truncation errors. Explain why a decision error forces estimation error and yields the global lower bound, including biased estimates and unfavorable records. Repeat the choice in log temperature using separation of order $`\min\{1,\sqrt{B/R}\}`$ when the block's information scales as $`R/B`$.
 
 **Dependencies and story role.** M10, M13, M18, M19. Complete the first proof branch and its uniformity over protocols.
 
 **Conceptual connection.** Constant-error binary testing suffices; no derivative of an approximate channel or continuity of Fisher information is needed. The testing inequalities also pass to admissible continuous-record limits.
 
-**Sources.** Anchor: WM §§2.2 and 2.7, pp. 54 and 85. Science: [global minimax reduction](../science/locality_converse.md#global-minimax-reduction); [operational limits](../science/locality_converse.md#infinite-bath-and-continuous-records); [explicit lower bound](../science/locality_converse.md#explicit-lower-bound-theorem).
+**Sources.** Anchor: WM §§2.2 and 2.7, pp. 54 and 85. Science: [global minimax reduction](../science/locality_converse.md#global-minimax-reduction); [operational limits](../science/locality_converse.md#infinite-bath-and-continuous-records); [explicit lower bound](../science/locality_converse.md#explicit-lower-bound-theorem). See the [uniform low-temperature testing argument](../science/low_temperature.md#converse).
 
 ### M21. Build the fixed counted sensor
 
@@ -362,25 +362,25 @@ The converse starts at the controlled boundary and reaches a statement about eve
 
 **Central question.** How can the count produce a global error bound without local unbiasedness or asymptotic normality?
 
-**Understanding target.** Use the detuned susceptibility to bound the magnitude of the calibrated mean slope, and the count law to bound its variance by $`\kappa\tau`$. Explain clipping to the mean range and inversion for both slope signs, including counts outside that range. Combine the resulting error bound with a midpoint estimate at short times, then convert to squared log-temperature loss on the fixed interval.
+**Understanding target.** Use the detuned susceptibility to bound the magnitude of the calibrated mean slope, and the count law to bound its variance by $`\kappa\tau`$. Explain clipping to the mean range and inversion for both slope signs, including counts outside that range. Combine the resulting error bound with a midpoint estimate at short times, then convert to squared log-temperature loss on the fixed interval. Apply the same method to the low-temperature receiver's total mode count, whose mean slope in log temperature is proportional to its number of modes and whose variance scales at most linearly in that number.
 
 **Dependencies and story role.** M05, M13, M22, M23, M24. Complete the temporal attaining construction with an estimator defined for every outcome.
 
 **Conceptual connection.** Linear signal response and at-most-linear noise give a uniform inverse-time risk once the nonlinear inverse is controlled globally.
 
-**Sources.** Anchor: WM §2.2, p. 54, as the local-estimation comparison, and §4.2, p. 149. Science: [global count estimator](../science/counted_sensor.md#4-a-global-estimator-including-biased-outcomes); [loss-coordinate comparison](../science/model_and_results.md#loss-units-and-minimax-risk).
+**Sources.** Anchor: WM §2.2, p. 54, as the local-estimation comparison, and §4.2, p. 149. Science: [global count estimator](../science/counted_sensor.md#4-a-global-estimator-including-biased-outcomes); [loss-coordinate comparison](../science/model_and_results.md#loss-units-and-minimax-risk). See the [mode-count estimator](../science/low_temperature.md#attaining-receiver).
 
 ### M26. Join spatial access and elapsed time
 
-**Central question.** How do the converse and two simple measurements establish the full $`1/(r+\tau)`$ law?
+**Central question.** How do spatial access and elapsed time give matching precision laws for a fixed interval and for a cooling bath?
 
-**Understanding target.** Explain the initial block-energy measurement using the true marginal covariance. Identify the bulk energy susceptibility, which has the same sign for both energy signs, and the bounded correction from the cut bond. The slope has magnitude at least proportional to $`r`$ for large $`r`$, and the variance is bounded by a constant times $`r`$. Choose the instantaneous block experiment when $`r\ge\tau`$ and the counted-sensor construction otherwise, then combine with the converse.
+**Understanding target.** Explain the initial block-energy measurement using the true marginal covariance. Identify the bulk energy susceptibility, which has the same sign for both energy signs, and the bounded correction from the cut bond. The slope has magnitude at least proportional to $`r`$ for large $`r`$, and the variance is bounded by a constant times $`r`$. Choose the instantaneous block experiment when $`r\ge\tau`$ and the counted-sensor construction otherwise, then combine with the converse. For the cooling bath, explain how disjoint energy-selected packets resolve the thermal window, either inside the contact region or after propagating through one bond into a finite empty lead. Compare the two mode counts, of orders $`r/B`$ and $`\tau/B`$ in their respective large-resource regimes.
 
 **Dependencies and story role.** M04, M13, M14, M20, M25. Join the two proof branches into the exact minimax order for every $`r\ge1`$ and $`\tau\ge0`$.
 
 **Conceptual connection.** Initially accessible thermal volume and elapsed propagation time supply alternative routes to the same order; auxiliary probe number changes neither charged quantity.
 
-**Sources.** Anchor: WM §§1.4 and 2.7, pp. 32 and 85. Science: [spatial access and the joint law](../science/counted_sensor.md#5-spatial-access-and-the-joint-law); [canonical matching theorem](../science/model_and_results.md#theorem-optimal-contact-and-time-scaling).
+**Sources.** Anchor: WM §§1.4 and 2.7, pp. 32 and 85. Science: [spatial access and the joint law](../science/counted_sensor.md#5-spatial-access-and-the-joint-law); [canonical matching theorem](../science/model_and_results.md#theorem-optimal-contact-and-time-scaling). See the [wave-packet constructions](../science/low_temperature.md#attaining-receiver).
 
 ### M27. Construct the collective Markov comparison record
 
@@ -410,22 +410,22 @@ The converse starts at the controlled boundary and reaches a statement about eve
 
 **Central question.** What is established, what is inherited, and which changes would require a new theorem?
 
-**Understanding target.** State the roles of the fixed known field, fixed compact interval, one initially thermal half-chain, fixed contacts, and bounded outgoing bonds. Explain how an unknown field, moving contact, fresh thermal input, temperature-bearing actuator, or unbounded local bosonic degree of freedom changes the model. Identify which parts of the complete-experiment result use established locality, Gaussian, counting, and statistical methods.
+**Understanding target.** State the roles of the fixed known field, fixed compact interval, one initially thermal half-chain, fixed contacts, and bounded outgoing bonds. Explain how an unknown field, moving contact, fresh thermal input, temperature-bearing actuator, or unbounded local bosonic degree of freedom changes the model. Identify which parts of the complete-experiment result use established locality, Gaussian, counting, and statistical methods. For the uniform low-temperature law, state the additional interior band crossing and the known interval $`b\in[B,2B]`$. Record the auxiliary lead size as a resource of the temporal construction.
 
 **Dependencies and story role.** M05, M14, M24, M26, M28. Delimit the interpretation before the final synthesis.
 
-**Conceptual connection.** Finite numerical checks support specific identifications and approximations; they do not certify universal scaling or priority. No pointwise QFI bound, uniform zero-temperature law, or sharp finite-coupling crossover follows from the theorem.
+**Conceptual connection.** Finite calculations check packet transport and count response. The analytic arguments establish the uniform rate on the stated interior band. The band edges and the resources needed for fixed-size attainment remain separate questions.
 
-**Sources.** Anchor: WM §§2.2 and 3.2, pp. 54 and 99, for estimation and approximation distinctions. Science: [theorem scope](../science/model_and_results.md#scope-of-the-theorem); [changed resources](../science/physical_consequences.md#which-resources-would-change-the-conclusion); [verification limits](../science/counted_sensor.md#6-what-the-verification-does-and-does-not-establish); [attribution and contribution](../references/RELATED_WORK.md#mathematical-and-physical-contribution).
+**Sources.** Anchor: WM §§2.2 and 3.2, pp. 54 and 99, for estimation and approximation distinctions. Science: [theorem scope](../science/model_and_results.md#scope-of-the-theorem); [changed resources](../science/physical_consequences.md#which-resources-would-change-the-conclusion); [verification limits](../science/counted_sensor.md#6-what-the-verification-does-and-does-not-establish); [attribution and contribution](../references/RELATED_WORK.md#mathematical-and-physical-contribution). See the [uniform-law assumptions](../science/low_temperature.md#uniform-minimax-law).
 
 ### M30. Synthesize the resource law and its physical meaning
 
-**Central question.** Why does $`r+Jt/\hbar`$ control optimal thermometric precision in this model?
+**Central question.** How do $`r+Jt/\hbar`$ and the thermal energy window control optimal thermometric precision?
 
-**Understanding target.** Explain how bounded links limit which initially thermal region can influence every accessible record, and how that region's distinguishability bounds estimation. Explain why the detuned counted sensor and initial block-energy readout attain the resulting order, including at zero field. Interpret the mean squared log-temperature law and its square root.
+**Understanding target.** Explain how bounded links limit which initially thermal region can influence every accessible record, and how that region's distinguishability bounds estimation. Explain why the detuned counted sensor and initial block-energy readout attain the resulting order, including at zero field. Interpret the mean squared log-temperature law and its square root. Compare the fixed-interval law with $`\Theta_\nu(\min\{1,B/(r+\tau)\})`$. Explain how both low-temperature bounds depend on the width of the thermal energy window, and recover the time scale $`\hbar/(k_BT)`$ at a fixed contact.
 
 **Dependencies and story role.** M14, M20, M26, M28, M29. Complete the narrative by joining mechanisms, global statistics, and physical implications.
 
 **Conceptual connection.** The result identifies a resource limit on acquiring initially encoded information. Arbitrary apparatus at a fixed contact may improve constants or implementation, while the controlled Markov comparison exposes the cost of treating thermal information supply as unrestricted.
 
-**Sources.** Anchor: WM §§2.2, 2.7, 3.2, and 4.2, pp. 54, 85, 99, and 149. Science: [canonical theorem](../science/model_and_results.md#theorem-optimal-contact-and-time-scaling); [converse meaning](../science/locality_converse.md#what-the-proof-establishes); [matching construction](../science/counted_sensor.md#5-spatial-access-and-the-joint-law); [physical interpretation](../science/physical_consequences.md#what-the-precision-law-says); [operational Markov consequence](../science/physical_consequences.md#an-operational-obstruction-to-uniform-markov-accuracy).
+**Sources.** Anchor: WM §§2.2, 2.7, 3.2, and 4.2, pp. 54, 85, 99, and 149. Science: [canonical theorem](../science/model_and_results.md#theorem-optimal-contact-and-time-scaling); [converse meaning](../science/locality_converse.md#what-the-proof-establishes); [matching construction](../science/counted_sensor.md#5-spatial-access-and-the-joint-law); [physical interpretation](../science/physical_consequences.md#what-the-precision-law-says); [operational Markov consequence](../science/physical_consequences.md#an-operational-obstruction-to-uniform-markov-accuracy). See the [uniform low-temperature law](../science/low_temperature.md#uniform-minimax-law).

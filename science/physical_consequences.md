@@ -17,7 +17,7 @@ This identifies two ways to improve the order of the precision. One can initiall
 
 The [counted-sensor construction](counted_sensor.md) shows that the bound is attainable. For $`\tau>r`$, one two-level sensor with fixed detuning, hopping, and counted loss suffices. The detector resets the sensor into a known state as the initially thermal chain evolves. For $`r\geq\tau`$, measuring the energy of the initial contacted block supplies the matching order.
 
-The theorem applies to squared log-temperature error as well: on the fixed interval, the dimensionless coordinate $`\theta=\log(k_{\mathrm B}T/J)=-\log b`$ is bi-Lipschitz in $`b`$. Squared error in physical inverse temperature carries the dimensional factor $`J^{-2}`$. The parameter interval stays fixed in these comparisons. Taking $`b_+\to\infty`$ would introduce a separate low-temperature limit.
+The theorem applies to squared log-temperature error as well: on the fixed interval, the dimensionless coordinate $`\theta=\log(k_{\mathrm B}T/J)=-\log b`$ is bi-Lipschitz in $`b`$. Squared error in physical inverse temperature carries the dimensional factor $`J^{-2}`$. The [low-temperature theorem](low_temperature.md#uniform-minimax-law) handles the separate limit of a moving inverse-temperature octave for fixed field in the gapless interior of the band.
 
 ## A collective Markov experiment
 
